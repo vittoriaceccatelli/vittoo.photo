@@ -1,0 +1,245 @@
+:root {
+    --bg:     #ffffff;
+    --text:   #111111;
+    --muted:  #888888;
+    --border: #e0e0da;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+/* ── Header ──────────────────────────────── */
+
+.pro-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 52px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+}
+
+.pro-home {
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.pro-home:hover {
+    opacity: 1;
+}
+
+.pro-nav {
+    display: flex;
+    gap: 40px;
+}
+
+.pro-nav a {
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.pro-nav a:hover,
+.pro-nav a.active {
+    opacity: 1;
+}
+
+/* ── Main ────────────────────────────────── */
+
+.pro-main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 148px 48px 100px;
+}
+
+/* ── Intro ───────────────────────────────── */
+
+.pro-intro {
+    margin-bottom: 80px;
+}
+
+.pro-intro h1 {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.pro-intro .tagline {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ── Sections ────────────────────────────── */
+
+.pro-section {
+    margin-bottom: 68px;
+}
+
+.pro-section h2 {
+    font-size: 9px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.pro-section p {
+    color: #444;
+    margin-bottom: 14px;
+}
+
+.pro-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline entries */
+.pro-entry {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+.pro-entry:last-child {
+    margin-bottom: 0;
+}
+
+.pro-entry__year {
+    flex-shrink: 0;
+    width: 80px;
+    font-size: 12px;
+    color: var(--muted);
+    padding-top: 2px;
+}
+
+.pro-entry__body strong {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.pro-entry__body span {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.pro-entry__body p {
+    font-size: 13px;
+    color: #555;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+/* Publication entries */
+.pro-pub {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.pro-pub:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.pro-pub__title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.pro-pub__meta {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ── Footer ──────────────────────────────── */
+
+.pro-footer {
+    text-align: center;
+    padding: 40px 48px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+.pro-footer a:hover {
+    color: var(--text);
+}
+
+/* ── Responsive ──────────────────────────── */
+
+@media (max-width: 768px) {
+    .pro-header {
+        padding: 20px 28px;
+    }
+    .pro-nav {
+        gap: 24px;
+    }
+    .pro-main {
+        padding: 120px 28px 80px;
+    }
+    .pro-intro h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pro-header {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+    .pro-nav {
+        gap: 16px;
+    }
+    .pro-nav a {
+        letter-spacing: 2px;
+    }
+    .pro-main {
+        padding: 140px 20px 60px;
+    }
+    .pro-footer {
+        padding: 32px 20px;
+    }
+    .pro-entry {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .pro-entry__year {
+        width: auto;
+    }
+}

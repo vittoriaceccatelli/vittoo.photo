@@ -1,0 +1,100 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.landing {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity 0.35s ease;
+}
+
+.panel:hover {
+    opacity: 0.75;
+}
+
+.panel--light {
+    background-color: #eeede8;
+}
+
+.panel--dark {
+    background-color: #1c1c1c;
+}
+
+.panel__label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 7px;
+}
+
+.panel--light .panel__label {
+    color: #1c1c1c;
+}
+
+.panel--dark .panel__label {
+    color: #eeede8;
+}
+
+/* Name sits at top centre spanning both panels.
+   mix-blend-mode: difference makes it appear dark on the light
+   panel and light on the dark panel with no JS. */
+.site-name {
+    position: absolute;
+    top: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    color: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@media (max-width: 600px) {
+    body {
+        overflow: auto;
+    }
+
+    .landing {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .panel {
+        min-height: 50vh;
+    }
+
+    .panel__label {
+        font-size: 10px;
+        letter-spacing: 5px;
+    }
+
+    .site-name {
+        top: 20px;
+        font-size: 8px;
+        letter-spacing: 4px;
+    }
+}
