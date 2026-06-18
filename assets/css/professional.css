@@ -185,6 +185,41 @@ a {
     color: var(--muted);
 }
 
+/* ── Contact + CV button ─────────────────── */
+
+.pro-contact {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.pro-contact a {
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.pro-contact a:hover {
+    color: var(--text);
+}
+
+.cv-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 9px 22px;
+    border: 1px solid var(--text);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--text);
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cv-download:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
 /* ── Footer ──────────────────────────────── */
 
 .pro-footer {
