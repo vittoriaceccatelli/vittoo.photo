@@ -39,6 +39,13 @@ a {
     background: var(--bg);
     border-bottom: 1px solid var(--border);
     z-index: 100;
+    transition: background 0.3s, backdrop-filter 0.3s, -webkit-backdrop-filter 0.3s, border-color 0.3s;
+}
+
+.pro-header.is-scrolled {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .pro-home {
@@ -300,11 +307,13 @@ a {
     padding: 24px 28px;
     border: 1px solid var(--border);
     color: var(--text);
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.18s, box-shadow 0.18s;
 }
 
 .pro-card:hover {
     border-color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
 }
 
 .pro-card__meta {
@@ -370,6 +379,35 @@ a {
     letter-spacing: 0.5px;
     color: var(--text);
     line-height: 1;
+    transition: transform 0.12s;
+}
+
+.chip--core {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+.chip--familiar {
+    color: #aaa;
+    border-color: #eaeae4;
+}
+
+.skill-legend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.skill-legend-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-right: 4px;
+    white-space: nowrap;
 }
 
 /* ── Thesis page components ──────────────── */
@@ -504,6 +542,53 @@ a {
 
 .pro-footer a:hover {
     color: var(--text);
+}
+
+/* ── Project figures ─────────────────────── */
+
+.pro-figure {
+    margin: 32px 0;
+    border: 1px solid var(--border);
+    background: #fafaf8;
+}
+
+.pro-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pro-figure figcaption {
+    padding: 12px 18px;
+    font-size: 11px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.6;
+}
+
+/* ── Scroll reveal ───────────────────────── */
+
+.sr {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.sr--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Page-load intro animation ───────────── */
+
+.pro-intro {
+    animation: fadeUp 0.65s ease both;
+    animation-delay: 0.08s;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Responsive ──────────────────────────── */

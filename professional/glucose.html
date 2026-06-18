@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Glucose Prediction — Vittoria Ceccatelli</title>
+    <meta name="description" content="AI for non-invasive glucose prediction from wearable data — multi-task ML system covering classification, regression, and 6-hour time-series forecasting. ETH Zurich semester project by Vittoria Ceccatelli.">
+    <meta property="og:title" content="Glucose Prediction — Vittoria Ceccatelli">
+    <meta property="og:description" content="Multi-task ML system predicting glucose from wearable physiological data — TabPFN, XGBoost, Temporal Fusion Transformer.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="../assets/css/professional.css">
 </head>
 <body>
@@ -98,6 +102,11 @@
             classification task was addressed via random downsampling, continuous-sequence removal,
             and SMOTE oversampling.
         </p>
+
+        <figure class="pro-figure">
+            <img src="../assets/images/projects/glucose-features.jpg" alt="Feature importance charts for glucose prediction models">
+            <figcaption>Feature importance analysis across models — EDA-related features, activity signals, sex, and circadian rhythm (time from midnight) are consistently the strongest predictors. Food log features rank lower than expected.</figcaption>
+        </figure>
     </section>
 
     <!-- ── Three tasks ───────────────────────── -->
@@ -193,6 +202,11 @@
             for time-series forecasting in digital health — where labelled data is scarce and
             personalised retraining is expensive.
         </p>
+
+        <figure class="pro-figure">
+            <img src="../assets/images/projects/glucose-forecast.jpg" alt="TFT 6-hour glucose forecasting predictions vs ground truth">
+            <figcaption>Temporal Fusion Transformer — 6-hour glucose forecast vs. Dexcom G6 ground truth for representative participants. RMSE 15.0 ± 2.8 mg/dL, 92% accuracy across the test set.</figcaption>
+        </figure>
     </section>
 
     <!-- ── Tools ───────────────────────────────── -->
