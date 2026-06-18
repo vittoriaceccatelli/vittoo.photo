@@ -12,6 +12,7 @@
     <a class="pro-home" href="../index.html">← VC</a>
     <nav class="pro-nav">
         <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
         <a href="#experience">EXPERIENCE</a>
         <a href="#skills">SKILLS</a>
     </nav>
@@ -22,21 +23,24 @@
     <!-- ── Intro ─────────────────────────────────────── -->
     <section class="pro-intro" id="about">
         <h1>Vittoria Ceccatelli</h1>
-        <p class="tagline">Biomedical Engineer · ETH Zurich &amp; Harvard Medical School</p>
+        <p class="tagline">ML &amp; Data Engineering · ETH Zurich &amp; Harvard Medical School</p>
     </section>
 
     <section class="pro-section">
         <h2>About</h2>
         <p>
-            I am a Biomedical Engineering MSc student at ETH Zurich, currently completing my
-            thesis at Harvard Medical School's Brigham and Women's Hospital. My work focuses on
-            developing automated machine learning pipelines for medical imaging — from CT-based
-            cardiovascular analysis to wearable-sensor glucose prediction.
+            I am a Biomedical Engineering MSc graduate from ETH Zurich, with my thesis completed
+            at Harvard Medical School's Brigham and Women's Hospital. I build automated,
+            production-quality computational systems — from end-to-end medical imaging pipelines
+            processing hundreds of CT scans, to multi-task ML models predicting glucose from
+            physiological wearable data.
         </p>
         <p>
-            I am drawn to problems at the intersection of data engineering, deep learning, and
-            clinical medicine, with a particular interest in making computational methods robust
-            enough for real-world deployment. I am Italian, British, and based in Switzerland.
+            I am drawn to hard quantitative problems that require turning noisy, high-dimensional
+            data into structured, reliable outputs. My work spans medical AI, signal processing,
+            and clinical decision support; I am equally interested in applications in data
+            engineering, quantitative research, and computational modelling more broadly.
+            I am Italian, British, and based in Switzerland.
         </p>
         <p class="pro-contact">
             vittoria.ceccatelli@gmail.com &nbsp;·&nbsp;
@@ -45,6 +49,50 @@
             <a href="https://github.com/vittoriaceccatelli" target="_blank">GitHub</a>
         </p>
         <a href="CV.pdf" download class="cv-download">Download CV</a>
+    </section>
+
+    <!-- ── Projects ─────────────────────────────────── -->
+    <section class="pro-section" id="projects">
+        <h2>Projects</h2>
+        <div class="pro-cards">
+
+            <a class="pro-card" href="thesis.html">
+                <div class="pro-card__meta">2025 – 2026 &nbsp;·&nbsp; Harvard Medical School &amp; ETH Zurich</div>
+                <div class="pro-card__title">Automated Carotid Artery Analysis Pipeline</div>
+                <div class="pro-card__desc">
+                    End-to-end ML pipeline for carotid CTA analysis — deep learning segmentation
+                    (nnU-Net, SegMamba, SwinUNETR), morphological analysis, calcification mapping,
+                    and 3D CFD simulation. Processed 111 patients; 354 features per patient.
+                    Presented at Harvard Surgery Research Day 2026.
+                </div>
+                <div class="pro-card__link">View project →</div>
+            </a>
+
+            <a class="pro-card" href="#">
+                <div class="pro-card__meta">2025 &nbsp;·&nbsp; ETH Zurich — Biomedical &amp; Mobile Health Technology Lab</div>
+                <div class="pro-card__title">AI for Glucose Prediction from Wearable Data</div>
+                <div class="pro-card__desc">
+                    Multi-task ML system for non-invasive glucose monitoring using wearable physiological
+                    data — covering classification, regression, and 6-hour time-series forecasting.
+                    Models benchmarked: TabPFN, XGBoost, Temporal Fusion Transformer, SeqFusion (zero-shot).
+                    69 engineered features across EDA, activity, and circadian signals.
+                </div>
+                <div class="pro-card__link">View project →</div>
+            </a>
+
+            <a class="pro-card" href="#">
+                <div class="pro-card__meta">2024 &nbsp;·&nbsp; ETH Zurich — Institute for Biomechanics</div>
+                <div class="pro-card__title">Auditory Noise Stimulation &amp; Postural Stability</div>
+                <div class="pro-card__desc">
+                    Signal processing and coherence analysis on EMG and force-plate (CoP) data from
+                    100 participants (50 elderly, 50 young). Developed MATLAB pipelines for EMG–EMG
+                    and EMG–CoP coherence analysis to quantify the effect of subthreshold auditory
+                    white noise on fall-risk in elderly individuals.
+                </div>
+                <div class="pro-card__link">View project →</div>
+            </a>
+
+        </div>
     </section>
 
     <!-- ── Education ─────────────────────────────────── -->
@@ -189,31 +237,73 @@
     <section class="pro-section" id="skills">
         <h2>Technical Skills</h2>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">Programming</div>
-            <div class="pro-entry__body">
-                <p>Python · MATLAB · R · SQL · Bash · HTML · CSS · JavaScript · Git · Linux</p>
+        <div class="skill-group">
+            <div class="skill-group__label">Programming</div>
+            <div class="skill-chips">
+                <span class="chip">Python</span>
+                <span class="chip">MATLAB</span>
+                <span class="chip">R</span>
+                <span class="chip">SQL</span>
+                <span class="chip">Bash</span>
+                <span class="chip">Git</span>
+                <span class="chip">Linux</span>
+                <span class="chip">HTML / CSS / JS</span>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">ML / DL</div>
-            <div class="pro-entry__body">
-                <p>PyTorch · TensorFlow · XGBoost · scikit-learn · PyTorch Forecasting · Supervised Learning · Validation &amp; Evaluation</p>
+        <div class="skill-group">
+            <div class="skill-group__label">ML &amp; DL</div>
+            <div class="skill-chips">
+                <span class="chip">PyTorch</span>
+                <span class="chip">TensorFlow</span>
+                <span class="chip">scikit-learn</span>
+                <span class="chip">XGBoost</span>
+                <span class="chip">TabPFN</span>
+                <span class="chip">Temporal Fusion Transformer</span>
+                <span class="chip">nnU-Net</span>
+                <span class="chip">SegMamba</span>
+                <span class="chip">SwinUNETR</span>
+                <span class="chip">UNETR</span>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">Data &amp; Signals</div>
-            <div class="pro-entry__body">
-                <p>Feature Engineering · Class Imbalance Strategies · Signal Processing · Data Cleaning · VTK · Slicer</p>
+        <div class="skill-group">
+            <div class="skill-group__label">Data &amp; Signals</div>
+            <div class="skill-chips">
+                <span class="chip">Feature Engineering</span>
+                <span class="chip">Signal Processing</span>
+                <span class="chip">Time-Series Forecasting</span>
+                <span class="chip">Coherence Analysis</span>
+                <span class="chip">Class Imbalance</span>
+                <span class="chip">NumPy</span>
+                <span class="chip">Pandas</span>
+                <span class="chip">SciPy</span>
+                <span class="chip">Matplotlib</span>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">Medical &amp; CAD</div>
-            <div class="pro-entry__body">
-                <p>Medical Image Segmentation · CFD (ANSYS) · CAD (PTC Creo · Geomagic Wrap &amp; DesignX) · DICOM</p>
+        <div class="skill-group">
+            <div class="skill-group__label">Medical &amp; CFD</div>
+            <div class="skill-chips">
+                <span class="chip">DICOM</span>
+                <span class="chip">ITK</span>
+                <span class="chip">VTK</span>
+                <span class="chip">3D Slicer</span>
+                <span class="chip">Medical Segmentation</span>
+                <span class="chip">SimVascular</span>
+                <span class="chip">ANSYS Fluent</span>
+                <span class="chip">CFD</span>
+                <span class="chip">Meshing</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <div class="skill-group__label">CAD</div>
+            <div class="skill-chips">
+                <span class="chip">PTC Creo</span>
+                <span class="chip">Geomagic Wrap</span>
+                <span class="chip">Geomagic DesignX</span>
+                <span class="chip">CT-based CAD</span>
             </div>
         </div>
     </section>

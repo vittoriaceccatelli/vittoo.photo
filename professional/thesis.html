@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carotid Pipeline — Vittoria Ceccatelli</title>
+    <link rel="stylesheet" href="../assets/css/professional.css">
+</head>
+<body>
+
+<header class="pro-header">
+    <a class="pro-home" href="index.html">← WORK</a>
+    <nav class="pro-nav">
+        <a href="#background">BACKGROUND</a>
+        <a href="#pipeline">PIPELINE</a>
+        <a href="#results">RESULTS</a>
+    </nav>
+</header>
+
+<main class="pro-main">
+
+    <!-- ── Hero ─────────────────────────────── -->
+    <section class="pro-intro" id="background">
+        <p class="pro-meta-label">Master Thesis &nbsp;·&nbsp; Harvard Medical School &amp; ETH Zurich &nbsp;·&nbsp; Sep 2025 – Mar 2026</p>
+        <h1>Automated Carotid Artery Analysis Pipeline</h1>
+        <p class="tagline">
+            A fully automated, modular framework for multi-domain characterization of carotid stenosis
+            from CT angiography — integrating deep learning segmentation, morphological analysis,
+            calcification mapping, and 3D CFD simulation.
+        </p>
+        <div class="thesis-links">
+            <!-- Replace GITHUB_REPO_URL with the actual repository link -->
+            <a href="GITHUB_REPO_URL" target="_blank" class="thesis-link-btn">GitHub →</a>
+            <a href="https://www.harvard.edu" target="_blank" class="thesis-link-btn thesis-link-btn--outline">Harvard Surgery Research Day →</a>
+        </div>
+    </section>
+
+    <!-- ── Background ─────────────────────── -->
+    <section class="pro-section">
+        <h2>Background</h2>
+        <p>
+            Carotid stenosis — the narrowing of the arteries that supply blood to the brain — affects
+            approximately 4% of the general population and is identified in up to 20% of stroke patients.
+            With age, prevalence rises to around 7.5% in men and 5% in women over 80.
+        </p>
+        <p>
+            Despite the complexity of the disease, current clinical assessment relies on a single linear
+            diameter measurement and operator-dependent blood velocity readings. Evidence increasingly
+            shows that disease outcomes depend on plaque morphology, calcification distribution, and
+            local hemodynamics — none of which are captured by standard techniques. The result is
+            high variability in treatment decisions for patients with identical stenosis severity grades.
+        </p>
+        <p>
+            A comprehensive, automated, and reproducible characterization framework was missing.
+            This thesis addresses that gap.
+        </p>
+    </section>
+
+    <!-- ── Pipeline ───────────────────────── -->
+    <section class="pro-section" id="pipeline">
+        <h2>The Pipeline</h2>
+        <p>
+            A fully automated bash/Python framework that takes raw CTA scans as input and produces
+            a structured, multi-modal feature dataset across three domains: vessel morphology,
+            calcification, and hemodynamics. Each stage is implemented as an independent, configurable
+            module — enabling users to swap components without disrupting the overall workflow.
+        </p>
+
+        <div class="pipeline">
+            <div class="pipeline__step">
+                <div class="pipeline__num">01</div>
+                <div class="pipeline__body">
+                    <strong>Input</strong>
+                    <span>
+                        Raw CTA scans (111 patients) in DICOM format. Processed on standard research
+                        computing hardware with optional GPU acceleration.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">02</div>
+                <div class="pipeline__body">
+                    <strong>Deep Learning Segmentation</strong>
+                    <span>
+                        Five configurable models — nnU-Net, SegMamba, UNETR, SwinUNETR, UMambaBot —
+                        benchmarked on an iteratively expanded annotation set. nnU-Net trained with
+                        progressive data augmentation; qualitative and quantitative comparison across
+                        challenging segmentation cases.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">03</div>
+                <div class="pipeline__body">
+                    <strong>ROI Isolation &amp; Standardization</strong>
+                    <span>
+                        Automated carotid bifurcation extraction, centerline computation, and geometric
+                        standardization — ensuring consistent spatial orientation across all patients
+                        for meaningful cohort-level comparisons.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">04</div>
+                <div class="pipeline__body">
+                    <strong>Morphological Feature Extraction</strong>
+                    <span>
+                        Centerline-based descriptors: diameter profiles, cross-sectional area,
+                        tortuosity, curvature, torsion, bifurcation and planarity angles, and
+                        stenosis severity (NASCET/ECST). Computed along the ICA, ECA, and CCA branches.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">05</div>
+                <div class="pipeline__body">
+                    <strong>Calcification Characterization</strong>
+                    <span>
+                        Calcium segmentation via Hounsfield unit thresholding. Spatial distribution
+                        quantified longitudinally, circumferentially, and radially along the vessel wall —
+                        capturing plaque burden beyond a single volume estimate.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">06</div>
+                <div class="pipeline__body">
+                    <strong>3D CFD Haemodynamic Simulation</strong>
+                    <span>
+                        Two configurable solvers — SimVascular and ANSYS Fluent (via PyFluent) — with
+                        three outlet boundary conditions: traction-free, Murray's Law, and Windkessel.
+                        Extracts wall shear stress (WSS), pressure, and velocity fields across the
+                        cardiac cycle. Mesh generated automatically from patient geometry.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">07</div>
+                <div class="pipeline__body">
+                    <strong>Output Dataset</strong>
+                    <span>
+                        354 features per patient (177 per carotid) across morphological, calcification,
+                        and haemodynamic domains. Structured for downstream ML-based prediction of
+                        post-surgical stroke risk. The Nezami Lab is currently building a predictive
+                        model on top of this dataset.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Results ─────────────────────────── -->
+    <section class="pro-section" id="results">
+        <h2>Results</h2>
+
+        <div class="thesis-stats">
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">111</div>
+                <div class="thesis-stat__label">CTA scans processed</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">354</div>
+                <div class="thesis-stat__label">features per patient</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">65.8%</div>
+                <div class="thesis-stat__label">end-to-end success rate</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">5</div>
+                <div class="thesis-stat__label">DL models benchmarked</div>
+            </div>
+        </div>
+
+        <p>
+            Automated segmentations closely matched clinician annotations — validated via Bland-Altman
+            analysis across all morphological features, with high Pearson correlation and low relative
+            differences. CFD haemodynamic outputs showed good-to-excellent agreement against an
+            experimental reference workflow.
+        </p>
+        <p>
+            Most pipeline failures were attributable to upstream segmentation quality: CTA image artifacts
+            or segmentation errors caused cascading failures in downstream modules. Improvements at this
+            stage would substantially raise the end-to-end success rate.
+        </p>
+        <p>
+            The pipeline eliminates operator-dependent variability across all stages, enabling reproducible
+            large-cohort characterization with consistent feature definitions — a prerequisite for
+            meaningful between-patient comparisons and outcome modeling.
+        </p>
+        <p>
+            <strong>Presented at the Harvard Surgery Research Day 2026.</strong>
+        </p>
+    </section>
+
+    <!-- ── Tools ───────────────────────────── -->
+    <section class="pro-section">
+        <h2>Tools &amp; Technologies</h2>
+        <div class="skill-chips">
+            <span class="chip">Python</span>
+            <span class="chip">Bash</span>
+            <span class="chip">nnU-Net</span>
+            <span class="chip">SegMamba</span>
+            <span class="chip">SwinUNETR</span>
+            <span class="chip">UNETR</span>
+            <span class="chip">UMambaBot</span>
+            <span class="chip">SimVascular</span>
+            <span class="chip">ANSYS Fluent</span>
+            <span class="chip">PyFluent</span>
+            <span class="chip">ITK</span>
+            <span class="chip">VTK</span>
+            <span class="chip">3D Slicer</span>
+            <span class="chip">DICOM</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">SciPy</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">CFD</span>
+            <span class="chip">Git</span>
+            <span class="chip">Linux</span>
+        </div>
+    </section>
+
+</main>
+
+<footer class="pro-footer">
+    <a href="index.html">← Back to Work</a>
+</footer>
+
+</body>
+</html>
