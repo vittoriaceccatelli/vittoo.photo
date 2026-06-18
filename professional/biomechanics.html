@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Postural Stability — Vittoria Ceccatelli</title>
+    <link rel="stylesheet" href="../assets/css/professional.css">
+</head>
+<body>
+
+<header class="pro-header">
+    <a class="pro-home" href="../index.html">← VC</a>
+    <nav class="pro-nav">
+        <a href="index.html">OVERVIEW</a>
+        <div class="pro-dropdown active">
+            <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
+            <div class="pro-dropdown__menu">
+                <a href="thesis.html">Carotid Pipeline</a>
+                <a href="glucose.html">Glucose Prediction</a>
+                <a href="biomechanics.html" class="active">Postural Stability</a>
+            </div>
+        </div>
+        <a href="CV.pdf" download>CV</a>
+    </nav>
+</header>
+
+<main class="pro-main">
+
+    <!-- ── Hero ─────────────────────────────── -->
+    <section class="pro-intro" id="background">
+        <p class="pro-meta-label">Semester Project &nbsp;·&nbsp; ETH Zurich — Institute for Biomechanics, D-HEST &nbsp;·&nbsp; Feb – Mar 2024</p>
+        <h1>Auditory Noise Stimulation &amp; Postural Stability</h1>
+        <p class="tagline">
+            Signal processing and coherence analysis of EMG and force-plate data from 100 participants,
+            quantifying how subthreshold auditory white noise stimulation affects neuromuscular
+            control and fall risk in elderly individuals.
+        </p>
+    </section>
+
+    <!-- ── Background ─────────────────────────── -->
+    <section class="pro-section">
+        <h2>Background</h2>
+        <p>
+            Postural stability — the body's ability to keep its centre of mass within safe boundaries —
+            depends on the integration of visual, vestibular, and somatosensory inputs. Falls are a
+            leading cause of injury in elderly populations; reduced postural stability with age is
+            a well-established risk factor.
+        </p>
+        <p>
+            A growing body of research suggests that <strong>stochastic resonance</strong> — the
+            phenomenon whereby a subthreshold noise signal enhances the detection of weak sensory
+            inputs — may improve postural control. Crucially, the effect is strongest when the
+            noise is just below the sensory threshold (subthreshold), not above it (suprathreshold).
+            Prior work had explored mechanical and vibratory noise applied to the soles of the feet;
+            this project investigated whether <strong>auditory white noise</strong> produces the
+            same stabilising effect.
+        </p>
+        <p>
+            A secondary question was whether older individuals — who have a lower baseline postural
+            stability and therefore more room for improvement — benefit more than younger individuals.
+        </p>
+    </section>
+
+    <!-- ── Experiment ─────────────────────────── -->
+    <section class="pro-section" id="experiment">
+        <h2>Experiment &amp; Methods</h2>
+        <p>
+            100 participants (50 elderly, 50 young) performed quiet standing under four conditions,
+            each lasting one minute. Data was collected simultaneously from a <strong>force plate</strong>
+            (CoP, centre of pressure) and <strong>surface EMG electrodes on 8 muscles per leg</strong>
+            (16 channels total).
+        </p>
+
+        <div class="pipeline">
+            <div class="pipeline__step">
+                <div class="pipeline__num">EO</div>
+                <div class="pipeline__body">
+                    <strong>Eyes Open</strong>
+                    <span>Baseline condition. Full sensory integration.</span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">EC</div>
+                <div class="pipeline__body">
+                    <strong>Eyes Closed</strong>
+                    <span>Visual input removed. Increased reliance on vestibular and somatosensory inputs; expected increase in sway.</span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">SUB</div>
+                <div class="pipeline__body">
+                    <strong>Eyes Closed + Subthreshold Noise</strong>
+                    <span>
+                        Auditory white noise at a volume just below each participant's personal hearing threshold.
+                        The hypothesis: noise may enhance peripheral sensory signals via stochastic resonance,
+                        improving postural control without conscious awareness of the stimulus.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">SUPRA</div>
+                <div class="pipeline__body">
+                    <strong>Eyes Closed + Suprathreshold Noise</strong>
+                    <span>Auditory white noise above the hearing threshold. Control for the suprathreshold condition; expected to be less beneficial than subthreshold.</span>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top: 28px;"><strong>Signal processing pipeline (MATLAB):</strong></p>
+        <p>
+            EMG signals (≥3000 Hz) were trimmed to 50 seconds, artifact-interpolated using a
+            spline method around peaks, filtered with a 50 Hz power-hum notch filter, and
+            rectified via the Hilbert transform. Force plate CoP data was high-pass filtered
+            (4th-order Butterworth, 20 Hz cut-off) and bias-corrected.
+        </p>
+        <p>
+            <strong>Linear CoP parameters</strong> extracted: mean velocity (radial, anteroposterior, mediolateral),
+            pathlength, sway area, and ML peak velocity. Statistical testing: Friedman's test for
+            overall condition effect; Wilcoxon signed rank sum test for pairwise comparisons.
+        </p>
+        <p>
+            <strong>Coherence analysis</strong> (magnitude squared coherence, MSC):
+            EMG–EMG coherence between all muscle pairs, and CoP–EMG coherence between the CoP
+            trajectory and each muscle. Coherence was analysed across delta, theta, alpha, and beta
+            frequency bands to assess neuromuscular synchronisation under each condition.
+        </p>
+    </section>
+
+    <!-- ── Results ─────────────────────────────── -->
+    <section class="pro-section" id="results">
+        <h2>Results</h2>
+
+        <div class="thesis-stats">
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">100</div>
+                <div class="thesis-stat__label">participants (50 elderly, 50 young)</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">16</div>
+                <div class="thesis-stat__label">EMG channels</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">4</div>
+                <div class="thesis-stat__label">experimental conditions</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">6</div>
+                <div class="thesis-stat__label">CoP parameters analysed</div>
+            </div>
+        </div>
+
+        <p>
+            <strong>CoP analysis:</strong> In elderly participants, subthreshold noise significantly
+            reduced radial, anteroposterior, and mediolateral mean velocity, as well as pathlength
+            and ML peak velocity (all p &lt; 0.02). The same reductions were present but statistically
+            smaller and often non-significant in younger participants — consistent with the principle
+            that individuals with a lower baseline stability have more room for improvement.
+        </p>
+        <p>
+            <strong>Coherence analysis:</strong> The eyes-closed condition produced the highest
+            EMG–EMG and CoP–EMG coherence values; eyes-open the lowest. Subthreshold noise
+            reduced coherence compared to eyes-closed in elderly participants — particularly in
+            the M. Triceps Surae (Soleus, Gastrocnemius), which is consistent with the central
+            role of the ankle plantarflexors in anteroposterior postural control.
+        </p>
+        <p>
+            Reduced coherence under subthreshold noise indicates <strong>decreased need for
+            compensatory neuromuscular synchronisation</strong> — the body is more efficiently
+            stabilised and requires less active muscular coordination to maintain balance.
+            Suprathreshold noise produced notably weaker effects, confirming the role of
+            stochastic resonance rather than simple auditory distraction.
+        </p>
+        <p>
+            Older participants showed generally higher baseline coherence values (delta and alpha bands
+            more prominent), suggesting that increased muscular synchronisation is a hallmark of
+            age-related compensation for reduced somatosensory acuity.
+        </p>
+    </section>
+
+    <!-- ── Tools ───────────────────────────────── -->
+    <section class="pro-section">
+        <h2>Tools &amp; Technologies</h2>
+        <div class="skill-chips">
+            <span class="chip">MATLAB</span>
+            <span class="chip">Signal Processing Toolbox</span>
+            <span class="chip">EMG Analysis</span>
+            <span class="chip">Force Plate (CoP)</span>
+            <span class="chip">Coherence Analysis (MSC)</span>
+            <span class="chip">Hilbert Transform</span>
+            <span class="chip">Butterworth Filter</span>
+            <span class="chip">Friedman's Test</span>
+            <span class="chip">Wilcoxon Signed Rank Test</span>
+            <span class="chip">Stochastic Resonance</span>
+        </div>
+    </section>
+
+</main>
+
+<footer class="pro-footer">
+    <a href="index.html">← Back to Overview</a>
+</footer>
+
+<script src="../assets/js/professional.js"></script>
+</body>
+</html>

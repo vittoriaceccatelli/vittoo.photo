@@ -35,7 +35,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 28px 52px;
+    padding: 28px 15%;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
     z-index: 100;
@@ -56,6 +56,7 @@ a {
 .pro-nav {
     display: flex;
     gap: 40px;
+    align-items: center;
 }
 
 .pro-nav a {
@@ -71,12 +72,79 @@ a {
     opacity: 1;
 }
 
+/* ── Nav dropdown ─────────────────────────── */
+
+.pro-dropdown {
+    position: relative;
+}
+
+.pro-dropdown__btn {
+    background: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: var(--text);
+    opacity: 0.4;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.pro-dropdown__btn::after {
+    content: ' ▾';
+    letter-spacing: 0;
+    font-size: 9px;
+}
+
+.pro-dropdown:hover .pro-dropdown__btn,
+.pro-dropdown.is-open .pro-dropdown__btn,
+.pro-dropdown.active .pro-dropdown__btn {
+    opacity: 1;
+}
+
+.pro-dropdown__menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 18px);
+    right: 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    min-width: 200px;
+    z-index: 200;
+    padding: 6px 0;
+}
+
+.pro-dropdown:hover .pro-dropdown__menu,
+.pro-dropdown.is-open .pro-dropdown__menu {
+    display: block;
+}
+
+.pro-dropdown__menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--text);
+    opacity: 0.4;
+    transition: opacity 0.15s;
+}
+
+.pro-dropdown__menu a:hover,
+.pro-dropdown__menu a.active {
+    opacity: 1;
+}
+
 /* ── Main ────────────────────────────────── */
 
 .pro-main {
-    max-width: 680px;
+    width: 70%;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 148px 48px 100px;
+    padding: 148px 0 100px;
 }
 
 /* ── Intro ───────────────────────────────── */
@@ -442,13 +510,14 @@ a {
 
 @media (max-width: 768px) {
     .pro-header {
-        padding: 20px 28px;
+        padding: 20px 5%;
     }
     .pro-nav {
         gap: 24px;
     }
     .pro-main {
-        padding: 120px 28px 80px;
+        width: 90%;
+        padding: 120px 0 80px;
     }
     .pro-intro h1 {
         font-size: 26px;
@@ -459,7 +528,7 @@ a {
     .pro-header {
         flex-wrap: wrap;
         gap: 12px;
-        padding: 16px 20px;
+        padding: 16px 4%;
     }
     .pro-nav {
         gap: 16px;
@@ -468,7 +537,8 @@ a {
         letter-spacing: 2px;
     }
     .pro-main {
-        padding: 140px 20px 60px;
+        width: 92%;
+        padding: 140px 0 60px;
     }
     .pro-footer {
         padding: 32px 20px;
@@ -499,5 +569,9 @@ a {
     }
     .pipeline__step::before {
         left: -25px;
+    }
+    .pro-dropdown__menu {
+        right: auto;
+        left: 0;
     }
 }

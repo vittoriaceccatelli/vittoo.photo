@@ -11,10 +11,16 @@
 <header class="pro-header">
     <a class="pro-home" href="../index.html">← VC</a>
     <nav class="pro-nav">
-        <a href="#about">ABOUT</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="#skills">SKILLS</a>
+        <a href="index.html" class="active">OVERVIEW</a>
+        <div class="pro-dropdown">
+            <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
+            <div class="pro-dropdown__menu">
+                <a href="thesis.html">Carotid Pipeline</a>
+                <a href="glucose.html">Glucose Prediction</a>
+                <a href="biomechanics.html">Postural Stability</a>
+            </div>
+        </div>
+        <a href="CV.pdf" download>CV</a>
     </nav>
 </header>
 
@@ -43,7 +49,7 @@
             I am Italian, British, and based in Switzerland.
         </p>
         <p class="pro-contact">
-            vittoria.ceccatelli@gmail.com &nbsp;·&nbsp;
+            <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a> &nbsp;·&nbsp;
             <a href="https://www.linkedin.com/in/vittoria-ceccatelli-336462125" target="_blank">LinkedIn</a>
             &nbsp;·&nbsp;
             <a href="https://github.com/vittoriaceccatelli" target="_blank">GitHub</a>
@@ -68,7 +74,7 @@
                 <div class="pro-card__link">View project →</div>
             </a>
 
-            <a class="pro-card" href="#">
+            <a class="pro-card" href="glucose.html">
                 <div class="pro-card__meta">2025 &nbsp;·&nbsp; ETH Zurich — Biomedical &amp; Mobile Health Technology Lab</div>
                 <div class="pro-card__title">AI for Glucose Prediction from Wearable Data</div>
                 <div class="pro-card__desc">
@@ -80,7 +86,7 @@
                 <div class="pro-card__link">View project →</div>
             </a>
 
-            <a class="pro-card" href="#">
+            <a class="pro-card" href="biomechanics.html">
                 <div class="pro-card__meta">2024 &nbsp;·&nbsp; ETH Zurich — Institute for Biomechanics</div>
                 <div class="pro-card__title">Auditory Noise Stimulation &amp; Postural Stability</div>
                 <div class="pro-card__desc">
@@ -327,5 +333,6 @@
     <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a>
 </footer>
 
+<script src="../assets/js/professional.js"></script>
 </body>
 </html>

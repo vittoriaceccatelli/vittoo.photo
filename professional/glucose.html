@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glucose Prediction — Vittoria Ceccatelli</title>
+    <link rel="stylesheet" href="../assets/css/professional.css">
+</head>
+<body>
+
+<header class="pro-header">
+    <a class="pro-home" href="../index.html">← VC</a>
+    <nav class="pro-nav">
+        <a href="index.html">OVERVIEW</a>
+        <div class="pro-dropdown active">
+            <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
+            <div class="pro-dropdown__menu">
+                <a href="thesis.html">Carotid Pipeline</a>
+                <a href="glucose.html" class="active">Glucose Prediction</a>
+                <a href="biomechanics.html">Postural Stability</a>
+            </div>
+        </div>
+        <a href="CV.pdf" download>CV</a>
+    </nav>
+</header>
+
+<main class="pro-main">
+
+    <!-- ── Hero ─────────────────────────────── -->
+    <section class="pro-intro" id="background">
+        <p class="pro-meta-label">Semester Project &nbsp;·&nbsp; ETH Zurich — Biomedical &amp; Mobile Health Technology Lab &nbsp;·&nbsp; Feb – May 2025</p>
+        <h1>AI for Glucose Prediction from Wearable Data</h1>
+        <p class="tagline">
+            A multi-task machine learning system predicting personalised glucose levels
+            from wearable physiological data — across classification, regression,
+            and 6-hour time-series forecasting — without requiring invasive continuous glucose monitoring.
+        </p>
+        <div class="thesis-links">
+            <a href="https://github.com/vittoriaceccatelli/glucoseProject" target="_blank" class="thesis-link-btn">GitHub →</a>
+        </div>
+    </section>
+
+    <!-- ── Background ─────────────────────────── -->
+    <section class="pro-section">
+        <h2>Background</h2>
+        <p>
+            Diabetes affects 830 million people worldwide (WHO, 2022) and the number is rising.
+            Continuous glucose monitors (CGMs) help patients manage their condition in real time,
+            but they are invasive — requiring a subcutaneous sensor — and expensive ($100–400/month),
+            placing them out of reach for many. Prediabetes, which precedes type 2 diabetes,
+            often goes undiagnosed entirely.
+        </p>
+        <p>
+            Wearable devices already measure a rich set of physiological signals — skin conductance,
+            skin temperature, photoplethysmography, and accelerometry — that reflect changes in
+            the autonomic nervous system and metabolism. The hypothesis driving this project:
+            can these non-invasive signals predict glucose levels accurately enough to reduce or
+            replace the need for CGM?
+        </p>
+        <p>
+            This project investigated three prediction tasks of increasing complexity, and
+            additionally evaluated whether including a food log as an additional data source
+            improves model performance.
+        </p>
+    </section>
+
+    <!-- ── Dataset ────────────────────────────── -->
+    <section class="pro-section">
+        <h2>Dataset</h2>
+        <p>
+            The publicly available <strong>BIG IDEAs Lab Glycaemic Variability and Wearable Device
+            Dataset</strong> (Physionet, v1.1.2) was used. It contains data from 16 participants
+            (7 male, 9 female, ages 36–65) with HbA1c values in the high-normal to prediabetic
+            range (5.2–6.4%). Each participant wore two devices simultaneously for 8–10 days:
+        </p>
+        <div class="pro-entry" style="margin-top: 16px;">
+            <div class="pro-entry__year">Dexcom G6</div>
+            <div class="pro-entry__body">
+                <span>Continuous glucose monitor — interstitial glucose at 5-minute intervals (ground truth)</span>
+            </div>
+        </div>
+        <div class="pro-entry">
+            <div class="pro-entry__year">Empatica E4</div>
+            <div class="pro-entry__body">
+                <span>Wristband — PPG (64 Hz), EDA (4 Hz), skin temperature (4 Hz), accelerometry (32 Hz)</span>
+            </div>
+        </div>
+        <div class="pro-entry">
+            <div class="pro-entry__year">Food log</div>
+            <div class="pro-entry__body">
+                <span>Timestamped entries of meal type and duration; 20 derived features</span>
+            </div>
+        </div>
+        <p style="margin-top: 16px;">
+            69 features were engineered in total: 46 from the Empatica E4 using a 5-minute rolling
+            window, 20 from the food log, and 3 additional features (sex, HbA1c, time from midnight).
+            Feature correlation analysis removed redundant features; class imbalance in the
+            classification task was addressed via random downsampling, continuous-sequence removal,
+            and SMOTE oversampling.
+        </p>
+    </section>
+
+    <!-- ── Three tasks ───────────────────────── -->
+    <section class="pro-section" id="approach">
+        <h2>Three Prediction Tasks</h2>
+
+        <div class="pipeline">
+            <div class="pipeline__step">
+                <div class="pipeline__num">01</div>
+                <div class="pipeline__body">
+                    <strong>Classification — Personalised Glycaemic Category</strong>
+                    <span>
+                        Each glucose reading was assigned to one of three personalised classes
+                        (PersHigh, PersNorm, PersLow) based on each participant's own glucose
+                        distribution. Models compared: Decision Tree with stratified k-fold CV,
+                        Decision Tree with 70/30 split, and <strong>TabPFN</strong> (pretrained
+                        in-context learner). TabPFN performed best; food log features improved
+                        accuracy by ~7% in tree-based models but had negligible effect on TabPFN.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">02</div>
+                <div class="pipeline__body">
+                    <strong>Regression — Interstitial Glucose Value</strong>
+                    <span>
+                        Predict the current interstitial glucose concentration (mg/dL).
+                        Population models (Leave-One-Group-Out CV) and personalised models
+                        (50/50 split per participant) were trained with <strong>XGBoost</strong>
+                        and a <strong>Temporal Fusion Transformer (TFT)</strong>.
+                        Best result: personalised TFT, RMSE 21.2 ± 4.3 mg/dL (86.6% accuracy).
+                        Food log had minimal impact on regression performance.
+                    </span>
+                </div>
+            </div>
+
+            <div class="pipeline__step">
+                <div class="pipeline__num">03</div>
+                <div class="pipeline__body">
+                    <strong>Forecasting — 6-Hour Glucose Trajectory</strong>
+                    <span>
+                        Predict glucose values 6 hours (72 timesteps) into the future.
+                        <strong>TFT</strong> (trained) and <strong>SeqFusion</strong>
+                        (zero-shot pretrained model selection) were compared.
+                        TFT achieved RMSE 15.0 ± 2.8 mg/dL (92% accuracy).
+                        SeqFusion's zero-shot performance was surprisingly strong,
+                        demonstrating the feasibility of pretrained model transfer to this domain.
+                        Food log features did not significantly impact forecasting accuracy.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Results ─────────────────────────────── -->
+    <section class="pro-section" id="results">
+        <h2>Results</h2>
+
+        <div class="thesis-stats">
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">16</div>
+                <div class="thesis-stat__label">participants (prediabetic range)</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">69</div>
+                <div class="thesis-stat__label">engineered features</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">3</div>
+                <div class="thesis-stat__label">prediction tasks</div>
+            </div>
+            <div class="thesis-stat">
+                <div class="thesis-stat__num">92%</div>
+                <div class="thesis-stat__label">TFT 6-hour forecasting accuracy</div>
+            </div>
+        </div>
+
+        <p>
+            Feature importance analysis consistently identified <strong>EDA-related features,
+            activity features, sex, and circadian rhythm signals</strong> (particularly
+            time from midnight) as the most predictive. This reflects known sex differences
+            in glucose metabolism and the strong circadian regulation of insulin sensitivity.
+        </p>
+        <p>
+            A key finding: <strong>models trained without food log features performed
+            comparably to those with food log features</strong> for the regression and
+            forecasting tasks. This is practically significant — it means a fully non-invasive,
+            food-log-free wearable system is feasible for glucose monitoring.
+        </p>
+        <p>
+            SeqFusion's zero-shot results highlighted the potential of foundation model approaches
+            for time-series forecasting in digital health — where labelled data is scarce and
+            personalised retraining is expensive.
+        </p>
+    </section>
+
+    <!-- ── Tools ───────────────────────────────── -->
+    <section class="pro-section">
+        <h2>Tools &amp; Technologies</h2>
+        <div class="skill-chips">
+            <span class="chip">Python</span>
+            <span class="chip">scikit-learn</span>
+            <span class="chip">XGBoost</span>
+            <span class="chip">TabPFN</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">pytorch-forecasting (TFT)</span>
+            <span class="chip">SeqFusion</span>
+            <span class="chip">SMOTE</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">Empatica E4</span>
+            <span class="chip">Dexcom G6 CGM</span>
+            <span class="chip">Physionet</span>
+            <span class="chip">Git</span>
+        </div>
+    </section>
+
+</main>
+
+<footer class="pro-footer">
+    <a href="index.html">← Back to Overview</a>
+</footer>
+
+<script src="../assets/js/professional.js"></script>
+</body>
+</html>

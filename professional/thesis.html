@@ -9,11 +9,18 @@
 <body>
 
 <header class="pro-header">
-    <a class="pro-home" href="index.html">← WORK</a>
+    <a class="pro-home" href="../index.html">← VC</a>
     <nav class="pro-nav">
-        <a href="#background">BACKGROUND</a>
-        <a href="#pipeline">PIPELINE</a>
-        <a href="#results">RESULTS</a>
+        <a href="index.html">OVERVIEW</a>
+        <div class="pro-dropdown active">
+            <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
+            <div class="pro-dropdown__menu">
+                <a href="thesis.html" class="active">Carotid Pipeline</a>
+                <a href="glucose.html">Glucose Prediction</a>
+                <a href="biomechanics.html">Postural Stability</a>
+            </div>
+        </div>
+        <a href="CV.pdf" download>CV</a>
     </nav>
 </header>
 
@@ -29,9 +36,7 @@
             calcification mapping, and 3D CFD simulation.
         </p>
         <div class="thesis-links">
-            <!-- Replace GITHUB_REPO_URL with the actual repository link -->
-            <a href="GITHUB_REPO_URL" target="_blank" class="thesis-link-btn">GitHub →</a>
-            <a href="https://www.harvard.edu" target="_blank" class="thesis-link-btn thesis-link-btn--outline">Harvard Surgery Research Day →</a>
+            <a href="https://github.com/vittoriaceccatelli/carotidPipeline" target="_blank" class="thesis-link-btn">GitHub →</a>
         </div>
     </section>
 
@@ -230,8 +235,9 @@
 </main>
 
 <footer class="pro-footer">
-    <a href="index.html">← Back to Work</a>
+    <a href="index.html">← Back to Overview</a>
 </footer>
 
+<script src="../assets/js/professional.js"></script>
 </body>
 </html>
