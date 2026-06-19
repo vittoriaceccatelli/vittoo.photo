@@ -10,10 +10,11 @@
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="../assets/css/professional.css">
 </head>
-<body>
+<body class="page-work">
 
 <header class="pro-header">
-    <a class="pro-home" href="../index.html">← VC</a>
+    <a class="pro-home" href="../index.html">Vittoria Ceccatelli</a>
+    <div class="pro-header__tagline">ML &amp; Data Engineering · ETH Zurich &amp; Harvard Medical School</div>
     <nav class="pro-nav">
         <a href="index.html" class="active">OVERVIEW</a>
         <div class="pro-dropdown">
@@ -24,47 +25,49 @@
                 <a href="biomechanics.html">Postural Stability</a>
             </div>
         </div>
-        <a href="../pages/collections.html">PHOTOGRAPHY</a>
-        <a href="CV.pdf" download>CV</a>
+        <a href="CV.pdf" download><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <div class="pro-dropdown pro-dropdown--personal">
+            <button class="pro-dropdown__btn" aria-expanded="false">PERSONAL</button>
+            <div class="pro-dropdown__menu">
+                <a href="../pages/collections.html">Photography</a>
+                <a href="../pages/opinions.html">Opinions</a>
+            </div>
+        </div>
     </nav>
 </header>
 
-<main class="pro-main">
+<main class="pro-main pro-main--overview">
 
-    <!-- ── Intro ─────────────────────────────────────── -->
-    <section class="pro-intro" id="about">
-        <h1>Vittoria Ceccatelli</h1>
-        <p class="tagline">ML &amp; Data Engineering · ETH Zurich &amp; Harvard Medical School</p>
-    </section>
+    <!-- ── About ─────────────────────────────────────── -->
+    <div class="pro-panel" id="about" data-label="About">
+        <div class="pro-panel__title">About</div>
+        <div class="pro-panel__body">
+            <p>
+                I am a Biomedical Engineering MSc graduate from ETH Zurich, with my thesis completed
+                at Harvard Medical School's Brigham and Women's Hospital. I build automated,
+                production-quality computational systems — from end-to-end medical imaging pipelines
+                processing hundreds of CT scans, to multi-task ML models predicting glucose from
+                physiological wearable data.
+            </p>
+            <p>
+                I am drawn to hard quantitative problems that require turning noisy, high-dimensional
+                data into structured, reliable outputs. My work spans medical AI, signal processing,
+                and clinical decision support; I am equally interested in applications in data
+                engineering, quantitative research, and computational modelling more broadly.
+                I am Italian, British, and based in Switzerland.
+            </p>
+            <p class="pro-contact">
+                <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a> &nbsp;·&nbsp;
+                <a href="https://www.linkedin.com/in/vittoria-ceccatelli-336462125" target="_blank">LinkedIn</a>
+                &nbsp;·&nbsp;
+                <a href="https://github.com/vittoriaceccatelli" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </div>
 
-    <section class="pro-section">
-        <h2>About</h2>
-        <p>
-            I am a Biomedical Engineering MSc graduate from ETH Zurich, with my thesis completed
-            at Harvard Medical School's Brigham and Women's Hospital. I build automated,
-            production-quality computational systems — from end-to-end medical imaging pipelines
-            processing hundreds of CT scans, to multi-task ML models predicting glucose from
-            physiological wearable data.
-        </p>
-        <p>
-            I am drawn to hard quantitative problems that require turning noisy, high-dimensional
-            data into structured, reliable outputs. My work spans medical AI, signal processing,
-            and clinical decision support; I am equally interested in applications in data
-            engineering, quantitative research, and computational modelling more broadly.
-            I am Italian, British, and based in Switzerland.
-        </p>
-        <p class="pro-contact">
-            <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a> &nbsp;·&nbsp;
-            <a href="https://www.linkedin.com/in/vittoria-ceccatelli-336462125" target="_blank">LinkedIn</a>
-            &nbsp;·&nbsp;
-            <a href="https://github.com/vittoriaceccatelli" target="_blank">GitHub</a>
-        </p>
-        <a href="CV.pdf" download class="cv-download">Download CV</a>
-    </section>
-
-    <!-- ── Projects ─────────────────────────────────── -->
-    <section class="pro-section" id="projects">
-        <h2>Projects</h2>
+    <!-- ── Projects ──────────────────────────────────── -->
+    <div class="pro-panel" id="projects" data-label="Projects">
+        <div class="pro-panel__title">Projects</div>
         <div class="pro-cards">
 
             <a class="pro-card" href="thesis.html">
@@ -75,6 +78,14 @@
                     (nnU-Net, SegMamba, SwinUNETR), morphological analysis, calcification mapping,
                     and 3D CFD simulation. Processed 111 patients; 354 features per patient.
                     Presented at Harvard Surgery Research Day 2026.
+                </div>
+                <div class="pro-card__tags">
+                    <span class="pro-card__tag">Python</span>
+                    <span class="pro-card__tag">PyTorch</span>
+                    <span class="pro-card__tag">nnU-Net</span>
+                    <span class="pro-card__tag">DICOM</span>
+                    <span class="pro-card__tag">VTK</span>
+                    <span class="pro-card__tag">CFD</span>
                 </div>
                 <div class="pro-card__link">View project →</div>
             </a>
@@ -88,6 +99,14 @@
                     Models benchmarked: TabPFN, XGBoost, Temporal Fusion Transformer, SeqFusion (zero-shot).
                     69 engineered features across EDA, activity, and circadian signals.
                 </div>
+                <div class="pro-card__tags">
+                    <span class="pro-card__tag">Python</span>
+                    <span class="pro-card__tag">PyTorch</span>
+                    <span class="pro-card__tag">XGBoost</span>
+                    <span class="pro-card__tag">TabPFN</span>
+                    <span class="pro-card__tag">TFT</span>
+                    <span class="pro-card__tag">scikit-learn</span>
+                </div>
                 <div class="pro-card__link">View project →</div>
             </a>
 
@@ -100,269 +119,263 @@
                     and EMG–CoP coherence analysis to quantify the effect of subthreshold auditory
                     white noise on fall-risk in elderly individuals.
                 </div>
+                <div class="pro-card__tags">
+                    <span class="pro-card__tag">MATLAB</span>
+                    <span class="pro-card__tag">Signal Processing</span>
+                    <span class="pro-card__tag">EMG</span>
+                    <span class="pro-card__tag">Coherence Analysis</span>
+                </div>
                 <div class="pro-card__link">View project →</div>
             </a>
 
         </div>
-    </section>
+    </div>
 
-    <!-- ── Education ─────────────────────────────────── -->
-    <section class="pro-section" id="experience">
-        <h2>Education</h2>
+    <!-- ── Proportional timeline (2026 top → 2020 bottom) ─ -->
+    <div class="pro-tl-section" id="experience" data-label="Timeline">
+        <div class="pro-panel__title">Timeline</div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2025 – 2026</div>
-            <div class="pro-entry__body">
-                <strong>Master Thesis — Harvard Medical School</strong>
-                <span>Brigham and Women's Hospital, Boston, USA</span>
-                <p>
-                    "A Standardized Pipeline for Automated Carotid Artery Analysis."
-                    Presented at the Harvard Surgery Research Day.
-                </p>
+        <!-- Year axis header -->
+        <div class="gantt__head">
+            <div></div>
+            <div class="gantt__head-track">
+                <div class="gantt__year" style="--p:0.00%">2020</div>
+                <div class="gantt__year" style="--p:15.58%">2021</div>
+                <div class="gantt__year" style="--p:31.17%">2022</div>
+                <div class="gantt__year" style="--p:46.75%">2023</div>
+                <div class="gantt__year" style="--p:62.34%">2024</div>
+                <div class="gantt__year" style="--p:77.92%">2025</div>
+                <div class="gantt__year" style="--p:93.51%">2026</div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2023 – 2026</div>
-            <div class="pro-entry__body">
-                <strong>MSc Biomedical Engineering — ETH Zurich</strong>
-                <span>Grade: 5.43 / 6.0</span>
-                <p>
-                    Coursework: Image Analysis and Computer Vision · Machine Learning ·
-                    Mobile Health and Activity Monitoring · Product Design in Medical Engineering ·
-                    Sports Biomechanics
-                </p>
+        <!-- Experience & Research -->
+        <div class="gantt__group-hd gantt__group-hd--first">Experience &amp; Research</div>
+
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">Applied ML / Data Engineering</span>
+                <span class="gantt__sub">Nezami Lab · Harvard Medical School</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Jan 2025 → Jun 2026 -->
+                <div class="gantt__bar" style="--l:77.92%;--w:22.08%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2023</div>
-            <div class="pro-entry__body">
-                <strong>Exchange Semester — National University of Singapore (NUS)</strong>
-                <span>Singapore</span>
-                <p>Coursework: Robotics in Rehabilitation · Genomic Data Analysis</p>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">Teaching Assistant</span>
+                <span class="gantt__sub">Programming &amp; Data Analysis · ETH Zurich</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Sep 2022 → Jun 2025 -->
+                <div class="gantt__bar" style="--l:41.56%;--w:42.86%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2022 – 2026</div>
-            <div class="pro-entry__body">
-                <strong>Swiss Study Foundation</strong>
-                <span>Member — selected based on high academic performance</span>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">ML on Wearable Data &amp; Glucose</span>
+                <span class="gantt__sub">ETH Zurich</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Jan 2025 → Jun 2025 -->
+                <div class="gantt__bar" style="--l:77.92%;--w:6.49%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2020 – 2023</div>
-            <div class="pro-entry__body">
-                <strong>BSc Health Sciences and Technology — ETH Zurich</strong>
-                <span>Grade: 5.32 / 6.0 &nbsp;(top 15%)</span>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">Biomechanics Data Analysis</span>
+                <span class="gantt__sub">ETH Zurich</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Sep 2024 → Dec 2024 -->
+                <div class="gantt__bar" style="--l:72.73%;--w:3.90%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2020</div>
-            <div class="pro-entry__body">
-                <strong>Dual Diploma</strong>
-                <span>German Abitur: 1.4 &nbsp;·&nbsp; International Baccalaureate: 38 points</span>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">R&amp;D Intern — Adler Ortho</span>
+                <span class="gantt__sub">Milan, Italy</span>
             </div>
-        </div>
-    </section>
-
-    <!-- ── Experience ────────────────────────────────── -->
-    <section class="pro-section">
-        <h2>Experience &amp; Research</h2>
-
-        <div class="pro-entry">
-            <div class="pro-entry__year">2025 – 2026</div>
-            <div class="pro-entry__body">
-                <strong>Applied ML / Data Engineering — Nezami Lab</strong>
-                <span>Harvard Medical School · Brigham and Women's Hospital, Boston</span>
-                <p>
-                    Built a fully automated end-to-end ML pipeline processing 111 raw CTA scans (DICOM),
-                    delivering standardised multi-modal feature datasets with a 65.8% end-to-end success rate.
-                    Engineered a modular feature extraction framework generating 354 features per patient across
-                    morphological, calcification, and hemodynamic domains. Integrated deep learning segmentation
-                    with automated geometry processing and 3D CFD simulation across 2 configurable solvers.
-                </p>
+            <div class="gantt__track">
+                <!-- Jul 2023 → Jul 2024 -->
+                <div class="gantt__bar" style="--l:54.55%;--w:15.58%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2025</div>
-            <div class="pro-entry__body">
-                <strong>ML on Wearable Data &amp; Glucose Prediction</strong>
-                <span>ETH Zurich, Switzerland</span>
-                <p>
-                    Implemented end-to-end ML pipelines for three prediction tasks (classification, regression,
-                    and time-series forecasting) on multi-modal wearable data. Feature engineering across 69
-                    derived features; strategies for missing data, class imbalance, and inter-patient variability.
-                    Compared baseline and deep learning architectures, evaluating trade-offs between performance,
-                    robustness, and interpretability.
-                </p>
+        <!-- Education -->
+        <div class="gantt__group-hd">Education</div>
+
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">MSc Biomedical Engineering</span>
+                <span class="gantt__sub">ETH Zurich · 5.43 / 6.0</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Sep 2023 → Jun 2026 -->
+                <div class="gantt__bar" style="--l:57.14%;--w:42.86%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2024</div>
-            <div class="pro-entry__body">
-                <strong>Biomechanics Data Analysis — Lab of Movement Biomechanics</strong>
-                <span>ETH Zurich, Switzerland</span>
-                <p>
-                    Signal processing and statistical analysis on high-frequency EMG and force-plate (CoP)
-                    time-series data from controlled experiments on fall-risk mitigation using auditory noise
-                    stimulation. Developed MATLAB pipelines for EMG–EMG and EMG–CoP coherence analysis.
-                </p>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">BSc Health Sciences &amp; Technology</span>
+                <span class="gantt__sub">ETH Zurich · 5.32 / 6.0 · top 15%</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Sep 2020 → Sep 2023 -->
+                <div class="gantt__bar" style="--l:10.39%;--w:46.75%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2023 – 2024</div>
-            <div class="pro-entry__body">
-                <strong>R&amp;D Intern — Adler Ortho</strong>
-                <span>Milan, Italy</span>
-                <p>
-                    Designed 50+ patient-specific hip implants using CT-based CAD tools (Geomagic Wrap and
-                    DesignX). Worked cross-functionally with surgeons and QA teams under regulatory constraints
-                    (PTC Creo). Created technical drawings and 3D visualisations for surgical planning and
-                    regulatory certification.
-                </p>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">Exchange Semester — NUS</span>
+                <span class="gantt__sub">Singapore</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Jan 2023 → May 2023 -->
+                <div class="gantt__bar" style="--l:46.75%;--w:5.19%"></div>
             </div>
         </div>
 
-        <div class="pro-entry">
-            <div class="pro-entry__year">2022 – 2025</div>
-            <div class="pro-entry__body">
-                <strong>Teaching Assistant — Programming &amp; Data Analysis</strong>
-                <span>ETH Zurich, Switzerland</span>
-                <p>
-                    Led one-on-one technical reviews of Python and MATLAB projects, focusing on code quality,
-                    efficiency, and structure. Reviewed and evaluated 40+ projects per semester. Translated
-                    complex technical concepts for non-technical and interdisciplinary audiences.
-                </p>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">Swiss Study Foundation</span>
+                <span class="gantt__sub">Selected based on high academic performance</span>
             </div>
-        </div>
-    </section>
-
-    <!-- ── Skills ────────────────────────────────────── -->
-    <section class="pro-section" id="skills">
-        <h2>Technical Skills</h2>
-
-        <div class="skill-legend">
-            <span class="skill-legend-label">Proficiency —</span>
-            <span class="chip chip--core">core</span>
-            <span class="chip">proficient</span>
-            <span class="chip chip--familiar">familiar</span>
-        </div>
-
-        <div class="skill-group">
-            <div class="skill-group__label">Programming</div>
-            <div class="skill-chips">
-                <span class="chip chip--core">Python</span>
-                <span class="chip chip--core">MATLAB</span>
-                <span class="chip chip--core">Git</span>
-                <span class="chip">Bash</span>
-                <span class="chip">Linux</span>
-                <span class="chip">R</span>
-                <span class="chip">SQL</span>
-                <span class="chip chip--familiar">HTML / CSS / JS</span>
+            <div class="gantt__track">
+                <!-- Feb 2022 → Apr 2026 -->
+                <div class="gantt__bar" style="--l:32.47%;--w:64.94%"></div>
             </div>
         </div>
 
-        <div class="skill-group">
-            <div class="skill-group__label">ML &amp; DL</div>
-            <div class="skill-chips">
-                <span class="chip chip--core">PyTorch</span>
-                <span class="chip chip--core">scikit-learn</span>
-                <span class="chip chip--core">XGBoost</span>
-                <span class="chip">TensorFlow</span>
-                <span class="chip">TabPFN</span>
-                <span class="chip">Temporal Fusion Transformer</span>
-                <span class="chip">nnU-Net</span>
-                <span class="chip chip--familiar">SegMamba</span>
-                <span class="chip chip--familiar">SwinUNETR</span>
-                <span class="chip chip--familiar">UNETR</span>
+        <div class="gantt__row">
+            <div class="gantt__name">
+                <span class="gantt__title">Dual Diploma</span>
+                <span class="gantt__sub">German Abitur 1.4 · IB 38 pts</span>
+            </div>
+            <div class="gantt__track">
+                <!-- Jun 2020 -->
+                <div class="gantt__milestone" style="--p:6.49%"></div>
             </div>
         </div>
 
-        <div class="skill-group">
-            <div class="skill-group__label">Data &amp; Signals</div>
-            <div class="skill-chips">
-                <span class="chip chip--core">Feature Engineering</span>
-                <span class="chip chip--core">Signal Processing</span>
-                <span class="chip chip--core">NumPy</span>
-                <span class="chip chip--core">Pandas</span>
-                <span class="chip chip--core">Matplotlib</span>
-                <span class="chip">Time-Series Forecasting</span>
-                <span class="chip">Coherence Analysis</span>
-                <span class="chip">SciPy</span>
-                <span class="chip chip--familiar">Class Imbalance (SMOTE)</span>
+    </div>
+
+    <!-- ── Technical Skills ───────────────────────────── -->
+    <div class="pro-panel" id="skills" data-label="Skills">
+        <div class="pro-panel__title">Technical Skills</div>
+
+        <div class="pro-skills-grid">
+
+            <div class="pro-skills-col">
+                <div class="pro-skills-col__label">Programming</div>
+                <div class="skill-rows">
+                    <div class="skill-row" data-level="core">
+                        <div class="skill-row__names">Python · MATLAB · Git</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:80%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="proficient">
+                        <div class="skill-row__names">Bash · Linux · R · SQL</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:50%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="familiar">
+                        <div class="skill-row__names">HTML / CSS / JS</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:25%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro-skills-col">
+                <div class="pro-skills-col__label">ML &amp; DL</div>
+                <div class="skill-rows">
+                    <div class="skill-row" data-level="core">
+                        <div class="skill-row__names">PyTorch · scikit-learn · XGBoost</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:80%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="proficient">
+                        <div class="skill-row__names">TensorFlow · TabPFN · TFT · nnU-Net</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:50%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="familiar">
+                        <div class="skill-row__names">SegMamba · SwinUNETR · UNETR</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:25%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro-skills-col">
+                <div class="pro-skills-col__label">Data &amp; Signals</div>
+                <div class="skill-rows">
+                    <div class="skill-row" data-level="core">
+                        <div class="skill-row__names">Feature Engineering · Signal Processing · NumPy · Pandas</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:80%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="proficient">
+                        <div class="skill-row__names">Time-Series Forecasting · Coherence Analysis · SciPy</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:50%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="familiar">
+                        <div class="skill-row__names">Class Imbalance (SMOTE)</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:25%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro-skills-col">
+                <div class="pro-skills-col__label">Medical &amp; CFD</div>
+                <div class="skill-rows">
+                    <div class="skill-row" data-level="core">
+                        <div class="skill-row__names">DICOM · Medical Segmentation</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:80%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="proficient">
+                        <div class="skill-row__names">ITK · VTK · 3D Slicer · SimVascular · ANSYS Fluent</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:50%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="familiar">
+                        <div class="skill-row__names">CFD Meshing</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:25%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro-skills-col">
+                <div class="pro-skills-col__label">CAD</div>
+                <div class="skill-rows">
+                    <div class="skill-row" data-level="proficient">
+                        <div class="skill-row__names">PTC Creo · Geomagic Wrap · Geomagic DesignX</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:50%"></div></div>
+                    </div>
+                    <div class="skill-row" data-level="familiar">
+                        <div class="skill-row__names">CT-based CAD</div>
+                        <div class="skill-row__bar"><div class="skill-row__fill" style="--bar-w:25%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── Languages ──────────────────────────────────── -->
+    <div class="pro-panel" id="languages" data-label="Languages">
+        <div class="pro-panel__title">Languages</div>
+        <div class="pro-panel__body">
+            <div class="pro-lang-row">
+                <div class="pro-lang-level">Native</div>
+                <div class="pro-lang-names">Italian · German · English</div>
+            </div>
+            <div class="pro-lang-row">
+                <div class="pro-lang-level">Professional</div>
+                <div class="pro-lang-names">French (B2) · Spanish (B1)</div>
             </div>
         </div>
-
-        <div class="skill-group">
-            <div class="skill-group__label">Medical &amp; CFD</div>
-            <div class="skill-chips">
-                <span class="chip chip--core">DICOM</span>
-                <span class="chip chip--core">Medical Segmentation</span>
-                <span class="chip">ITK</span>
-                <span class="chip">VTK</span>
-                <span class="chip">3D Slicer</span>
-                <span class="chip">SimVascular</span>
-                <span class="chip">ANSYS Fluent</span>
-                <span class="chip chip--familiar">CFD Meshing</span>
-            </div>
-        </div>
-
-        <div class="skill-group">
-            <div class="skill-group__label">CAD</div>
-            <div class="skill-chips">
-                <span class="chip">PTC Creo</span>
-                <span class="chip">Geomagic Wrap</span>
-                <span class="chip">Geomagic DesignX</span>
-                <span class="chip chip--familiar">CT-based CAD</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Currently ────────────────────────────────── -->
-    <section class="pro-section">
-        <h2>Currently</h2>
-
-        <div class="pro-entry">
-            <div class="pro-entry__year">Reading</div>
-            <div class="pro-entry__body">
-                <p><em>Advances in Financial Machine Learning</em> — Marcos López de Prado</p>
-            </div>
-        </div>
-
-        <div class="pro-entry">
-            <div class="pro-entry__year">Learning</div>
-            <div class="pro-entry__body">
-                <p>MLOps patterns for reproducible ML pipelines — containerisation, experiment tracking, model versioning (Docker, DVC, MLflow)</p>
-            </div>
-        </div>
-
-        <div class="pro-entry">
-            <div class="pro-entry__year">Exploring</div>
-            <div class="pro-entry__body">
-                <p>Foundation models for medical imaging and clinical NLP — applying large pre-trained models to small clinical datasets</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Languages ─────────────────────────────────── -->
-    <section class="pro-section">
-        <h2>Languages</h2>
-        <div class="pro-entry">
-            <div class="pro-entry__year">Native</div>
-            <div class="pro-entry__body"><p>Italian · German · English</p></div>
-        </div>
-        <div class="pro-entry">
-            <div class="pro-entry__year">Professional</div>
-            <div class="pro-entry__body"><p>French (B2) · Spanish (B1)</p></div>
-        </div>
-    </section>
+    </div>
 
 </main>
 

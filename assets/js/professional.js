@@ -48,10 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     addSR('.pro-section');
-    addSR('.pro-entry',        function (i) { return (i % 6) * 55; });
-    addSR('.pro-card',         function (i) { return i * 80; });
-    addSR('.pipeline__step',   function (i) { return i * 65; });
-    addSR('.skill-group',      function (i) { return i * 50; });
+    addSR('.pro-panel');
+    addSR('.pro-entry',              function (i) { return (i % 6) * 55; });
+    addSR('.pro-card',               function (i) { return i * 80; });
+    addSR('.pipeline__step',         function (i) { return i * 65; });
+    addSR('.pro-skills-col',         function (i) { return i * 50; });
     addSR('.pro-figure');
     addSR('.thesis-stats');
 
@@ -64,9 +65,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
 
-    srTargets.forEach(function (el) { revealObserver.observe(el); });
+    srTargets.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            el.classList.add('sr--visible');  // already in viewport on load
+        } else {
+            revealObserver.observe(el);       // off-screen: reveal on scroll
+        }
+    });
 
-    // ── Count-up animation for stat numbers ─────────────────────────
+    // ── Count-up animation ──────────────────────────────────────────
     function animateNum(el) {
         const raw = el.textContent.trim();
         const isPercent = raw.endsWith('%');
@@ -103,5 +111,76 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.thesis-stats').forEach(function (el) {
         statObserver.observe(el);
     });
+
+    // ── 1. Text scramble on h1 ──────────────────────────────────────
+    const h1 = document.querySelector('.pro-intro h1');
+    if (h1) {
+        const finalText = h1.textContent;
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789·—∙';
+        const duration = 1100;
+        // Each character resolves at a staggered random time
+        const resolveAt = finalText.split('').map(function (ch, i) {
+            if (ch === ' ') return 0;
+            return (i / finalText.length) * duration * 0.7 + Math.random() * duration * 0.4;
+        });
+        let start = null;
+
+        function scrambleTick(ts) {
+            if (!start) start = ts;
+            const elapsed = ts - start;
+            h1.textContent = finalText.split('').map(function (ch, i) {
+                if (ch === ' ') return ' ';
+                if (elapsed >= resolveAt[i]) return ch;
+                return chars[Math.floor(Math.random() * chars.length)];
+            }).join('');
+            if (elapsed < duration) {
+                requestAnimationFrame(scrambleTick);
+            } else {
+                h1.textContent = finalText;
+            }
+        }
+
+        setTimeout(function () { requestAnimationFrame(scrambleTick); }, 100);
+    }
+
+    // ── 3. Section dot navigation ───────────────────────────────────
+    const sections = Array.from(document.querySelectorAll('.pro-section, .pro-panel, .pro-tl-section')).filter(function (s) {
+        return s.dataset.label || s.querySelector('h2');
+    });
+
+    if (sections.length >= 3) {
+        const dotNav = document.createElement('nav');
+        dotNav.className = 'section-dots';
+        dotNav.setAttribute('aria-label', 'Page sections');
+
+        sections.forEach(function (s) {
+            const label = s.dataset.label
+                || (s.querySelector('h2') || s.querySelector('.pro-panel__title') || {textContent: ''}).textContent.trim();
+            const dot = document.createElement('button');
+            dot.className = 'section-dot';
+            dot.title = label;
+            dot.setAttribute('aria-label', label);
+            dot.addEventListener('click', function () {
+                s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            dotNav.appendChild(dot);
+        });
+
+        document.body.appendChild(dotNav);
+
+        const dots = Array.from(dotNav.querySelectorAll('.section-dot'));
+
+        const dotObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    const idx = sections.indexOf(entry.target);
+                    dots.forEach(function (d) { d.classList.remove('is-active'); });
+                    if (idx >= 0) dots[idx].classList.add('is-active');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(function (s) { dotObserver.observe(s); });
+    }
 
 });

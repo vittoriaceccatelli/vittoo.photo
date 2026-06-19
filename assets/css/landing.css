@@ -6,11 +6,10 @@
 
 html, body {
     height: 100%;
-}
-
-body {
     overflow: hidden;
 }
+
+/* ── Layout ──────────────────────────────── */
 
 .landing {
     display: flex;
@@ -20,81 +19,163 @@ body {
 
 .panel {
     flex: 1;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: opacity 0.35s ease;
+    transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
 }
 
-.panel:hover {
-    opacity: 0.75;
+.landing:has(.panel--light:hover) .panel--light,
+.landing:has(.panel--dark:hover)  .panel--dark {
+    flex: 1.12;
 }
 
-.panel--light {
-    background-color: #eeede8;
+/* ── Panels ──────────────────────────────── */
+
+.panel--light { background: #eeede8; }
+.panel--dark  { background: #111111; }
+
+/* ── Divider ─────────────────────────────── */
+
+.landing__divider {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, #888 20%, #888 80%, transparent 100%);
+    opacity: 0.2;
+    flex-shrink: 0;
+    pointer-events: none;
 }
 
-.panel--dark {
-    background-color: #1c1c1c;
-}
+/* ── Name — small, top-centred ───────────── */
 
-.panel__label {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 7px;
-}
-
-.panel--light .panel__label {
-    color: #1c1c1c;
-}
-
-.panel--dark .panel__label {
-    color: #eeede8;
-}
-
-/* Name sits at top centre spanning both panels.
-   mix-blend-mode: difference makes it appear dark on the light
-   panel and light on the dark panel with no JS. */
-.site-name {
+.panel__name {
     position: absolute;
     top: 44px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: Arial, sans-serif;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
     font-weight: normal;
     letter-spacing: 6px;
-    white-space: nowrap;
-    color: white;
-    mix-blend-mode: difference;
     pointer-events: none;
-    z-index: 10;
+    transition: opacity 0.3s ease;
 }
 
+.panel--light .panel__name { color: #111111; opacity: 0.4; text-align: right; padding-right: 32px; }
+.panel--dark  .panel__name { color: #eeede8; opacity: 0.4; text-align: left;  padding-left:  32px; }
+
+.panel:hover .panel__name { opacity: 0.9; }
+
+/* ── Label — centred, primary content ───── */
+
+.panel__label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    transition: opacity 0.3s ease;
+}
+
+.panel--light .panel__label { color: #111111; }
+.panel--dark  .panel__label { color: #eeede8; }
+
+/* Dim the non-hovered side */
+
+.landing:has(.panel--light:hover) .panel--dark  .panel__label,
+.landing:has(.panel--light:hover) .panel--dark  .panel__name,
+.landing:has(.panel--dark:hover)  .panel--light .panel__label,
+.landing:has(.panel--dark:hover)  .panel--light .panel__name {
+    opacity: 0.25;
+}
+
+/* ── Personal panel split ───────────────── */
+
+.panel--personal { cursor: default; }
+
+.personal__split {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.panel--personal:hover .personal__split {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.panel--personal:hover .panel__label,
+.panel--personal:hover .panel__name {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.personal__half {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.25s;
+}
+
+.personal__half:hover { background: rgba(255, 255, 255, 0.05); }
+
+.personal__label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    color: #eeede8;
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
+}
+
+.personal__half:hover .personal__label { opacity: 1; }
+
+.personal__divider {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, #888 20%, #888 80%, transparent 100%);
+    opacity: 0.2;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+/* ── Mobile ──────────────────────────────── */
+
 @media (max-width: 600px) {
-    body {
-        overflow: auto;
-    }
+    html, body { overflow: auto; }
 
     .landing {
         flex-direction: column;
         min-height: 100vh;
     }
 
-    .panel {
-        min-height: 50vh;
+    .landing__divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, transparent 0%, #888 20%, #888 80%, transparent 100%);
+    }
+
+    .panel { min-height: 50vh; }
+
+    .panel__name {
+        top: 24px;
+        font-size: 9px;
+        letter-spacing: 4px;
     }
 
     .panel__label {
         font-size: 10px;
         letter-spacing: 5px;
-    }
-
-    .site-name {
-        top: 20px;
-        font-size: 8px;
-        letter-spacing: 4px;
     }
 }

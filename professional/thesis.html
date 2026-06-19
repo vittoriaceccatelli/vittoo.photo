@@ -24,8 +24,15 @@
                 <a href="biomechanics.html">Postural Stability</a>
             </div>
         </div>
-        <a href="../pages/collections.html">PHOTOGRAPHY</a>
-        <a href="CV.pdf" download>CV</a>
+        
+        <a href="CV.pdf" download><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <div class="pro-dropdown">
+            <button class="pro-dropdown__btn" aria-expanded="false">PERSONAL</button>
+            <div class="pro-dropdown__menu">
+                <a href="../pages/collections.html">Photography</a>
+                <a href="../pages/opinions.html">Opinions</a>
+            </div>
+        </div>
     </nav>
 </header>
 
@@ -165,8 +172,8 @@
         </div>
 
         <figure class="pro-figure">
-            <img src="../assets/images/projects/thesis-pipeline.jpg" alt="Pipeline architecture overview from the thesis">
-            <figcaption>Pipeline architecture — from raw DICOM input through DL segmentation, ROI isolation, morphological extraction, calcification mapping, 3D CFD simulation, to the final multi-domain feature dataset.</figcaption>
+            <img src="../assets/images/projects/thesis-pipeline.png" alt="Pipeline architecture overview from the thesis">
+            <figcaption>Pipeline architecture — raw CTA input through five configurable DL segmentation models, carotid ROI isolation, morphological and calcification characterisation, mesh generation, and 3D CFD simulation with three boundary condition options.</figcaption>
         </figure>
     </section>
 
@@ -214,13 +221,13 @@
         </p>
 
         <figure class="pro-figure">
-            <img src="../assets/images/projects/thesis-cfd.jpg" alt="CFD velocity fields across the carotid bifurcation">
-            <figcaption>3D CFD velocity fields — showing flow patterns and haemodynamic conditions across the carotid bifurcation for representative patients. Outputs include wall shear stress, pressure, and velocity across the cardiac cycle.</figcaption>
+            <img src="../assets/images/projects/thesis-cfd.png" alt="CFD average velocity and streamlines for non-stenotic and stenotic carotid geometries">
+            <figcaption>CFD outputs — average velocity (top) and velocity streamlines (bottom) for representative non-stenotic (1–3) and stenotic (4) patients. Stenosis drives high-velocity jets and disturbed flow patterns visible in both representations.</figcaption>
         </figure>
 
         <figure class="pro-figure">
-            <img src="../assets/images/projects/thesis-calcification.jpg" alt="Spatial distribution of calcification along the vessel wall">
-            <figcaption>Calcification spatial distribution — longitudinal, circumferential, and radial quantification of plaque burden along the ICA, ECA, and CCA vessel wall segments.</figcaption>
+            <img src="../assets/images/projects/thesis-calcification.png" alt="Spatial distribution of calcification along the vessel wall">
+            <figcaption>Calcium spatial distribution — concentric (radial), angular, and longitudinal volume fractions across CCA, ECA, and ICA branches, left and right. Captures where along and around the vessel wall plaque burden concentrates.</figcaption>
         </figure>
     </section>
 

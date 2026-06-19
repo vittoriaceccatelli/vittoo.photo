@@ -24,8 +24,15 @@
                 <a href="biomechanics.html">Postural Stability</a>
             </div>
         </div>
-        <a href="../pages/collections.html">PHOTOGRAPHY</a>
-        <a href="CV.pdf" download>CV</a>
+        
+        <a href="CV.pdf" download><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <div class="pro-dropdown">
+            <button class="pro-dropdown__btn" aria-expanded="false">PERSONAL</button>
+            <div class="pro-dropdown__menu">
+                <a href="../pages/collections.html">Photography</a>
+                <a href="../pages/opinions.html">Opinions</a>
+            </div>
+        </div>
     </nav>
 </header>
 
@@ -105,8 +112,8 @@
         </p>
 
         <figure class="pro-figure">
-            <img src="../assets/images/projects/glucose-features.jpg" alt="Feature importance charts for glucose prediction models">
-            <figcaption>Feature importance analysis across models — EDA-related features, activity signals, sex, and circadian rhythm (time from midnight) are consistently the strongest predictors. Food log features rank lower than expected.</figcaption>
+            <img src="../assets/images/projects/glucose-data.png" alt="Glucose time series for Participant 3 over 8 days">
+            <figcaption>Raw CGM data (Dexcom G6) for a representative participant over 8 days — interstitial glucose values at 5-minute intervals, showing typical diurnal variability, post-meal spikes, and the range the models must learn to predict.</figcaption>
         </figure>
     </section>
 
@@ -205,8 +212,8 @@
         </p>
 
         <figure class="pro-figure">
-            <img src="../assets/images/projects/glucose-forecast.jpg" alt="TFT 6-hour glucose forecasting predictions vs ground truth">
-            <figcaption>Temporal Fusion Transformer — 6-hour glucose forecast vs. Dexcom G6 ground truth for representative participants. RMSE 15.0 ± 2.8 mg/dL, 92% accuracy across the test set.</figcaption>
+            <img src="../assets/images/projects/glucose-results.png" alt="Clarke Error Grid for personalised XGBoost regression model without food log">
+            <figcaption>Clarke Error Grid — personalised XGBoost regression model without food log features. Points in Zone A (clinically accurate) and B (benign errors) confirm the model's safety profile. The result holds without food log input, supporting a fully non-invasive wearable-only system.</figcaption>
         </figure>
     </section>
 

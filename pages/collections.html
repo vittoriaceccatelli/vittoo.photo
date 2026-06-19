@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>vittoo.photo</title>
     <meta name="description" content="Photography by Vittoria Ceccatelli — wildlife, landscapes, street, people, flora, architecture, and the sea.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="../assets/css/gallery.css">
 </head>
 <body>
 
 <header class="g-header">
-    <a class="g-logo" href="../index.html">← VC</a>
+    <a class="g-logo" href="../index.html">← VITTORIA CECCATELLI</a>
     <nav class="g-nav">
-        <a class="g-nav__link" href="https://www.instagram.com/vittoo.photo/" target="_blank">Instagram</a>
-        <a class="g-nav__link" href="../professional/">Work →</a>
+        <a class="g-nav__link" href="https://www.instagram.com/vittoo.photo/" target="_blank">INSTAGRAM</a>
+        <a class="g-nav__link" id="map-toggle" href="#">MAP</a>
+        <a class="g-nav__link" href="opinions.html">OPINIONS</a>
+        <a class="g-nav__link" href="../professional/">WORK →</a>
     </nav>
 </header>
 
@@ -32,452 +35,452 @@
 <div class="g-grid" id="gallery">
 
     <!-- ── MARE ─────────────────────────────── -->
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="vn" data-collection="landscapes mare"
          data-title="HALONG BAY" data-location="Halong Bay, Vietnam" data-date="06.05.2023"
          data-camera="Nikon D3200" data-aperture="f/11" data-shutter="1/400s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0018.jpg" alt="Halong Bay, Vietnam" loading="lazy">
+        <img src="../assets/images/asia/DSC_0018.jpg" alt="Halong Bay, Vietnam" loading="lazy" width="5144" height="2893">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="kh" data-collection="mare people"
          data-title="FISHER BOAT" data-location="Koh Rong Sanloem, Cambodia" data-date="03.06.2023"
          data-camera="Nikon D3200" data-aperture="f/5" data-shutter="1/500s" data-iso="ISO 100">
-        <img src="../assets/images/asia/958ACEA2-7015-49F7-B941-921C832C5A86.jpg" alt="Fisher boat, Cambodia" loading="lazy">
+        <img src="../assets/images/asia/958ACEA2-7015-49F7-B941-921C832C5A86.jpg" alt="Fisher boat, Cambodia" loading="lazy" width="5903" height="3925">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="id" data-collection="landscapes mare"
          data-title="STRIPES IN THE SKY AND IN THE SEA" data-location="Komodo, Indonesia" data-date="24.03.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/125s" data-iso="ISO 800">
-        <img src="../assets/images/asia/DSC_0243.jpg" alt="Komodo, Indonesia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0243.jpg" alt="Komodo, Indonesia" loading="lazy" width="5970" height="3358">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="id" data-collection="mare people"
          data-title="THROWING ROCKS" data-location="Flores, Indonesia" data-date="25.03.2023"
          data-camera="Nikon D3200" data-aperture="f/10" data-shutter="1/640s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0283.jpg" alt="Flores, Indonesia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0283.jpg" alt="Flores, Indonesia" loading="lazy" width="5352" height="3010">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="id" data-collection="mare"
          data-title="A WAVE" data-location="Bali, Indonesia" data-date="25.03.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/1600s" data-iso="ISO 100">
-        <img src="../assets/images/asia/IMG_4434.jpg" alt="Wave, Bali" loading="lazy">
+        <img src="../assets/images/asia/IMG_4434.jpg" alt="Wave, Bali" loading="lazy" width="2048" height="1152">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="gb" data-collection="landscapes mare people"
          data-title="CHILLY SWIM" data-location="Coast of Snowdonia, Wales" data-date="10.09.2023"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/800s" data-iso="ISO 100">
-        <img src="../assets/images/europe/4FD4E7F0-1DDB-4FF6-A30E-20DA8ACCC20E_1_105_c.jpg" alt="Coast of Snowdonia, Wales" loading="lazy">
+        <img src="../assets/images/europe/4FD4E7F0-1DDB-4FF6-A30E-20DA8ACCC20E_1_105_c.jpg" alt="Coast of Snowdonia, Wales" loading="lazy" width="1087" height="723">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="gr" data-collection="mare"
          data-title="SAILING BOAT IN PROFILE" data-location="Rhodes, Greece" data-date="30.05.2022"
          data-camera="Nikon D3200" data-aperture="f/7.1" data-shutter="1/800s" data-iso="ISO 100">
-        <img src="../assets/images/europe/DSC_0175.jpeg" alt="Rhodes, Greece" loading="lazy">
+        <img src="../assets/images/europe/DSC_0175.jpeg" alt="Rhodes, Greece" loading="lazy" width="5899" height="3922">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="pt" data-collection="mare"
          data-title="SAILING AWAY FROM THE CITY" data-location="Lisbon, Portugal" data-date="11.09.2021"
          data-camera="Nikon D3200" data-aperture="f/13" data-shutter="1/640s" data-iso="ISO 100">
-        <img src="../assets/images/europe/DSC_0439.jpeg" alt="Lisbon, Portugal" loading="lazy">
+        <img src="../assets/images/europe/DSC_0439.jpeg" alt="Lisbon, Portugal" loading="lazy" width="5827" height="3874">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="us" data-collection="architecture fauna mare"
          data-title="SEAGULLS IN FRONT OF THE GOLDEN GATE BRIDGE" data-location="San Francisco, USA" data-date="15.04.2019"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/500s" data-iso="ISO 400">
-        <img src="../assets/images/americas/DSC_0009.jpeg" alt="Golden Gate Bridge, San Francisco" loading="lazy">
+        <img src="../assets/images/americas/DSC_0009.jpeg" alt="Golden Gate Bridge, San Francisco" loading="lazy" width="5910" height="3902">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="caribbean" data-collection="colours mare"
          data-title="RAINBOW AND SAILING BOAT" data-location="Caribbean Sea" data-date="26.08.2016"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/400s" data-iso="ISO 100">
-        <img src="../assets/images/americas/DSC_0283.jpeg" alt="Caribbean Sea" loading="lazy">
+        <img src="../assets/images/americas/DSC_0283.jpeg" alt="Caribbean Sea" loading="lazy" width="4512" height="3000">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="caribbean" data-collection="mare"
          data-title="SUNKEN SHIP" data-location="Caribbean Sea" data-date="25.08.2016"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/400s" data-iso="ISO 200">
-        <img src="../assets/images/americas/DSC_0281.jpg" alt="Caribbean Sea" loading="lazy">
+        <img src="../assets/images/americas/DSC_0281.jpg" alt="Caribbean Sea" loading="lazy" width="4512" height="3000">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="gb" data-collection="mare"
          data-title="WAITING FOR THE WAVE" data-location="Seven Sisters Cliffs, England" data-date="24.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 250">
-        <img src="../assets/images/europe/DSC0093.jpg" alt="Seven Sisters Cliffs, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0093.jpg" alt="Seven Sisters Cliffs, England" loading="lazy" width="1616" height="1080">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="gb" data-collection="mare"
          data-title="POST-SURF" data-location="Seven Sisters Cliffs, England" data-date="24.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 250">
-        <img src="../assets/images/europe/DSC0100.jpg" alt="Seven Sisters Cliffs, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0100.jpg" alt="Seven Sisters Cliffs, England" loading="lazy" width="1557" height="1041">
     </div>
 
-    <div class="g-item" data-collection="mare"
+    <div class="g-item" data-country="eg" data-collection="fauna mare"
          data-title="UNDERWATER RACE" data-location="Red Sea, Egypt" data-date="27.10.2019">
-        <img src="../assets/images/africa/IMG_0051.jpg" alt="Red Sea, Egypt" loading="lazy">
+        <img src="../assets/images/africa/IMG_0051.jpg" alt="Red Sea, Egypt" loading="lazy" width="2049" height="1537">
     </div>
 
     <!-- ── FAUNA ─────────────────────────────── -->
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="id" data-collection="fauna"
          data-title="REFLECTION" data-location="Ubud, Indonesia" data-date="18.02.2023"
          data-camera="Nikon D3200" data-aperture="f/5" data-shutter="1/160s" data-iso="ISO 400">
-        <img src="../assets/images/asia/DSC_0250.jpg" alt="Ubud, Indonesia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0250.jpg" alt="Ubud, Indonesia" loading="lazy" width="4345" height="2444">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="id" data-collection="fauna"
          data-title="PREDATOR" data-location="Komodo, Indonesia" data-date="24.03.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/500s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0163.jpg" alt="Komodo, Indonesia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0163.jpg" alt="Komodo, Indonesia" loading="lazy" width="2637" height="1483">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="id" data-collection="fauna mare"
          data-title="GIANTS" data-location="Komodo, Indonesia" data-date="22.03.2023"
          data-camera="Nikon D3200" data-aperture="f/5" data-shutter="1/100s" data-iso="ISO 400">
-        <img src="../assets/images/asia/DSC_0079.jpg" alt="Komodo, Indonesia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0079.jpg" alt="Komodo, Indonesia" loading="lazy" width="5855" height="3293">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="la" data-collection="fauna"
          data-title="ELEPHANT EYE" data-location="Luang Prabang, Laos" data-date="16.06.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/250s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0195.jpg" alt="Luang Prabang, Laos" loading="lazy">
+        <img src="../assets/images/asia/DSC_0195.jpg" alt="Luang Prabang, Laos" loading="lazy" width="6016" height="4000">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="id" data-collection="fauna"
          data-title="CHEEKY THIEF" data-location="Uluwatu, Indonesia" data-date="17.02.2023"
          data-camera="Nikon D3200" data-aperture="f/11" data-shutter="1/1000s" data-iso="ISO 400">
-        <img src="../assets/images/asia/DSC_0102.jpg" alt="Uluwatu, Indonesia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0102.jpg" alt="Uluwatu, Indonesia" loading="lazy" width="6016" height="3384">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="id" data-collection="fauna"
          data-title="LA GUARDIA" data-location="Uluwatu, Indonesia" data-date="17.02.2023"
          data-camera="Nikon D3200" data-aperture="f/11" data-shutter="1/1000s" data-iso="ISO 400">
-        <img src="../assets/images/asia/DSC_0109-2.jpg" alt="Uluwatu, Indonesia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0109-2.jpg" alt="Uluwatu, Indonesia" loading="lazy" width="3437" height="1933">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="gb" data-collection="fauna"
          data-title="CHICKEN" data-location="Pwllheli, Wales" data-date="10.09.2023"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/250s" data-iso="ISO 400">
-        <img src="../assets/images/europe/C8F17572-CD74-471F-AFC1-6C8370033857_1_105_c.jpg" alt="Pwllheli, Wales" loading="lazy">
+        <img src="../assets/images/europe/C8F17572-CD74-471F-AFC1-6C8370033857_1_105_c.jpg" alt="Pwllheli, Wales" loading="lazy" width="1062" height="706">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="gb" data-collection="fauna"
          data-title="PARK-MATES" data-location="Richmond Park, England" data-date="07.09.2023"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/800s" data-iso="ISO 100">
-        <img src="../assets/images/europe/CFC14F9C-F949-462C-BB92-3E8D9BD0B221_1_105_c.jpg" alt="Richmond Park, England" loading="lazy">
+        <img src="../assets/images/europe/CFC14F9C-F949-462C-BB92-3E8D9BD0B221_1_105_c.jpg" alt="Richmond Park, England" loading="lazy" width="1087" height="723">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="gb" data-collection="fauna"
          data-title="DUCKS IN LINE" data-location="Richmond Park, England" data-date="14.09.2023"
          data-camera="Nikon D3200" data-aperture="f/8" data-shutter="1/800s" data-iso="ISO 400">
-        <img src="../assets/images/europe/D09E56BF-5960-4510-A8AF-E784E50226C5_1_105_c.jpg" alt="Richmond Park, England" loading="lazy">
+        <img src="../assets/images/europe/D09E56BF-5960-4510-A8AF-E784E50226C5_1_105_c.jpg" alt="Richmond Park, England" loading="lazy" width="1087" height="723">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="gb" data-collection="fauna"
          data-title="SHEEP" data-location="Petersfield, England" data-date="05.09.2020"
          data-camera="iPhone XR" data-aperture="f/1.8" data-shutter="1/3200s" data-iso="ISO 25">
-        <img src="../assets/images/europe/IMG_4957.jpeg" alt="Petersfield, England" loading="lazy">
+        <img src="../assets/images/europe/IMG_4957.jpeg" alt="Petersfield, England" loading="lazy" width="3625" height="2719">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="gb" data-collection="fauna landscapes"
          data-title="SEAGULL OVER THE CLIFFS" data-location="Seven Sisters Cliffs, England" data-date="25.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/4000s" data-iso="ISO 160">
-        <img src="../assets/images/europe/DSC0241-2.jpg" alt="Seven Sisters Cliffs, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0241-2.jpg" alt="Seven Sisters Cliffs, England" loading="lazy" width="1616" height="1080">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="gb" data-collection="colours fauna"
          data-title="GREEN ON GREEN" data-location="Kew Gardens, England" data-date="27.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/250s" data-iso="ISO 125">
-        <img src="../assets/images/europe/DSC0404.jpg" alt="Kew Gardens, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0404.jpg" alt="Kew Gardens, England" loading="lazy" width="1383" height="924">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="za" data-collection="fauna"
          data-title="AT THE END OF A LONG STRAIGHT ROAD" data-location="South Africa" data-date="18.12.2017"
          data-camera="Nikon D3200" data-aperture="f/5" data-shutter="1/125s" data-iso="ISO 100">
-        <img src="../assets/images/africa/DSC_0253.jpg" alt="South Africa" loading="lazy">
+        <img src="../assets/images/africa/DSC_0253.jpg" alt="South Africa" loading="lazy" width="4348" height="2891">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="za" data-collection="fauna"
          data-title="END OF A MEAL" data-location="South Africa" data-date="18.12.2017"
          data-camera="Nikon D3200" data-aperture="f/8" data-shutter="1/250s" data-iso="ISO 400">
-        <img src="../assets/images/africa/DSC_0276.jpg" alt="South Africa" loading="lazy">
+        <img src="../assets/images/africa/DSC_0276.jpg" alt="South Africa" loading="lazy" width="3872" height="2592">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="za" data-collection="fauna"
          data-title="LOOK-OUT" data-location="South Africa" data-date="19.12.2017"
          data-camera="Nikon D3200" data-aperture="f/5.3" data-shutter="1/500s" data-iso="ISO 720">
-        <img src="../assets/images/africa/DSC_0287.jpg" alt="South Africa" loading="lazy">
+        <img src="../assets/images/africa/DSC_0287.jpg" alt="South Africa" loading="lazy" width="3883" height="2582">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="za" data-collection="fauna"
          data-title="SLOW RUNNER" data-location="South Africa" data-date="19.12.2017"
          data-camera="Nikon D3200" data-aperture="f/7.1" data-shutter="1/200s" data-iso="ISO 400">
-        <img src="../assets/images/africa/DSC_0420.jpg" alt="South Africa" loading="lazy">
+        <img src="../assets/images/africa/DSC_0420.jpg" alt="South Africa" loading="lazy" width="3872" height="2592">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="za" data-collection="fauna mare"
          data-title="PINK LINE" data-location="South Africa" data-date="26.12.2017"
          data-camera="Nikon D3200" data-aperture="f/11" data-shutter="1/500s" data-iso="ISO 200">
-        <img src="../assets/images/africa/DSC_0548.jpg" alt="South Africa" loading="lazy">
+        <img src="../assets/images/africa/DSC_0548.jpg" alt="South Africa" loading="lazy" width="3845" height="2574">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="za" data-collection="fauna mare"
          data-title="PENGUINS" data-location="South Africa" data-date="29.12.2017"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/640s" data-iso="ISO 100">
-        <img src="../assets/images/africa/DSC_0567.jpg" alt="South Africa" loading="lazy">
+        <img src="../assets/images/africa/DSC_0567.jpg" alt="South Africa" loading="lazy" width="4512" height="3000">
     </div>
 
-    <div class="g-item" data-collection="fauna"
+    <div class="g-item" data-country="br" data-collection="fauna"
          data-title="TAKING FLIGHT" data-location="Brazil" data-date="28.10.2014"
          data-camera="Nikon D3200" data-aperture="f/8" data-shutter="1/550s" data-iso="ISO 100">
-        <img src="../assets/images/americas/DSCF1603.jpg" alt="Brazil" loading="lazy">
+        <img src="../assets/images/americas/DSCF1603.jpg" alt="Brazil" loading="lazy" width="4472" height="3354">
     </div>
 
     <!-- ── FLORA ─────────────────────────────── -->
-    <div class="g-item" data-collection="flora"
+    <div class="g-item" data-country="gb" data-collection="flora"
          data-title="RED SYMMETRIES" data-location="Kew Gardens, England" data-date="27.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/320s" data-iso="ISO 1250">
-        <img src="../assets/images/europe/DSC0514.jpg" alt="Kew Gardens, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0514.jpg" alt="Kew Gardens, England" loading="lazy" width="1616" height="1080">
     </div>
 
-    <div class="g-item" data-collection="flora"
+    <div class="g-item" data-country="gb" data-collection="flora"
          data-title="LIFE LINES" data-location="Kew Gardens, England" data-date="27.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/320s" data-iso="ISO 500">
-        <img src="../assets/images/europe/DSC0505.jpg" alt="Kew Gardens, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0505.jpg" alt="Kew Gardens, England" loading="lazy" width="1459" height="975">
     </div>
 
-    <div class="g-item" data-collection="flora"
+    <div class="g-item" data-country="gb" data-collection="flora"
          data-title="TEXTURE" data-location="Kew Gardens, England" data-date="27.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/320s" data-iso="ISO 500">
-        <img src="../assets/images/europe/DSC0504.jpg" alt="Kew Gardens, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0504.jpg" alt="Kew Gardens, England" loading="lazy" width="1616" height="1080">
     </div>
 
-    <div class="g-item" data-collection="flora"
+    <div class="g-item" data-country="gb" data-collection="flora"
          data-title="LIKE A PAINTING" data-location="Kew Gardens, England" data-date="27.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/320s" data-iso="ISO 500">
-        <img src="../assets/images/europe/DSC0499.jpg" alt="Kew Gardens, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0499.jpg" alt="Kew Gardens, England" loading="lazy" width="1450" height="969">
     </div>
 
-    <div class="g-item" data-collection="flora"
+    <div class="g-item" data-country="gb" data-collection="flora"
          data-title="WALL OF CACTI" data-location="Kew Gardens, England" data-date="27.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/11" data-shutter="1/320s" data-iso="ISO 3200">
-        <img src="../assets/images/europe/DSC0491.jpg" alt="Kew Gardens, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0491.jpg" alt="Kew Gardens, England" loading="lazy" width="1616" height="1080">
     </div>
 
-    <div class="g-item" data-collection="flora"
+    <div class="g-item" data-country="gb" data-collection="flora"
          data-title="WOVEN CACTUS" data-location="Kew Gardens, England" data-date="27.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/320s" data-iso="ISO 500">
-        <img src="../assets/images/europe/DSC0480.jpg" alt="Kew Gardens, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0480.jpg" alt="Kew Gardens, England" loading="lazy" width="1616" height="1080">
     </div>
 
-    <div class="g-item" data-collection="flora"
+    <div class="g-item" data-country="br" data-collection="flora landscapes"
          data-title="WATERLILIES" data-location="Lencois Maranhenses, Brazil" data-date="28.10.2014"
          data-camera="Fujifilm FinePix" data-aperture="f/6.2" data-shutter="1/1100s" data-iso="ISO 100">
-        <img src="../assets/images/americas/DSCF1632.jpeg" alt="Lencois Maranhenses, Brazil" loading="lazy">
+        <img src="../assets/images/americas/DSCF1632.jpeg" alt="Lencois Maranhenses, Brazil" loading="lazy" width="4372" height="3279">
     </div>
 
     <!-- ── STREET ────────────────────────────── -->
-    <div class="g-item" data-collection="street"
+    <div class="g-item" data-country="kh" data-collection="street"
          data-title="TUK TUK AND MOTORBIKES" data-location="Phnom Penh, Cambodia" data-date="31.05.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/100s" data-iso="ISO 100">
-        <img src="../assets/images/asia/0DB8914E-566E-422E-850F-C5EE06AB7467.jpg" alt="Phnom Penh, Cambodia" loading="lazy">
+        <img src="../assets/images/asia/0DB8914E-566E-422E-850F-C5EE06AB7467.jpg" alt="Phnom Penh, Cambodia" loading="lazy" width="5142" height="3419">
     </div>
 
-    <div class="g-item" data-collection="street"
+    <div class="g-item" data-country="th" data-collection="street"
          data-title="TIMELESS BANGKOK" data-location="Bangkok, Thailand" data-date="04.07.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/1600s" data-iso="ISO 400">
-        <img src="../assets/images/asia/050A0836-E704-4B82-9528-E165635711A5_1_100_o-2.jpg" alt="Bangkok, Thailand" loading="lazy">
+        <img src="../assets/images/asia/050A0836-E704-4B82-9528-E165635711A5_1_100_o-2.jpg" alt="Bangkok, Thailand" loading="lazy" width="3350" height="2227">
     </div>
 
-    <div class="g-item" data-collection="street"
+    <div class="g-item" data-country="om" data-collection="street"
          data-title="CHAOS" data-location="Misfat, Oman" data-date="30.12.2022"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/200s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0006.jpeg" alt="Misfat, Oman" loading="lazy">
+        <img src="../assets/images/asia/DSC_0006.jpeg" alt="Misfat, Oman" loading="lazy" width="3200" height="4000">
     </div>
 
-    <div class="g-item" data-collection="street"
+    <div class="g-item" data-country="my" data-collection="street"
          data-title="CLOCKS" data-location="Georgetown, Malaysia" data-date="10.02.2023"
          data-camera="Nikon D3200" data-aperture="f/4.2" data-shutter="1/60s" data-iso="ISO 900">
-        <img src="../assets/images/asia/DSC_0015.jpg" alt="Georgetown, Malaysia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0015.jpg" alt="Georgetown, Malaysia" loading="lazy" width="5089" height="3384">
     </div>
 
-    <div class="g-item" data-collection="street"
+    <div class="g-item" data-country="ma" data-collection="street"
          data-title="EVENINGS AT THE BEACH" data-location="Essaouira, Morocco" data-date="24.10.2015"
          data-camera="Nikon D3200" data-aperture="f/9" data-shutter="1/1600s" data-iso="ISO 800">
-        <img src="../assets/images/africa/DSC_0070.jpeg" alt="Essaouira, Morocco" loading="lazy">
+        <img src="../assets/images/africa/DSC_0070.jpeg" alt="Essaouira, Morocco" loading="lazy" width="5734" height="3225">
     </div>
 
-    <div class="g-item" data-collection="street"
+    <div class="g-item" data-country="gr" data-collection="street"
          data-title="BREAD" data-location="Simi, Greece" data-date="29.05.2022"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/125s" data-iso="ISO 560">
-        <img src="../assets/images/europe/DSC_0117.jpeg" alt="Simi, Greece" loading="lazy">
+        <img src="../assets/images/europe/DSC_0117.jpeg" alt="Simi, Greece" loading="lazy" width="5650" height="3756">
     </div>
 
-    <div class="g-item" data-collection="street"
+    <div class="g-item" data-country="gb" data-collection="landscapes people"
          data-title="EARLY MORNING WALK" data-location="Seven Sisters Cliffs, England" data-date="25.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/5000s" data-iso="ISO 160">
-        <img src="../assets/images/europe/DSC0303.jpg" alt="Seven Sisters Cliffs, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0303.jpg" alt="Seven Sisters Cliffs, England" loading="lazy" width="7008" height="4672">
     </div>
 
     <!-- ── PEOPLE ────────────────────────────── -->
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="la" data-collection="colours people street"
          data-title="BASKET WEAVING" data-location="Nong Khiaw, Laos" data-date="18.06.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/160s" data-iso="ISO 200">
-        <img src="../assets/images/asia/DSC_0036.jpg" alt="Nong Khiaw, Laos" loading="lazy">
+        <img src="../assets/images/asia/DSC_0036.jpg" alt="Nong Khiaw, Laos" loading="lazy" width="4845" height="3221">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="la" data-collection="people street"
          data-title="WALK IN THE SUN" data-location="Nong Khiaw, Laos" data-date="17.06.2023"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/160s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0005.jpg" alt="Nong Khiaw, Laos" loading="lazy">
+        <img src="../assets/images/asia/DSC_0005.jpg" alt="Nong Khiaw, Laos" loading="lazy" width="6016" height="4000">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="kh" data-collection="people street"
          data-title="STREET VENDORS" data-location="Kep, Cambodia" data-date="05.06.2023"
          data-camera="Nikon D3200" data-aperture="f/4.2" data-shutter="1/500s" data-iso="ISO 1600">
-        <img src="../assets/images/asia/DSC_0014-2.jpg" alt="Kep, Cambodia" loading="lazy">
+        <img src="../assets/images/asia/DSC_0014-2.jpg" alt="Kep, Cambodia" loading="lazy" width="5932" height="3944">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="kh" data-collection="people street"
          data-title="CHEEKY" data-location="Phnom Penh, Cambodia" data-date="31.05.2023"
          data-camera="Nikon D3200" data-aperture="f/4.2" data-shutter="1/100s" data-iso="ISO 200">
-        <img src="../assets/images/asia/ECE1AB3D-D998-48D2-8EE5-1CC4DAD9AB70.jpg" alt="Phnom Penh, Cambodia" loading="lazy">
+        <img src="../assets/images/asia/ECE1AB3D-D998-48D2-8EE5-1CC4DAD9AB70.jpg" alt="Phnom Penh, Cambodia" loading="lazy" width="5321" height="3538">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="kh" data-collection="people street"
          data-title="LOCAL MARKET" data-location="Phnom Penh, Cambodia" data-date="31.05.2023"
          data-camera="Nikon D3200" data-aperture="f/4.2" data-shutter="1/500s" data-iso="ISO 400">
-        <img src="../assets/images/asia/684E38B9-E760-4144-BA45-F589C7124E09.jpg" alt="Phnom Penh, Cambodia" loading="lazy">
+        <img src="../assets/images/asia/684E38B9-E760-4144-BA45-F589C7124E09.jpg" alt="Phnom Penh, Cambodia" loading="lazy" width="4883" height="3247">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="kh" data-collection="people street"
          data-title="MOMENT OF REST" data-location="Phnom Penh, Cambodia" data-date="31.05.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/500s" data-iso="ISO 400">
-        <img src="../assets/images/asia/543D0348-6670-48BE-8E20-B9BC5E9E6291.jpg" alt="Phnom Penh, Cambodia" loading="lazy">
+        <img src="../assets/images/asia/543D0348-6670-48BE-8E20-B9BC5E9E6291.jpg" alt="Phnom Penh, Cambodia" loading="lazy" width="4096" height="2722">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="kh" data-collection="people street"
          data-title="RED VISOR" data-location="Phnom Penh, Cambodia" data-date="31.05.2023"
          data-camera="Nikon D3200" data-aperture="f/4" data-shutter="1/500s" data-iso="ISO 400">
-        <img src="../assets/images/asia/ADCE01F0-46EB-4EF6-A80B-E6567DC4C4C2.jpg" alt="Phnom Penh, Cambodia" loading="lazy">
+        <img src="../assets/images/asia/ADCE01F0-46EB-4EF6-A80B-E6567DC4C4C2.jpg" alt="Phnom Penh, Cambodia" loading="lazy" width="3200" height="4000">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="gb" data-collection="landscapes mare people"
          data-title="ENJOYING THE VIEW" data-location="Coast of Snowdonia, Wales" data-date="10.09.2023"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/800s" data-iso="ISO 100">
-        <img src="../assets/images/europe/046B3E53-CC98-4ABA-87EC-8D1879117E1D_1_105_c.jpg" alt="Coast of Snowdonia, Wales" loading="lazy">
+        <img src="../assets/images/europe/046B3E53-CC98-4ABA-87EC-8D1879117E1D_1_105_c.jpg" alt="Coast of Snowdonia, Wales" loading="lazy" width="1075" height="715">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="gr" data-collection="mare people street"
          data-title="FISHERMAN" data-location="Rhodes, Greece" data-date="29.05.2022"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/500s" data-iso="ISO 280">
-        <img src="../assets/images/europe/DSC_0115.jpeg" alt="Rhodes, Greece" loading="lazy">
+        <img src="../assets/images/europe/DSC_0115.jpeg" alt="Rhodes, Greece" loading="lazy" width="5678" height="3774">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="ma" data-collection="people street"
          data-title="MAN COOKING MEAT AT THE LOCAL MARKET" data-location="Essaouira, Morocco" data-date="25.10.2015"
          data-camera="Nikon D3200" data-aperture="f/7.1" data-shutter="1/500s" data-iso="ISO 400">
-        <img src="../assets/images/africa/DSC_0127.jpg" alt="Essaouira, Morocco" loading="lazy">
+        <img src="../assets/images/africa/DSC_0127.jpg" alt="Essaouira, Morocco" loading="lazy" width="5174" height="4000">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="ma" data-collection="people street"
          data-title="SHOPPING" data-location="Essaouira, Morocco" data-date="25.10.2015"
          data-camera="Nikon D3200" data-aperture="f/9" data-shutter="1/640s" data-iso="ISO 400">
-        <img src="../assets/images/africa/DSC_0106.jpg" alt="Essaouira, Morocco" loading="lazy">
+        <img src="../assets/images/africa/DSC_0106.jpg" alt="Essaouira, Morocco" loading="lazy" width="5999" height="3555">
     </div>
 
-    <div class="g-item" data-collection="people"
+    <div class="g-item" data-country="lk" data-collection="landscapes people"
          data-title="WOMEN WORKING IN TEA PLANTATION" data-location="Ella–Kandy Train, Sri Lanka" data-date="18.06.2024"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/2500s" data-iso="ISO 1000">
-        <img src="../assets/images/asia/DSC0098-2 copy.jpg" alt="Ella-Kandy Train, Sri Lanka" loading="lazy">
+        <img src="../assets/images/asia/DSC0098-2 copy.jpg" alt="Ella-Kandy Train, Sri Lanka" loading="lazy" width="5794" height="3863">
     </div>
 
     <!-- ── ARCHITECTURE ──────────────────────── -->
-    <div class="g-item" data-collection="architecture"
+    <div class="g-item" data-country="th" data-collection="architecture colours street"
          data-title="DETAILS AND COLOURS" data-location="Bangkok, Thailand" data-date="04.07.2023"
          data-camera="Nikon D3200" data-aperture="f/4.5" data-shutter="1/1600s" data-iso="ISO 1600">
-        <img src="../assets/images/asia/0BB6B032-9E73-4503-9355-A45A21D0F4D8-2.jpg" alt="Bangkok, Thailand" loading="lazy">
+        <img src="../assets/images/asia/0BB6B032-9E73-4503-9355-A45A21D0F4D8-2.jpg" alt="Bangkok, Thailand" loading="lazy" width="5802" height="3858">
     </div>
 
-    <div class="g-item" data-collection="architecture"
+    <div class="g-item" data-country="gb" data-collection="architecture landscapes"
          data-title="FLOATING HARRY POTTER BRIDGE" data-location="Millenium Bridge, London" data-date="15.09.2023"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/800s" data-iso="ISO 100">
-        <img src="../assets/images/europe/5D922272-E2A9-4252-9766-521A82AE43F0_1_105_c.jpg" alt="Millenium Bridge, London" loading="lazy">
+        <img src="../assets/images/europe/5D922272-E2A9-4252-9766-521A82AE43F0_1_105_c.jpg" alt="Millenium Bridge, London" loading="lazy" width="1087" height="723">
     </div>
 
-    <div class="g-item" data-collection="architecture"
+    <div class="g-item" data-country="vn" data-collection="architecture street"
          data-title="ROCKS OF NINH BINH" data-location="Ninh Binh, Vietnam" data-date="07.05.2023"
          data-camera="Nikon D3200" data-aperture="f/5" data-shutter="1/160s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0098.JPEG" alt="Ninh Binh, Vietnam" loading="lazy">
+        <img src="../assets/images/asia/DSC_0098.JPEG" alt="Ninh Binh, Vietnam" loading="lazy" width="4000" height="6016">
     </div>
 
-    <div class="g-item" data-collection="architecture"
+    <div class="g-item" data-country="pt" data-collection="architecture street"
          data-title="PORTO" data-location="Porto, Portugal" data-date="08.09.2021"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/500s" data-iso="ISO 180">
-        <img src="../assets/images/europe/DSC_0147.jpeg" alt="Porto, Portugal" loading="lazy">
+        <img src="../assets/images/europe/DSC_0147.jpeg" alt="Porto, Portugal" loading="lazy" width="6011" height="3994">
     </div>
 
-    <div class="g-item" data-collection="architecture"
+    <div class="g-item" data-country="no" data-collection="architecture"
          data-title="NORDIC HOUSE" data-location="Alta, Norway" data-date="03.04.2016"
          data-camera="Nikon D3200" data-aperture="f/16" data-shutter="1/500s" data-iso="ISO 800">
-        <img src="../assets/images/europe/DSC_0326.jpg" alt="Alta, Norway" loading="lazy">
+        <img src="../assets/images/europe/DSC_0326.jpg" alt="Alta, Norway" loading="lazy" width="6016" height="4000">
     </div>
 
     <!-- ── LANDSCAPES ────────────────────────── -->
-    <div class="g-item" data-collection="landscapes"
+    <div class="g-item" data-country="vn" data-collection="landscapes"
          data-title="TERRACES" data-location="Sapa, Vietnam" data-date="13.05.2023"
          data-camera="Nikon D3200" data-aperture="f/5.6" data-shutter="1/200s" data-iso="ISO 100">
-        <img src="../assets/images/asia/DSC_0158.jpg" alt="Sapa, Vietnam" loading="lazy">
+        <img src="../assets/images/asia/DSC_0158.jpg" alt="Sapa, Vietnam" loading="lazy" width="6016" height="4000">
     </div>
 
-    <div class="g-item" data-collection="landscapes"
+    <div class="g-item" data-country="ch" data-collection="landscapes"
          data-title="FREEZING WATERFALL" data-location="Surlej, Switzerland" data-date="25.11.2020">
-        <img src="../assets/images/europe/IMG_6059.JPG" alt="Surlej, Switzerland" loading="lazy">
+        <img src="../assets/images/europe/IMG_6059.JPG" alt="Surlej, Switzerland" loading="lazy" width="5377" height="3575">
     </div>
 
-    <div class="g-item" data-collection="landscapes"
+    <div class="g-item" data-country="ma" data-collection="landscapes"
          data-title="PALMS IN THE SAHARA" data-location="Sahara Desert, Morocco" data-date="27.12.2018">
-        <img src="../assets/images/africa/IMG_9644.jpeg" alt="Sahara Desert, Morocco" loading="lazy">
+        <img src="../assets/images/africa/IMG_9644.jpeg" alt="Sahara Desert, Morocco" loading="lazy" width="1600" height="1200">
     </div>
 
-    <div class="g-item" data-collection="landscapes"
+    <div class="g-item" data-country="gb" data-collection="landscapes mare"
          data-title="WHITE CLIFF" data-location="Seven Sisters Cliffs, England" data-date="25.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 100">
-        <img src="../assets/images/europe/DSC0114.jpg" alt="Seven Sisters Cliffs, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0114.jpg" alt="Seven Sisters Cliffs, England" loading="lazy" width="1593" height="1065">
     </div>
 
-    <div class="g-item" data-collection="landscapes"
+    <div class="g-item" data-country="it" data-collection="landscapes"
          data-title="OBSTACLE" data-location="Val Ferret, Italy" data-date="21.10.2023"
          data-camera="Sony α7 IV" data-aperture="f/5.6" data-shutter="1/800s" data-iso="ISO 320">
-        <img src="../assets/images/europe/6A2F932D-1C0F-4BCC-955B-4B1DF3D6E847.jpg" alt="Val Ferret, Italy" loading="lazy">
+        <img src="../assets/images/europe/6A2F932D-1C0F-4BCC-955B-4B1DF3D6E847.jpg" alt="Val Ferret, Italy" loading="lazy" width="4672" height="7008">
     </div>
 
-    <div class="g-item" data-collection="landscapes"
+    <div class="g-item" data-country="it" data-collection="landscapes"
          data-title="ON THE BRINK OF WINTER" data-location="Val Ferret, Italy" data-date="21.10.2023"
          data-camera="Sony α7 IV" data-aperture="f/5.6" data-shutter="1/800s" data-iso="ISO 320">
-        <img src="../assets/images/europe/A74D797B-1274-47CF-BCFE-63D3AA10226E.jpg" alt="Val Ferret, Italy" loading="lazy">
+        <img src="../assets/images/europe/A74D797B-1274-47CF-BCFE-63D3AA10226E.jpg" alt="Val Ferret, Italy" loading="lazy" width="7008" height="4672">
     </div>
 
     <!-- ── COLOURS ───────────────────────────── -->
-    <div class="g-item" data-collection="colours"
+    <div class="g-item" data-country="vn" data-collection="colours"
          data-title="LANTERNS" data-location="Hoi An, Vietnam" data-date="23.05.2023"
          data-camera="Nikon D3200" data-aperture="f/7.1" data-shutter="1/320s" data-iso="ISO 1600">
-        <img src="../assets/images/asia/AFE1BEED-99FF-459E-A0FF-5AFF049383F1_1_105_c.jpg" alt="Hoi An, Vietnam" loading="lazy">
+        <img src="../assets/images/asia/AFE1BEED-99FF-459E-A0FF-5AFF049383F1_1_105_c.jpg" alt="Hoi An, Vietnam" loading="lazy" width="1087" height="723">
     </div>
 
-    <div class="g-item" data-collection="colours"
+    <div class="g-item" data-country="pt" data-collection="architecture street"
          data-title="AZULEJOS" data-location="Porto, Portugal" data-date="08.09.2021"
          data-camera="Nikon D3200" data-aperture="f/10" data-shutter="1/160s" data-iso="ISO 100">
-        <img src="../assets/images/europe/DSC_0163.jpeg" alt="Porto, Portugal" loading="lazy">
+        <img src="../assets/images/europe/DSC_0163.jpeg" alt="Porto, Portugal" loading="lazy" width="6016" height="4000">
     </div>
 
-    <div class="g-item" data-collection="colours"
+    <div class="g-item" data-country="gb" data-collection="colours people"
          data-title="RED ON WHITE" data-location="Seven Sisters Cliffs, England" data-date="25.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/6400s" data-iso="ISO 100">
-        <img src="../assets/images/europe/DSC0313.jpg" alt="Seven Sisters Cliffs, England" loading="lazy">
+        <img src="../assets/images/europe/DSC0313.jpg" alt="Seven Sisters Cliffs, England" loading="lazy" width="1506" height="1006">
     </div>
 
-    <div class="g-item" data-collection="colours"
+    <div class="g-item" data-country="gb" data-collection="architecture landscapes mare"
          data-title="VIEWS FROM A LONG-NAMED TOWN" data-location="Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch, Wales" data-date="09.09.2023"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/800s" data-iso="ISO 100">
-        <img src="../assets/images/europe/698CCD19-0C2E-4C40-81A1-BE6CA65A998A_1_105_c.jpg" alt="Wales" loading="lazy">
+        <img src="../assets/images/europe/698CCD19-0C2E-4C40-81A1-BE6CA65A998A_1_105_c.jpg" alt="Wales" loading="lazy" width="1087" height="723">
     </div>
 
 </div>
@@ -499,10 +502,29 @@
     </div>
 </div>
 
+<!-- ── Map overlay ───────────────────────────── -->
+<div class="g-map-overlay" id="map-overlay" aria-hidden="true">
+    <button class="g-map__close" id="map-close" aria-label="Close map">×</button>
+    <div class="g-map__hint" id="map-hint">Click a highlighted country or pin to browse photos</div>
+    <div id="map"></div>
+    <div class="g-map-panel" id="map-panel">
+        <div class="g-map-panel__header">
+            <div>
+                <div class="g-map-panel__label" id="map-panel-label"></div>
+                <div class="g-map-panel__count" id="map-panel-count"></div>
+            </div>
+            <button class="g-map-panel__close" id="map-panel-close">×</button>
+        </div>
+        <div class="g-map-panel__grid" id="map-panel-grid"></div>
+    </div>
+</div>
+
 <footer class="g-footer">
     <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../assets/data/countries.js"></script>
 <script src="../assets/js/gallery.js"></script>
 </body>
 </html>
