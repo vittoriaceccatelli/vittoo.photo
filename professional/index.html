@@ -12,7 +12,7 @@
 </head>
 <body class="page-work">
 
-<header class="pro-header">
+<header class="pro-header is-light">
     <a class="pro-home" href="../index.html">VC</a>
     <div class="pro-header__tagline">ML &amp; Data Engineering · ETH Zurich &amp; Harvard Medical School</div>
     <nav class="pro-nav">
@@ -47,14 +47,30 @@
             </h1>
         </div>
         <div class="pro-about__col pro-about__col--right">
-            <div class="pro-about__role">Biomedical Engineer &amp; ML Researcher</div>
+            <div class="pro-about__role">ML Engineer · Biomedical Systems</div>
             <p class="pro-about__bio">
-                I am a Biomedical Engineering MSc graduate from ETH Zurich, with my thesis completed
-                at Harvard Medical School's Brigham and Women's Hospital. I build automated,
-                production-quality computational systems — from end-to-end medical imaging pipelines
-                processing hundreds of CT scans, to multi-task ML models predicting glucose from
-                physiological wearable data. I am drawn to hard quantitative problems that require
-                turning noisy, high-dimensional data into structured, reliable outputs.
+                I'm a Biomedical Engineering MSc graduate from ETH Zurich (5.43 / 6.0), with my thesis
+                completed at Harvard Medical School's Brigham and Women's Hospital and presented at
+                Harvard Surgery Research Day 2026. I was selected as a Swiss Study Foundation scholar
+                in 2022 on the basis of academic performance.
+            </p>
+            <p class="pro-about__bio">
+                I build automated, production-grade computational systems for hard medical problems.
+                My thesis produced a complete carotid artery analysis pipeline — deep learning
+                segmentation with nnU-Net, SegMamba, and SwinUNETR, 3D morphological feature
+                extraction, calcification mapping, and CFD simulation — processing 111 real patients
+                and generating 354 features per scan. Before Harvard, I designed a multi-task ML
+                system for non-invasive glucose prediction from wearable physiological signals,
+                covering classification, regression, and 6-hour time-series forecasting across
+                69 engineered features. Earlier work involved MATLAB pipelines for EMG and
+                force-plate coherence analysis across 100 participants, quantifying the effect of
+                auditory noise stimulation on fall-risk in elderly individuals.
+            </p>
+            <p class="pro-about__bio">
+                The throughline across all three: the data is messy, the pipeline has to be robust,
+                and the output has to actually mean something. I'm drawn to the engineering layer
+                that turns noisy high-dimensional biology into structured, reliable results — and
+                to problems where getting it right matters.
             </p>
             <div class="pro-about__contact">
                 <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a>
@@ -194,34 +210,78 @@
         <div class="pro-panel__title">Skills &amp; Languages</div>
         <div class="pro-skills-list">
 
-            <div class="pro-skill-row">
+            <div class="pro-skill-row" style="--row-clr: #7a9fc9">
                 <div class="pro-skill-row__cat">Programming</div>
-                <div class="pro-skill-row__items">Python · MATLAB · Git · Bash · Linux · R · SQL · HTML / CSS / JS</div>
+                <div class="pro-skill-row__items">
+                    <span class="stag stag--core">Python</span>
+                    <span class="stag stag--core">MATLAB</span>
+                    <span class="stag stag--core">Git</span>
+                    <span class="stag stag--core">Bash</span>
+                    <span class="stag stag--core">Linux</span>
+                    <span class="stag">R</span>
+                    <span class="stag">SQL</span>
+                    <span class="stag">HTML / CSS / JS</span>
+                </div>
             </div>
 
-            <div class="pro-skill-row">
+            <div class="pro-skill-row" style="--row-clr: #9484b8">
                 <div class="pro-skill-row__cat">ML &amp; DL</div>
-                <div class="pro-skill-row__items">PyTorch · scikit-learn · XGBoost · TensorFlow · TabPFN · nnU-Net · SegMamba · SwinUNETR</div>
+                <div class="pro-skill-row__items">
+                    <span class="stag stag--core">PyTorch</span>
+                    <span class="stag stag--core">scikit-learn</span>
+                    <span class="stag stag--core">XGBoost</span>
+                    <span class="stag stag--core">nnU-Net</span>
+                    <span class="stag">TensorFlow</span>
+                    <span class="stag">TabPFN</span>
+                    <span class="stag">SegMamba</span>
+                    <span class="stag">SwinUNETR</span>
+                </div>
             </div>
 
-            <div class="pro-skill-row">
+            <div class="pro-skill-row" style="--row-clr: #5fa898">
                 <div class="pro-skill-row__cat">Data &amp; Signals</div>
-                <div class="pro-skill-row__items">Feature Engineering · Signal Processing · NumPy · Pandas · Time-Series Forecasting · SciPy</div>
+                <div class="pro-skill-row__items">
+                    <span class="stag stag--core">NumPy</span>
+                    <span class="stag stag--core">Pandas</span>
+                    <span class="stag stag--core">Feature Engineering</span>
+                    <span class="stag stag--core">Signal Processing</span>
+                    <span class="stag">Time-Series Forecasting</span>
+                    <span class="stag">SciPy</span>
+                </div>
             </div>
 
-            <div class="pro-skill-row">
+            <div class="pro-skill-row" style="--row-clr: #c4a040">
                 <div class="pro-skill-row__cat">Medical &amp; CFD</div>
-                <div class="pro-skill-row__items">DICOM · Medical Image Segmentation · ITK · VTK · 3D Slicer · SimVascular · ANSYS Fluent</div>
+                <div class="pro-skill-row__items">
+                    <span class="stag stag--core">DICOM</span>
+                    <span class="stag stag--core">Medical Image Segmentation</span>
+                    <span class="stag stag--core">ITK</span>
+                    <span class="stag stag--core">VTK</span>
+                    <span class="stag">3D Slicer</span>
+                    <span class="stag">SimVascular</span>
+                    <span class="stag">ANSYS Fluent</span>
+                </div>
             </div>
 
-            <div class="pro-skill-row">
+            <div class="pro-skill-row" style="--row-clr: #bf7c6a">
                 <div class="pro-skill-row__cat">CAD</div>
-                <div class="pro-skill-row__items">PTC Creo · Geomagic Wrap · Geomagic DesignX · CT-based CAD</div>
+                <div class="pro-skill-row__items">
+                    <span class="stag stag--core">PTC Creo</span>
+                    <span class="stag">Geomagic Wrap</span>
+                    <span class="stag">Geomagic DesignX</span>
+                    <span class="stag">CT-based CAD</span>
+                </div>
             </div>
 
-            <div class="pro-skill-row">
+            <div class="pro-skill-row pro-skill-row--lang">
                 <div class="pro-skill-row__cat">Languages</div>
-                <div class="pro-skill-row__items">Italian · German · English (native) · French (B2) · Spanish (B1)</div>
+                <div class="pro-skill-row__items">
+                    <span class="lang-chip"><span class="lang-chip__name">Italian</span><span class="lang-chip__level">native</span></span>
+                    <span class="lang-chip"><span class="lang-chip__name">English</span><span class="lang-chip__level">native</span></span>
+                    <span class="lang-chip"><span class="lang-chip__name">German</span><span class="lang-chip__level">C1</span></span>
+                    <span class="lang-chip"><span class="lang-chip__name">French</span><span class="lang-chip__level">B2</span></span>
+                    <span class="lang-chip"><span class="lang-chip__name">Spanish</span><span class="lang-chip__level">B1</span></span>
+                </div>
             </div>
 
         </div>

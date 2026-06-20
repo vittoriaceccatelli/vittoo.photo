@@ -50,6 +50,37 @@ a {
     -webkit-backdrop-filter: blur(12px);
 }
 
+/* ── Header: light mode over the cream about section ── */
+
+.pro-header.is-light {
+    background: transparent;
+    border-bottom-color: transparent;
+}
+
+.pro-header.is-light .pro-home,
+.pro-header.is-light .pro-nav a,
+.pro-header.is-light .pro-dropdown__btn {
+    color: #111111;
+}
+
+.pro-header.is-light .pro-header__tagline {
+    color: rgba(17, 17, 17, 0.45);
+}
+
+.pro-header.is-light .pro-dropdown__menu {
+    background: #f4f1eb;
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.pro-header.is-light .pro-dropdown__menu a {
+    color: #111111;
+}
+
+.pro-header.is-light.is-scrolled {
+    background: rgba(244, 241, 235, 0.92);
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
 .pro-home {
     font-size: 10px;
     letter-spacing: 4px;
@@ -662,21 +693,22 @@ a {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    border: 1px solid var(--text);
+    border: 1px solid rgba(17, 17, 17, 0.4);
     background: transparent;
     cursor: pointer;
     padding: 0;
-    opacity: 0.18;
-    transition: opacity 0.25s, background 0.25s, transform 0.2s;
+    opacity: 0.35;
+    transition: opacity 0.25s, background 0.25s, border-color 0.25s, transform 0.2s;
 }
 
 .section-dot:hover {
-    opacity: 0.55;
+    opacity: 0.6;
     transform: scale(1.5);
 }
 
 .section-dot.is-active {
-    background: var(--text);
+    background: rgba(17, 17, 17, 0.7);
+    border-color: rgba(17, 17, 17, 0.7);
     opacity: 0.7;
 }
 
@@ -690,7 +722,7 @@ a {
     font-size: 9px;
     letter-spacing: 2px;
     font-weight: bold;
-    color: var(--text);
+    color: rgba(17, 17, 17, 0.55);
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.2s;
@@ -818,9 +850,9 @@ a {
 
 .pro-header__tagline {
     position: absolute;
-    left: 50%;
+    left: 110px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     font-size: 10px;
     letter-spacing: 1.5px;
     color: var(--muted);
@@ -948,7 +980,7 @@ html {
 .pro-about__col--left {
     justify-content: center;
     padding: 80px 48px 60px 80px;
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    border-right: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .pro-about__col--right {
@@ -980,6 +1012,11 @@ html {
     font-size: 13px;
     color: rgba(232, 226, 214, 0.48);
     line-height: 1.82;
+    margin-bottom: 16px;
+}
+
+.pro-about__bio:last-of-type {
+    margin-bottom: 0;
 }
 
 .pro-about__contact {
@@ -1004,6 +1041,19 @@ html {
 .pro-about__contact span {
     opacity: 0.35;
 }
+
+/* ── About: light cream section ─────────── */
+
+.pro-about {
+    background-color: #f4f1eb;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+.pro-about .pro-about__name     { color: #111111; }
+.pro-about .pro-about__role     { color: #888888; }
+.pro-about .pro-about__bio      { color: rgba(17, 17, 17, 0.5); }
+.pro-about .pro-about__contact,
+.pro-about .pro-about__contact a { color: #888888; }
 
 /* ── Vertical timeline ───────────────────── */
 
@@ -1268,9 +1318,9 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     display: grid;
     grid-template-columns: 130px 1fr;
     gap: 28px;
-    padding: 15px 0;
+    padding: 18px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 .pro-skill-row:first-child {
@@ -1284,12 +1334,81 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     text-transform: uppercase;
     color: var(--muted);
     line-height: 1.4;
+    padding-top: 5px;
 }
 
 .pro-skill-row__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+/* ── Skill tags (monospace chips) ────────── */
+
+.stag {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', Courier, monospace;
     font-size: 13px;
-    color: rgba(232, 226, 214, 0.65);
-    line-height: 1.6;
+    padding: 5px 12px;
+    border: 1px solid rgba(232, 226, 214, 0.1);
+    color: rgba(232, 226, 214, 0.32);
+    letter-spacing: 0.3px;
+    line-height: 1;
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: border-color 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.stag:hover {
+    border-color: rgba(232, 226, 214, 0.22);
+    color: rgba(232, 226, 214, 0.55);
+}
+
+.stag--core {
+    border-color: rgba(232, 226, 214, 0.28);
+    color: rgba(232, 226, 214, 0.85);
+    background: rgba(232, 226, 214, 0.05);
+}
+
+.stag--core:hover {
+    border-color: var(--row-clr, rgba(232, 226, 214, 0.5));
+    color: rgba(232, 226, 214, 0.98);
+    background: color-mix(in srgb, var(--row-clr, rgba(232,226,214,0.1)) 10%, transparent);
+    box-shadow: 0 0 14px color-mix(in srgb, var(--row-clr, rgba(232,226,214,0.1)) 18%, transparent);
+}
+
+/* ── Language chips ──────────────────────── */
+
+.pro-skill-row--lang .pro-skill-row__items {
+    gap: 8px;
+    align-items: stretch;
+}
+
+.lang-chip {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 16px;
+    border: 1px solid rgba(232, 226, 214, 0.1);
+    min-width: 72px;
+}
+
+.lang-chip__name {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(232, 226, 214, 0.82);
+    letter-spacing: 0.3px;
+    line-height: 1;
+}
+
+.lang-chip__level {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 .pro-skill-row.sr {
@@ -1315,14 +1434,15 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
 }
 
 .pro-skills-section .pro-panel__title {
-    max-width: 900px;
-    margin: 0 auto 32px;
-    width: 100%;
+    margin: 0 -80px 48px;
+    padding: 20px 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 20px;
+    max-width: none;
+    width: auto;
 }
 
 .pro-skills-section .pro-skills-list {
-    max-width: 900px;
-    margin: 0 auto;
     width: 100%;
 }
 
@@ -1337,14 +1457,15 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
 }
 
 .pro-projects-section .pro-panel__title {
-    max-width: 1060px;
-    margin: 0 auto 32px;
-    width: 100%;
+    margin: 0 -80px 48px;
+    padding: 20px 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 20px;
+    max-width: none;
+    width: auto;
 }
 
 .pro-projects-section .pro-cards {
-    max-width: 1060px;
-    margin: 0 auto;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -1375,7 +1496,7 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     .pro-about__col--left {
         padding: 100px 40px 32px;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     }
     .pro-about__col--right {
         padding: 40px 40px 52px;

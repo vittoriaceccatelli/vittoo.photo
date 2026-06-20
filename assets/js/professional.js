@@ -298,7 +298,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     const idx = sections.indexOf(entry.target);
                     dots.forEach(function (d) { d.classList.remove('is-active'); });
                     if (idx >= 0) dots[idx].classList.add('is-active');
-                    dotNav.classList.add('is-dark');
+                    const isAbout = entry.target.classList.contains('pro-about');
+                    dotNav.classList.toggle('is-dark', !isAbout);
+                    if (header) header.classList.toggle('is-light', isAbout);
                 }
             });
         }, { threshold: 0.2 });
