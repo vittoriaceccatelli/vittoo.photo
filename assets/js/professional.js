@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     addSR('.pro-section');
-    addSR('.pro-panel');
     addSR('.pro-entry',              function (i) { return (i % 6) * 55; });
     addSR('.pro-card',               function (i) { return i * 80; });
     addSR('.pipeline__step',         function (i) { return i * 65; });
-    addSR('.pro-skills-col',         function (i) { return i * 50; });
+    addSR('.vtl-entry',              function (i) { return i * 50; });
+    addSR('.pro-skill-row',          function (i) { return i * 40; });
     addSR('.pro-figure');
     addSR('.thesis-stats');
 
@@ -112,39 +112,161 @@ document.addEventListener('DOMContentLoaded', function () {
         statObserver.observe(el);
     });
 
-    // ── 1. Text scramble on h1 ──────────────────────────────────────
-    const h1 = document.querySelector('.pro-intro h1');
-    if (h1) {
-        const finalText = h1.textContent;
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789·—∙';
-        const duration = 1100;
-        // Each character resolves at a staggered random time
-        const resolveAt = finalText.split('').map(function (ch, i) {
-            if (ch === ' ') return 0;
-            return (i / finalText.length) * duration * 0.7 + Math.random() * duration * 0.4;
-        });
-        let start = null;
+    // ── 1. Text scramble on name spans ─────────────────────────────
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789·—∙';
 
-        function scrambleTick(ts) {
+    function scrambleSpan(el, delay) {
+        var finalText = el.textContent.trim();
+        var duration = 900;
+        var resolveAt = finalText.split('').map(function (ch, i) {
+            return (i / finalText.length) * duration * 0.65 + Math.random() * duration * 0.4;
+        });
+        var start = null;
+
+        function tick(ts) {
             if (!start) start = ts;
-            const elapsed = ts - start;
-            h1.textContent = finalText.split('').map(function (ch, i) {
-                if (ch === ' ') return ' ';
+            var elapsed = ts - start;
+            el.textContent = finalText.split('').map(function (ch, i) {
                 if (elapsed >= resolveAt[i]) return ch;
                 return chars[Math.floor(Math.random() * chars.length)];
             }).join('');
             if (elapsed < duration) {
-                requestAnimationFrame(scrambleTick);
+                requestAnimationFrame(tick);
             } else {
-                h1.textContent = finalText;
+                el.textContent = finalText;
             }
         }
 
-        setTimeout(function () { requestAnimationFrame(scrambleTick); }, 100);
+        setTimeout(function () { requestAnimationFrame(tick); }, delay);
     }
 
+    document.querySelectorAll('.pro-about__name span').forEach(function (span, i) {
+        scrambleSpan(span, 80 + i * 260);
+    });
+
+    // ── 2. Timeline scroll dot ──────────────────────────────────────
+    var tlSection = document.querySelector('.pro-tl-section');
+    var vtlEl     = document.querySelector('.vtl');
+    var scrollDot = document.querySelector('.vtl__scroll-dot');
+
+    if (tlSection && vtlEl && scrollDot) {
+        var targetProg  = 0;
+        var currentProg = 0;
+        var dotRaf      = null;
+
+        function getScrollProgress() {
+            var vtlRect     = vtlEl.getBoundingClientRect();
+            var totalTravel = Math.max(1, vtlEl.offsetHeight - window.innerHeight);
+            var scrolled    = -(vtlRect.top - 80);
+            return Math.max(0, Math.min(1, scrolled / totalTravel));
+        }
+
+        var spine = document.querySelector('.vtl__spine');
+
+        function animateDot() {
+            var dist = targetProg - currentProg;
+            currentProg += dist * 0.012; // low factor = heavy lag
+            var pct = (currentProg * 100).toFixed(2) + '%';
+            scrollDot.style.top = pct;
+            if (spine) spine.style.setProperty('--dot-pct', pct);
+            if (Math.abs(dist) > 0.0002) {
+                dotRaf = requestAnimationFrame(animateDot);
+            } else {
+                currentProg = targetProg;
+                dotRaf = null;
+            }
+        }
+
+        window.addEventListener('scroll', function () {
+            targetProg = getScrollProgress();
+            if (!dotRaf) dotRaf = requestAnimationFrame(animateDot);
+        }, { passive: true });
+
+        targetProg  = getScrollProgress();
+        currentProg = targetProg;
+        var initPct = (currentProg * 100).toFixed(2) + '%';
+        scrollDot.style.top = initPct;
+        if (spine) spine.style.setProperty('--dot-pct', initPct);
+    }
+
+    // ── Card positioning: top of bar (end date), collision-resolved ──
+    (function positionCards() {
+        var TOTAL_M = 77;
+        var GAP_PX  = 8;
+
+        function resolve() {
+            document.querySelectorAll('.vtl__col').forEach(function (col) {
+                var colH    = col.offsetHeight;
+                if (!colH) return;
+
+                var entries = Array.from(col.querySelectorAll('.vtl-entry'));
+
+                // Reset all cards so heights are accurate
+                entries.forEach(function (el) {
+                    var card = el.querySelector('.vtl-entry__card');
+                    if (card) card.style.top = '0px';
+                });
+
+                var items = entries.map(function (el) {
+                    var st       = el.getAttribute('style') || '';
+                    var topM     = st.match(/top:\s*([\d.]+)%/);
+                    var durM_m   = st.match(/--dur-m:\s*(\d+)/);
+                    var startPct = topM   ? parseFloat(topM[1])   : 0;
+                    var durM     = durM_m ? parseInt(durM_m[1], 10) : 0;
+                    // end date is above start date on the spine
+                    var midPct   = startPct - (durM / 2 / TOTAL_M * 100);
+                    var card     = el.querySelector('.vtl-entry__card');
+                    var override = el.dataset.cardPct;
+                    var idealPx  = override
+                        ? parseFloat(override) / 100 * colH
+                        : Math.max(0, midPct / 100 * colH);
+                    return {
+                        card:     card,
+                        idealPx:  idealPx,
+                        entryPx:  el.offsetTop,
+                        cardH:    card ? card.offsetHeight : 0
+                    };
+                }).sort(function (a, b) { return a.idealPx - b.idealPx; });
+
+                var floor = 0;
+                items.forEach(function (it) {
+                    var colPos = Math.max(it.idealPx - it.cardH / 2, floor);
+                    if (it.card) it.card.style.top = (colPos - it.entryPx) + 'px';
+                    floor = colPos + it.cardH + GAP_PX;
+                });
+            });
+        }
+
+        requestAnimationFrame(function () { requestAnimationFrame(resolve); });
+    }());
+
+    // ── Month ticks on spine ─────────────────────────────────────────
+    (function buildMonthTicks() {
+        var spine = document.querySelector('.vtl__spine');
+        if (!spine) return;
+        var yearSpans = Array.from(spine.querySelectorAll('span'));
+        if (yearSpans.length < 2) return;
+
+        var spineTop = spine.getBoundingClientRect().top + window.scrollY;
+
+        yearSpans.forEach(function (span, i) {
+            if (i >= yearSpans.length - 1) return;
+            var r1   = span.getBoundingClientRect();
+            var r2   = yearSpans[i + 1].getBoundingClientRect();
+            var topY = (r1.top + window.scrollY + r1.height / 2) - spineTop;
+            var botY = (r2.top + window.scrollY + r2.height / 2) - spineTop;
+            var gap  = botY - topY;
+            for (var m = 1; m <= 11; m++) {
+                var tick = document.createElement('div');
+                tick.className = 'vtl__month-tick';
+                tick.style.top = (topY + (m / 12) * gap) + 'px';
+                spine.appendChild(tick);
+            }
+        });
+    }());
+
     // ── 3. Section dot navigation ───────────────────────────────────
-    const sections = Array.from(document.querySelectorAll('.pro-section, .pro-panel, .pro-tl-section')).filter(function (s) {
+    const sections = Array.from(document.querySelectorAll('.pro-about, .pro-tl-section, .pro-skills-section, .pro-projects-section')).filter(function (s) {
         return s.dataset.label || s.querySelector('h2');
     });
 
@@ -176,6 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const idx = sections.indexOf(entry.target);
                     dots.forEach(function (d) { d.classList.remove('is-active'); });
                     if (idx >= 0) dots[idx].classList.add('is-active');
+                    dotNav.classList.add('is-dark');
                 }
             });
         }, { threshold: 0.2 });

@@ -9,7 +9,7 @@
 <body>
 
 <header class="op-header" id="op-header">
-    <a class="op-home" href="../index.html">Vittoria Ceccatelli</a>
+    <a class="op-home" href="../index.html">VC</a>
     <nav class="op-nav">
         <a href="collections.html">PHOTOGRAPHY</a>
         <a href="../professional/">WORK →</a>
@@ -186,12 +186,22 @@
     <a href="mailto:viki.ceccatelli@gmail.com">viki.ceccatelli@gmail.com</a>
 </footer>
 
-<script>
-    var header = document.getElementById('op-header');
-    window.addEventListener('scroll', function () {
-        header.classList.toggle('is-scrolled', window.scrollY > 10);
-    }, { passive: true });
-</script>
+<!-- ── Lightbox ─────────────────────────── -->
+<div class="op-lightbox" id="op-lightbox">
+    <button class="op-lb__close" id="op-lb-close" aria-label="Close">×</button>
+    <div class="op-lb__inner">
+        <div class="op-lb__cover" id="op-lb-cover">
+            <img id="op-lb-img" src="" alt="">
+        </div>
+        <div class="op-lb__content">
+            <div class="op-lb__title"       id="op-lb-title"></div>
+            <div class="op-lb__meta"        id="op-lb-meta"></div>
+            <div class="op-lb__commentary"  id="op-lb-commentary"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/opinions.js"></script>
 
 </body>
 </html>
