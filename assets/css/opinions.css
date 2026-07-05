@@ -194,14 +194,34 @@ a { color: inherit; text-decoration: none; }
     gap: 3px;
 }
 
+.op-grid--scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 3px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.op-grid--scroll::-webkit-scrollbar { display: none; }
+
+.op-grid--scroll .op-item {
+    flex: 0 0 220px;
+    width: 220px;
+}
+
+.op-grid--square .op-item {
+    aspect-ratio: 1 / 1;
+}
+
 /* ── Individual cover item ─────────────── */
 
 .op-item {
     position: relative;
-    aspect-ratio: 3 / 4;
     overflow: hidden;
     background: #1e1b18;
     cursor: pointer;
+    aspect-ratio: 2 / 3;
 }
 
 .op-item img {
@@ -322,8 +342,8 @@ a { color: inherit; text-decoration: none; }
 
 .op-lb__cover {
     flex-shrink: 0;
-    width: 180px;
-    aspect-ratio: 2 / 3;
+    width: 260px;
+    max-height: 80vh;
     background: #1e1b18;
     border-radius: 3px;
     overflow: hidden;
@@ -332,8 +352,7 @@ a { color: inherit; text-decoration: none; }
 
 .op-lb__cover img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
