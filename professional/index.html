@@ -8,13 +8,13 @@
     <meta property="og:title" content="Vittoria Ceccatelli — Work">
     <meta property="og:description" content="ML & Data Engineering · ETH Zurich & Harvard Medical School">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="../assets/css/professional.css">
+    <link rel="stylesheet" href="../assets/css/professional.css?v=31">
 </head>
 <body class="page-work">
 
 <header class="pro-header is-light">
     <a class="pro-home" href="../index.html">VC</a>
-    <div class="pro-header__tagline">ML &amp; Data Engineering · ETH Zurich &amp; Harvard Medical School</div>
+    <div class="pro-header__tagline">ML &amp; Data Engineering</div>
     <nav class="pro-nav">
         <a href="index.html" class="active">OVERVIEW</a>
         <div class="pro-dropdown">
@@ -25,7 +25,8 @@
                 <a href="biomechanics.html">Postural Stability</a>
             </div>
         </div>
-        <a href="CV.pdf" download><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <a href="../pages/currently.html">CURRENTLY</a>
         <div class="pro-dropdown pro-dropdown--personal">
             <button class="pro-dropdown__btn" aria-expanded="false">PERSONAL</button>
             <div class="pro-dropdown__menu">
@@ -45,33 +46,36 @@
                 <span>Vittoria</span>
                 <span>Ceccatelli</span>
             </h1>
+            <div class="pro-about__title">MSc ETH Zurich in Biomedical Engineering</div>
+            <div class="pro-about__langs">
+                <span class="pro-about__langs-native">Italian &nbsp;·&nbsp; English &nbsp;·&nbsp; German</span><span class="pro-about__langs-prof"> &nbsp;·&nbsp; French &nbsp;·&nbsp; Spanish</span>
+            </div>
+
         </div>
         <div class="pro-about__col pro-about__col--right">
-            <div class="pro-about__role">ML Engineer · Biomedical Systems</div>
-            <p class="pro-about__bio">
-                I'm a Biomedical Engineering MSc graduate from ETH Zurich (5.43 / 6.0), with my thesis
-                completed at Harvard Medical School's Brigham and Women's Hospital and presented at
-                Harvard Surgery Research Day 2026. I was selected as a Swiss Study Foundation scholar
-                in 2022 on the basis of academic performance.
-            </p>
-            <p class="pro-about__bio">
-                I build automated, production-grade computational systems for hard medical problems.
-                My thesis produced a complete carotid artery analysis pipeline — deep learning
-                segmentation with nnU-Net, SegMamba, and SwinUNETR, 3D morphological feature
-                extraction, calcification mapping, and CFD simulation — processing 111 real patients
-                and generating 354 features per scan. Before Harvard, I designed a multi-task ML
-                system for non-invasive glucose prediction from wearable physiological signals,
-                covering classification, regression, and 6-hour time-series forecasting across
-                69 engineered features. Earlier work involved MATLAB pipelines for EMG and
-                force-plate coherence analysis across 100 participants, quantifying the effect of
-                auditory noise stimulation on fall-risk in elderly individuals.
-            </p>
-            <p class="pro-about__bio">
-                The throughline across all three: the data is messy, the pipeline has to be robust,
-                and the output has to actually mean something. I'm drawn to the engineering layer
-                that turns noisy high-dimensional biology into structured, reliable results — and
-                to problems where getting it right matters.
-            </p>
+            <div class="pro-about__bios">
+                <p class="pro-about__bio">
+                    I'm drawn to the <strong>engineering layer between noisy biological data and reliable
+                    clinical results</strong> — the part that decides whether a measurement becomes a
+                    meaningful output. My background spans <strong>medical image analysis, physiological
+                    ML, and signal processing</strong>, built across ETH Zurich, Harvard Medical School,
+                    and NUS.
+                </p>
+                <p class="pro-about__bio">
+                    The problems I find most interesting sit at the gap between a model that performs
+                    on a dataset and one that holds up under <strong>real clinical constraints</strong>.
+                    I build with reproducibility in mind — pipelines with clearly defined failure modes
+                    and outputs that can be interpreted and trusted outside a research setting.
+                </p>
+                <p class="pro-about__bio">
+                    I'm looking for roles in <strong>ML engineering or data engineering</strong> where
+                    the work connects directly to a meaningful outcome — in health, or anywhere that
+                    technical rigour and domain expertise are both required.
+                </p>
+            </div>
+            <div class="pro-about__creds">
+                MSc 5.43&thinsp;/&thinsp;6.0 &nbsp;·&nbsp; BSc 5.32&thinsp;/&thinsp;6.0 &nbsp;·&nbsp; Swiss Study Foundation 2022&thinsp;–&thinsp;2026 &nbsp;·&nbsp; Harvard Surgery Research Day 2026
+            </div>
             <div class="pro-about__contact">
                 <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a>
                 <span>·</span>
@@ -90,12 +94,31 @@
             <span class="pro-tl__sticky-label">Timeline</span>
         </div>
 
-        <div class="vtl">
+        <div class="vtl-row">
+
+            <!-- Country stripe -->
+            <div class="vtl__stripe">
+                <div class="vtl__stripe-seg" style="--seg-clr:#bf7c6a; --seg-top:0%; --seg-h:11.7%">
+                    <span>USA</span>
+                </div>
+                <div class="vtl__stripe-seg" style="--seg-clr:#7a9fc9; --seg-top:11.7%; --seg-h:35.05%">
+                    <span>Switzerland</span>
+                </div>
+                <div class="vtl__stripe-seg" style="--seg-clr:#5fa898; --seg-top:46.75%; --seg-h:6.5%">
+                    <span>Singapore</span>
+                </div>
+                <div class="vtl__stripe-seg" style="--seg-clr:#7a9fc9; --seg-top:53.25%; --seg-h:38.96%">
+                    <span>Switzerland</span>
+                </div>
+                <div class="vtl__stripe-seg" style="--seg-clr:#b07b95; --seg-top:92.21%; --seg-h:7.79%"></div>
+            </div>
+
+            <div class="vtl">
 
             <!-- Left: Education -->
             <div class="vtl__col vtl__col--left">
 
-                <div class="vtl-entry vtl-entry--left" style="--clr:#7a9fc9; top:42.86%; --dur-m:31; --bar-lane:1">
+                <div class="vtl-entry vtl-entry--left" style="--clr:#5a80b5; top:42.86%; --dur-m:31; --bar-lane:1">
                     <div class="vtl-entry__card">
                         <div class="vtl-entry__dates">Sep 2023 – Apr 2026</div>
                         <div class="vtl-entry__title">MSc Biomedical Engineering</div>
@@ -104,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="vtl-entry vtl-entry--left" style="--clr:#5fa898; top:53.25%; --dur-m:5; --bar-lane:2">
+                <div class="vtl-entry vtl-entry--left" style="--clr:#4e94a8; top:53.25%; --dur-m:5; --bar-lane:2">
                     <div class="vtl-entry__card">
                         <div class="vtl-entry__dates">2023</div>
                         <div class="vtl-entry__title">Exchange Semester</div>
@@ -113,16 +136,7 @@
                     </div>
                 </div>
 
-                <div class="vtl-entry vtl-entry--left" style="--clr:#c4a040; top:68.83%; --dur-m:51; --bar-lane:0">
-                    <div class="vtl-entry__card">
-                        <div class="vtl-entry__dates">Jan 2022 – Apr 2026</div>
-                        <div class="vtl-entry__title">Swiss Study Foundation</div>
-                        <div class="vtl-entry__place">Switzerland</div>
-                        <div class="vtl-entry__desc">Selected based on high academic performance.</div>
-                    </div>
-                </div>
-
-                <div class="vtl-entry vtl-entry--left" style="--clr:#7a9fc9; top:89.61%; --dur-m:35; --bar-lane:1">
+                <div class="vtl-entry vtl-entry--left" style="--clr:#7aa8cc; top:89.61%; --dur-m:35; --bar-lane:1" data-card-pct="58.44">
                     <div class="vtl-entry__card">
                         <div class="vtl-entry__dates">Sep 2020 – Aug 2023</div>
                         <div class="vtl-entry__title">BSc Health Sciences &amp; Technology</div>
@@ -130,11 +144,12 @@
                     </div>
                 </div>
 
-                <div class="vtl-entry vtl-entry--left" style="--clr:#9484b8; top:93.51%; --dur-m:1; --bar-lane:1" data-card-pct="93.51">
+                <div class="vtl-entry vtl-entry--left" style="--clr:#7888b5; top:100%; --dur-m:6; --bar-lane:1" data-card-pct="96.1">
                     <div class="vtl-entry__card">
-                        <div class="vtl-entry__dates">Jun 2020</div>
-                        <div class="vtl-entry__title">Dual Diploma</div>
-                        <div class="vtl-entry__place">German Abitur 1.4 · IB 38 pts</div>
+                        <div class="vtl-entry__dates">Sep 2013 – Jun 2020</div>
+                        <div class="vtl-entry__title">German School London</div>
+                        <div class="vtl-entry__place">London, United Kingdom</div>
+                        <div class="vtl-entry__desc">German Abitur 1.4 &nbsp;·&nbsp; IB Diploma 38 pts</div>
                     </div>
                 </div>
 
@@ -165,7 +180,7 @@
                     </a>
                 </div>
 
-                <div class="vtl-entry vtl-entry--right" style="--clr:#7a9fc9; top:20.78%; --dur-m:4; --bar-lane:1">
+                <div class="vtl-entry vtl-entry--right" style="--clr:#c4a040; top:20.78%; --dur-m:4; --bar-lane:1">
                     <a class="vtl-entry__card vtl-entry__card--link" href="glucose.html">
                         <div class="vtl-entry__dates">Feb 2025 – Jun 2025</div>
                         <div class="vtl-entry__title">ML on Wearable Data &amp; Glucose Prediction</div>
@@ -174,7 +189,7 @@
                     </a>
                 </div>
 
-                <div class="vtl-entry vtl-entry--right" style="--clr:#5fa898; top:36.36%; --dur-m:1; --bar-lane:1" data-card-pct="31.81">
+                <div class="vtl-entry vtl-entry--right" style="--clr:#b87848; top:36.36%; --dur-m:1; --bar-lane:1" data-card-pct="31.81">
                     <a class="vtl-entry__card vtl-entry__card--link" href="biomechanics.html">
                         <div class="vtl-entry__dates">Feb 2024 – Mar 2024</div>
                         <div class="vtl-entry__title">Biomechanics Data Analysis</div>
@@ -183,7 +198,7 @@
                     </a>
                 </div>
 
-                <div class="vtl-entry vtl-entry--right" style="--clr:#c4a040; top:41.56%; --dur-m:3; --bar-lane:1" data-card-pct="33.11">
+                <div class="vtl-entry vtl-entry--right" style="--clr:#c47850; top:41.56%; --dur-m:3; --bar-lane:1" data-card-pct="33.11">
                     <div class="vtl-entry__card">
                         <div class="vtl-entry__dates">Oct 2023 – Jan 2024</div>
                         <div class="vtl-entry__title">R&amp;D Intern — Adler Ortho</div>
@@ -192,7 +207,7 @@
                     </div>
                 </div>
 
-                <div class="vtl-entry vtl-entry--right" style="--clr:#9484b8; top:58.44%; --dur-m:33; --bar-lane:0" data-card-pct="54.55">
+                <div class="vtl-entry vtl-entry--right" style="--clr:#a88860; top:58.44%; --dur-m:33; --bar-lane:0" data-card-pct="54.55">
                     <div class="vtl-entry__card">
                         <div class="vtl-entry__dates">Sep 2022 – Jun 2025</div>
                         <div class="vtl-entry__title">Teaching Assistant</div>
@@ -201,7 +216,119 @@
                     </div>
                 </div>
 
+
             </div>
+
+            </div><!-- .vtl -->
+        </div><!-- .vtl-row -->
+
+        <!-- ── Compact background timeline: 2007–2020 ── -->
+        <div class="vtl-row vtl-row--compact">
+
+            <!-- Country stripe -->
+            <div class="vtl__stripe">
+                <div class="vtl__stripe-seg" style="--seg-clr:#b07b95; --seg-top:0%; --seg-h:48.72%">
+                    <span style="top:25%">United Kingdom</span>
+                </div>
+                <div class="vtl__stripe-seg" style="--seg-clr:#9ab87a; --seg-top:48.72%; --seg-h:51.28%">
+                    <span>Italy</span>
+                </div>
+            </div>
+
+            <div class="vtl vtl--compact">
+
+            <div class="vtl__col vtl__col--left">
+
+                <div class="vtl-entry vtl-entry--left" style="--clr:#7888b5; top:48.72%; --dur-m:76; --bar-lane:1">
+                </div>
+
+                <div class="vtl-entry vtl-entry--left" style="--clr:#90bac8; top:100%; --dur-m:77; --bar-lane:1" data-card-pct="75.3">
+                    <div class="vtl-entry__card">
+                        <div class="vtl-entry__dates">2007 – Jun 2013</div>
+                        <div class="vtl-entry__title">German School Milan</div>
+                        <div class="vtl-entry__place">Milan, Italy</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vtl__spine">
+                <span style="top:53.85%">2013</span>
+                <span style="top:100%">2007</span>
+            </div>
+
+            <div class="vtl__col vtl__col--right"></div>
+            </div><!-- .vtl.vtl--compact -->
+        </div><!-- .vtl-row.vtl-row--compact -->
+
+    </section>
+
+    <!-- ── Projects ──────────────────────────────────── -->
+    <section class="pro-projects-section" id="projects" data-label="Projects">
+        <div class="pro-panel__title">Projects</div>
+        <div class="pro-cards">
+
+            <a class="pro-card" href="thesis.html" style="--card-clr: #7a9fc9">
+                <div class="pro-card__meta">2025 – 2026 &nbsp;·&nbsp; Harvard Medical School &amp; ETH Zurich</div>
+                <div class="pro-card__title">Automated Carotid Artery Analysis Pipeline</div>
+                <div class="pro-card__desc">
+                    End-to-end ML pipeline for carotid CTA analysis — deep learning segmentation
+                    (nnU-Net, SegMamba, SwinUNETR), morphological analysis, calcification mapping,
+                    and 3D CFD simulation. Processed 111 patients; 354 features per patient.
+                    Presented at Harvard Surgery Research Day 2026.
+                </div>
+                <div class="pro-card__result">End-to-end pipeline across 111 patients · presented at Harvard Surgery Research Day 2026</div>
+                <div class="pro-card__tags">
+                    <span class="pro-card__tag">Python</span>
+                    <span class="pro-card__tag">PyTorch</span>
+                    <span class="pro-card__tag">nnU-Net</span>
+                    <span class="pro-card__tag">DICOM</span>
+                    <span class="pro-card__tag">VTK</span>
+                    <span class="pro-card__tag">CFD</span>
+                </div>
+                <div class="pro-card__link">View project →</div>
+            </a>
+
+            <a class="pro-card" href="glucose.html" style="--card-clr: #c4a040">
+                <div class="pro-card__meta">2025 &nbsp;·&nbsp; ETH Zurich - Biomedical &amp; Mobile Health Technology Lab</div>
+                <div class="pro-card__title">AI for Glucose Prediction from Wearable Data</div>
+                <div class="pro-card__desc">
+                    Multi-task ML system for non-invasive glucose monitoring using wearable physiological
+                    data — covering classification, regression, and 6-hour time-series forecasting.
+                    Models benchmarked: TabPFN, XGBoost, Temporal Fusion Transformer, SeqFusion (zero-shot).
+                    69 engineered features across EDA, activity, and circadian signals.
+                </div>
+                <div class="pro-card__result">Multi-task system covering classification, regression and 6-hour forecasting · 69 engineered features</div>
+                <div class="pro-card__tags">
+                    <span class="pro-card__tag">Python</span>
+                    <span class="pro-card__tag">PyTorch</span>
+                    <span class="pro-card__tag">XGBoost</span>
+                    <span class="pro-card__tag">TabPFN</span>
+                    <span class="pro-card__tag">TFT</span>
+                    <span class="pro-card__tag">scikit-learn</span>
+                </div>
+                <div class="pro-card__link">View project →</div>
+            </a>
+
+            <a class="pro-card" href="biomechanics.html" style="--card-clr: #9484b8">
+                <div class="pro-card__meta">2024 &nbsp;·&nbsp; ETH Zurich - Laboratory for Movement Biomechanics</div>
+                <div class="pro-card__title">Auditory Noise Stimulation &amp; Postural Stability</div>
+                <div class="pro-card__desc">
+                    Signal processing and coherence analysis on EMG and force-plate (CoP) data from
+                    100 participants (50 elderly, 50 young). Developed MATLAB pipelines for EMG–EMG
+                    and EMG–CoP coherence analysis to quantify the effect of subthreshold auditory
+                    white noise on fall-risk in elderly individuals.
+                </div>
+                <div class="pro-card__result">Full EMG–CoP coherence pipeline across 100 participants (50 elderly, 50 young)</div>
+                <div class="pro-card__tags">
+                    <span class="pro-card__tag">MATLAB</span>
+                    <span class="pro-card__tag">Signal Processing</span>
+                    <span class="pro-card__tag">EMG</span>
+                    <span class="pro-card__tag">Coherence Analysis</span>
+                </div>
+                <div class="pro-card__link">View project →</div>
+            </a>
+
         </div>
     </section>
 
@@ -283,72 +410,6 @@
                     <span class="lang-chip"><span class="lang-chip__name">Spanish</span><span class="lang-chip__level">B1</span></span>
                 </div>
             </div>
-
-        </div>
-    </section>
-
-    <!-- ── Projects ──────────────────────────────────── -->
-    <section class="pro-projects-section" id="projects" data-label="Projects">
-        <div class="pro-panel__title">Projects</div>
-        <div class="pro-cards">
-
-            <a class="pro-card" href="thesis.html">
-                <div class="pro-card__meta">2025 – 2026 &nbsp;·&nbsp; Harvard Medical School &amp; ETH Zurich</div>
-                <div class="pro-card__title">Automated Carotid Artery Analysis Pipeline</div>
-                <div class="pro-card__desc">
-                    End-to-end ML pipeline for carotid CTA analysis — deep learning segmentation
-                    (nnU-Net, SegMamba, SwinUNETR), morphological analysis, calcification mapping,
-                    and 3D CFD simulation. Processed 111 patients; 354 features per patient.
-                    Presented at Harvard Surgery Research Day 2026.
-                </div>
-                <div class="pro-card__tags">
-                    <span class="pro-card__tag">Python</span>
-                    <span class="pro-card__tag">PyTorch</span>
-                    <span class="pro-card__tag">nnU-Net</span>
-                    <span class="pro-card__tag">DICOM</span>
-                    <span class="pro-card__tag">VTK</span>
-                    <span class="pro-card__tag">CFD</span>
-                </div>
-                <div class="pro-card__link">View project →</div>
-            </a>
-
-            <a class="pro-card" href="glucose.html">
-                <div class="pro-card__meta">2025 &nbsp;·&nbsp; ETH Zurich — Biomedical &amp; Mobile Health Technology Lab</div>
-                <div class="pro-card__title">AI for Glucose Prediction from Wearable Data</div>
-                <div class="pro-card__desc">
-                    Multi-task ML system for non-invasive glucose monitoring using wearable physiological
-                    data — covering classification, regression, and 6-hour time-series forecasting.
-                    Models benchmarked: TabPFN, XGBoost, Temporal Fusion Transformer, SeqFusion (zero-shot).
-                    69 engineered features across EDA, activity, and circadian signals.
-                </div>
-                <div class="pro-card__tags">
-                    <span class="pro-card__tag">Python</span>
-                    <span class="pro-card__tag">PyTorch</span>
-                    <span class="pro-card__tag">XGBoost</span>
-                    <span class="pro-card__tag">TabPFN</span>
-                    <span class="pro-card__tag">TFT</span>
-                    <span class="pro-card__tag">scikit-learn</span>
-                </div>
-                <div class="pro-card__link">View project →</div>
-            </a>
-
-            <a class="pro-card" href="biomechanics.html">
-                <div class="pro-card__meta">2024 &nbsp;·&nbsp; ETH Zurich — Institute for Biomechanics</div>
-                <div class="pro-card__title">Auditory Noise Stimulation &amp; Postural Stability</div>
-                <div class="pro-card__desc">
-                    Signal processing and coherence analysis on EMG and force-plate (CoP) data from
-                    100 participants (50 elderly, 50 young). Developed MATLAB pipelines for EMG–EMG
-                    and EMG–CoP coherence analysis to quantify the effect of subthreshold auditory
-                    white noise on fall-risk in elderly individuals.
-                </div>
-                <div class="pro-card__tags">
-                    <span class="pro-card__tag">MATLAB</span>
-                    <span class="pro-card__tag">Signal Processing</span>
-                    <span class="pro-card__tag">EMG</span>
-                    <span class="pro-card__tag">Coherence Analysis</span>
-                </div>
-                <div class="pro-card__link">View project →</div>
-            </a>
 
         </div>
     </section>

@@ -6,7 +6,7 @@
     <title>vittoo.photo</title>
     <meta name="description" content="Photography by Vittoria Ceccatelli — wildlife, landscapes, street, people, flora, architecture, and the sea.">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="../assets/css/gallery.css">
+    <link rel="stylesheet" href="../assets/css/gallery.css?v=4">
 </head>
 <body>
 
@@ -16,7 +16,13 @@
         <a class="g-nav__link" href="https://www.instagram.com/vittoo.photo/" target="_blank">INSTAGRAM</a>
         <a class="g-nav__link" id="map-toggle" href="#">MAP</a>
         <a class="g-nav__link" href="opinions.html">OPINIONS</a>
-        <a class="g-nav__link" href="../professional/">WORK →</a>
+        <div class="g-dropdown">
+            <button class="g-dropdown__btn">PROFESSIONAL</button>
+            <div class="g-dropdown__menu">
+                <a href="../professional/">Archive</a>
+                <a href="currently.html">Currently</a>
+            </div>
+        </div>
     </nav>
 </header>
 
@@ -30,6 +36,7 @@
     <button class="g-filter" data-filter="architecture">ARCHITECTURE</button>
     <button class="g-filter" data-filter="landscapes">LANDSCAPES</button>
     <button class="g-filter" data-filter="colours">COLOURS</button>
+    <button class="g-filter" data-filter="film">FILM PHOTOGRAPHY</button>
 </div>
 
 <div class="g-grid" id="gallery">
@@ -111,11 +118,6 @@
          data-title="POST-SURF" data-location="Seven Sisters Cliffs, England" data-date="24.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 250">
         <img src="../assets/images/europe/DSC0100.jpg" alt="Seven Sisters Cliffs, England" loading="lazy" width="1557" height="1041">
-    </div>
-
-    <div class="g-item" data-country="eg" data-collection="fauna mare"
-         data-title="UNDERWATER RACE" data-location="Red Sea, Egypt" data-date="27.10.2019">
-        <img src="../assets/images/africa/IMG_0051.jpg" alt="Red Sea, Egypt" loading="lazy" width="2049" height="1537">
     </div>
 
     <!-- ── FAUNA ─────────────────────────────── -->
@@ -228,9 +230,9 @@
     </div>
 
     <div class="g-item" data-country="br" data-collection="fauna"
-         data-title="TAKING FLIGHT" data-location="Brazil" data-date="28.10.2014"
+         data-title="TAKING FLIGHT" data-location="Lencois Maranhenses, Brazil" data-date="28.10.2014"
          data-camera="Nikon D3200" data-aperture="f/8" data-shutter="1/550s" data-iso="ISO 100">
-        <img src="../assets/images/americas/DSCF1603.jpg" alt="Brazil" loading="lazy" width="4472" height="3354">
+        <img src="../assets/images/americas/DSCF1603.jpg" alt="Lencois Maranhenses, Brazil" loading="lazy" width="4472" height="3354">
     </div>
 
     <!-- ── FLORA ─────────────────────────────── -->
@@ -430,16 +432,6 @@
         <img src="../assets/images/asia/DSC_0158.jpg" alt="Sapa, Vietnam" loading="lazy" width="6016" height="4000">
     </div>
 
-    <div class="g-item" data-country="ch" data-collection="landscapes"
-         data-title="FREEZING WATERFALL" data-location="Surlej, Switzerland" data-date="25.11.2020">
-        <img src="../assets/images/europe/IMG_6059.JPG" alt="Surlej, Switzerland" loading="lazy" width="5377" height="3575">
-    </div>
-
-    <div class="g-item" data-country="ma" data-collection="landscapes"
-         data-title="PALMS IN THE SAHARA" data-location="Sahara Desert, Morocco" data-date="27.12.2018">
-        <img src="../assets/images/africa/IMG_9644.jpeg" alt="Sahara Desert, Morocco" loading="lazy" width="1600" height="1200">
-    </div>
-
     <div class="g-item" data-country="gb" data-collection="landscapes mare"
          data-title="WHITE CLIFF" data-location="Seven Sisters Cliffs, England" data-date="25.09.2023"
          data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 100">
@@ -481,6 +473,493 @@
          data-title="VIEWS FROM A LONG-NAMED TOWN" data-location="Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch, Wales" data-date="09.09.2023"
          data-camera="Nikon D3200" data-aperture="f/6.3" data-shutter="1/800s" data-iso="ISO 100">
         <img src="../assets/images/europe/698CCD19-0C2E-4C40-81A1-BE6CA65A998A_1_105_c.jpg" alt="Wales" loading="lazy" width="1087" height="723">
+    </div>
+
+    <div class="g-item" data-country="gr" data-collection="mare fauna"
+         data-title="JUMPING TUNA" data-location="Skyros, Greece" data-date="08.08.2024"
+         data-camera="Sony α7 IV" data-aperture="f/5.0" data-shutter="1/5000s" data-iso="ISO 320">
+        <img src="../assets/images/europe/DSC0148.jpg" alt="Skyros, Greece" loading="lazy" width="2703" height="1802">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="landscapes colours"
+         data-title="CANYONLANDS COLOURS" data-location="Canyonlands, USA" data-date="06.09.2025"
+         data-camera="Sony α7 IV" data-aperture="f/6.3" data-shutter="1/640s" data-iso="ISO 250">
+        <img src="../assets/images/americas/DSC0564.jpg" alt="Canyonlands, USA" loading="lazy" width="6859" height="4573">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="mare colours"
+         data-title="CLOUDS. RAYS. SHADOWS. WATER." data-location="Agua Amarga, Spain" data-date="21.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/5" data-shutter="1/1600s" data-iso="ISO 160">
+        <img src="../assets/images/europe/DSC0766.jpg" alt="Agua Amarga, Spain" loading="lazy" width="6988" height="4659">
+    </div>
+
+    <div class="g-item" data-country="it" data-collection="architecture street"
+         data-title="AN ARCH IN SIENA" data-location="Siena, Italy" data-date="07.09.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 1250">
+        <img src="../assets/images/europe/DSC0163_2.jpg" alt="Siena, Italy" loading="lazy" width="3801" height="5701">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="mare architecture landscapes"
+         data-title="AGUA AMARGA" data-location="Agua Amarga, Spain" data-date="22.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/6.3" data-shutter="1/800s" data-iso="ISO 160">
+        <img src="../assets/images/europe/DSC0980.jpg" alt="Agua Amarga, Spain" loading="lazy" width="6429" height="4286">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="mare people colours"
+         data-title="PEACEFUL SUNBATHING" data-location="San Jose, Spain" data-date="25.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/5.6" data-shutter="1/1250s" data-iso="ISO 80">
+        <img src="../assets/images/europe/DSC1644.jpg" alt="San Jose, Spain" loading="lazy" width="6903" height="4602">
+    </div>
+
+    <div class="g-item" data-country="it" data-collection="architecture street"
+         data-title="COLUMNS OF HOUSES" data-location="San Gimignano, Italy" data-date="07.09.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 320">
+        <img src="../assets/images/europe/DSC0172.jpg" alt="San Gimignano, Italy" loading="lazy" width="6823" height="4549">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="landscapes"
+         data-title="BLACK AND WHITE DUNES" data-location="Agua Amarga, Spain" data-date="22.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/6.3" data-shutter="1/800s" data-iso="ISO 160">
+        <img src="../assets/images/europe/DSC1720.jpg" alt="Agua Amarga, Spain" loading="lazy" width="6852" height="4568">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="mare people landscapes"
+         data-title="POST KITING" data-location="Fuerteventura, Spain" data-date="20.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/6.3" data-shutter="1/800s" data-iso="ISO 160">
+        <img src="../assets/images/europe/63B94FD6-4ED1-4D4D-AE48-E6E1D6B907F51102o.jpg" alt="Fuerteventura, Spain" loading="lazy" width="2147" height="1431">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="street architecture"
+         data-title="THE PALACE" data-location="San Francisco, USA" data-date="17.09.2025"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/500s" data-iso="ISO 50">
+        <img src="../assets/images/americas/DSC1047.jpg" alt="San Francisco, USA" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="it" data-collection="street"
+         data-title="TUK TUK IN SAN GIMIGNANO" data-location="San Gimignano, Italy" data-date="07.09.2024"
+         data-camera="Sony α7 IV" data-aperture="f/9" data-shutter="1/1600s" data-iso="ISO 3200">
+        <img src="../assets/images/europe/DSC0212.jpg" alt="San Gimignano, Italy" loading="lazy" width="4429" height="6643">
+    </div>
+
+    <div class="g-item" data-country="gr" data-collection="mare landscapes"
+         data-title="A SIMPLE LIFE" data-location="Kottes, Greece" data-date="05.08.2024"
+         data-camera="Sony α7 IV" data-aperture="f/22" data-shutter="1/6400s" data-iso="ISO 12800">
+        <img src="../assets/images/europe/DSC0089.jpg" alt="Kottes, Greece" loading="lazy" width="6917" height="4611">
+    </div>
+
+    <div class="g-item" data-country="cz" data-collection="street architecture"
+         data-title="CROSSING OF THE BRIDGE" data-location="Prague, Czech Republic" data-date="09.11.2024"
+         data-camera="Sony α7 IV" data-aperture="f/8" data-shutter="1/1600s" data-iso="ISO 1600">
+        <img src="../assets/images/europe/DSC0248.jpg" alt="Prague, Czech Republic" loading="lazy" width="6723" height="4482">
+    </div>
+
+    <div class="g-item" data-country="gr" data-collection="mare"
+         data-title="FISHERS' NETS" data-location="Kottes, Greece" data-date="04.08.2024"
+         data-camera="Sony α7 IV" data-aperture="f/10" data-shutter="1/4000s" data-iso="ISO 6400">
+        <img src="../assets/images/europe/DSC0060.jpg" alt="Kottes, Greece" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="lk" data-collection="people landscapes"
+         data-title="HARD WORK: 1" data-location="Ella, Sri Lanka" data-date="26.05.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4.5" data-shutter="1/1250s" data-iso="ISO 100">
+        <img src="../assets/images/asia/DSC2663.jpg" alt="Ella, Sri Lanka" loading="lazy" width="3638" height="2425">
+    </div>
+
+    <div class="g-item" data-country="gr" data-collection="architecture landscapes"
+         data-title="HUMAN WONDER WORK" data-location="Meteora, Greece" data-date="17.08.2024"
+         data-camera="Sony α7 IV" data-aperture="f/22" data-shutter="1/250s" data-iso="ISO 200">
+        <img src="../assets/images/europe/DSC0070.jpg" alt="Meteora, Greece" loading="lazy" width="6681" height="4454">
+    </div>
+
+    <div class="g-item" data-country="lk" data-collection="people landscapes"
+         data-title="HARD WORK: 2" data-location="Ella, Sri Lanka" data-date="26.05.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4.5" data-shutter="1/1250s" data-iso="ISO 125">
+        <img src="../assets/images/asia/DSC2659.jpg" alt="Ella, Sri Lanka" loading="lazy" width="6526" height="4351">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="street colours"
+         data-title="COLES" data-location="Malaga, Spain" data-date="29.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1000s" data-iso="ISO 2000">
+        <img src="../assets/images/europe/DSC1837.jpg" alt="Malaga, Spain" loading="lazy" width="4609" height="6913">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="street colours"
+         data-title="FISH AND SPICES" data-location="Malaga, Spain" data-date="29.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1000s" data-iso="ISO 2000">
+        <img src="../assets/images/europe/DSC1835.jpg" alt="Malaga, Spain" loading="lazy" width="4197" height="6295">
+    </div>
+
+    <div class="g-item" data-country="dk" data-collection="street colours"
+         data-title="STILL IN COPENHAGEN" data-location="Copenhagen, Denmark" data-date="16.07.2024"
+         data-camera="Sony α7 IV" data-aperture="f/10" data-shutter="1/4000s" data-iso="ISO 8000">
+        <img src="../assets/images/europe/DSC0050.jpg" alt="Copenhagen, Denmark" loading="lazy" width="6899" height="4599">
+    </div>
+
+    <div class="g-item" data-country="it" data-collection="landscapes"
+         data-title="MONT BLANC" data-location="Mont Blanc, Italy" data-date="22.10.2023"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/2500s" data-iso="ISO 50">
+        <img src="../assets/images/europe/DSC0683.jpg" alt="Mont Blanc, Italy" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="street colours"
+         data-title="MERCADO ESPANOL" data-location="Malaga, Spain" data-date="29.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1000s" data-iso="ISO 2500">
+        <img src="../assets/images/europe/DSC1841.jpg" alt="Malaga, Spain" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="landscapes"
+         data-title="WINDOW ON THE CANYONS" data-location="Canyonlands, USA" data-date="06.09.2025"
+         data-camera="Sony α7 IV" data-aperture="f/13" data-shutter="1/200s" data-iso="ISO 250">
+        <img src="../assets/images/americas/DSC0550.jpg" alt="Canyonlands, USA" loading="lazy" width="6237" height="4158">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="people"
+         data-title="THE DUTCH" data-location="Rodalquilar, Spain" data-date="22.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/5.6" data-shutter="1/2000s" data-iso="ISO 200">
+        <img src="../assets/images/europe/DSC1114.jpg" alt="Rodalquilar, Spain" loading="lazy" width="4672" height="7008">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="landscapes"
+         data-title="MACRO THAT LOOKS LIKE MICRO" data-location="Yellowstone, USA" data-date="11.09.2025"
+         data-camera="Sony α7 IV" data-aperture="f/7.1" data-shutter="1/800s" data-iso="ISO 160">
+        <img src="../assets/images/americas/DSC0977.jpg" alt="Yellowstone, USA" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="it" data-collection="landscapes"
+         data-title="TUSCAN HILLS" data-location="San Gimignano, Italy" data-date="07.09.2024"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/1600s" data-iso="ISO 400">
+        <img src="../assets/images/europe/DSC0180.jpg" alt="San Gimignano, Italy" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="landscapes"
+         data-title="STILL IN RODALQUILAR" data-location="Rodalquilar, Spain" data-date="22.01.2024"
+         data-camera="Sony α7 IV" data-aperture="f/10" data-shutter="1/640s" data-iso="ISO 200">
+        <img src="../assets/images/europe/DSC1261.jpg" alt="Rodalquilar, Spain" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="lk" data-collection="landscapes"
+         data-title="WATERFALL" data-location="Haputale, Sri Lanka" data-date="31.05.2024"
+         data-camera="Sony α7 IV" data-aperture="f/10" data-shutter="1/50s" data-iso="ISO 50">
+        <img src="../assets/images/asia/DSC0184.jpg" alt="Haputale, Sri Lanka" loading="lazy" width="4672" height="7008">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="fauna"
+         data-title="BLACK BEAR" data-location="Yellowstone, USA" data-date="11.09.2025"
+         data-camera="Sony α7 IV" data-aperture="f/4" data-shutter="1/320s" data-iso="ISO 250">
+        <img src="../assets/images/americas/DSC0943-2.jpg" alt="Yellowstone, USA" loading="lazy" width="4407" height="2938">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="landscapes fauna"
+         data-title="BISON IN YELLOWSTONE" data-location="Yellowstone, USA" data-date="10.09.2025"
+         data-camera="Sony α7 IV" data-aperture="f/6.3" data-shutter="1/320s" data-iso="ISO 125">
+        <img src="../assets/images/americas/DSC0811.jpg" alt="Yellowstone, USA" loading="lazy" width="6879" height="4586">
+    </div>
+
+
+    <!-- ── New photos — fill in metadata ── -->
+
+    <!-- ── MISSING EXIF ONLY (has title · date · camera) ── -->
+
+    <div class="g-item" data-country="es" data-collection="mare people landscapes"
+         data-title="EVENING SWIM" data-location="Fuerteventura, Spain" data-date="18.04.2024"
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/europe/8BA08116-0C9A-4D5C-B27E-1091EFA941561102o.jpg" alt="" loading="lazy" width="2126" height="1417">
+    </div>
+
+    <div class="g-item" data-country="es" data-collection="landscapes"
+         data-title="VOLCANOES IN THE DESERT" data-location="Fuerteventura, Spain" data-date="18.04.2024"
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/europe/DE8E3E8E-6B5C-415F-A776-55410590B7F91102o.jpg" alt="Fuerteventura, Spain" loading="lazy" width="2172" height="1448">
+    </div>
+
+    <!-- ── MISSING TITLE + DATE (camera known · Olympus OM-1 · film) ── -->
+
+    <div class="g-item" data-country="cl" data-collection="film landscapes"
+         data-title="" data-location="Torres del Paine, Chile" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/000015400006.jpg" alt="Torres del Paine, Chile" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="cl" data-collection="film fauna"
+         data-title="" data-location="Torres del Paine, Chile" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/000015400014.jpg" alt="Torres del Paine, Chile" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="cl" data-collection="film landscapes"
+         data-title="" data-location="Torres del Paine, Chile" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/000015400016.jpg" alt="Torres del Paine, Chile" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="cl" data-collection="film landscapes fauna"
+         data-title="" data-location="Torres del Paine, Chile" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/000015400020.jpg" alt="Torres del Paine, Chile" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="cl" data-collection="film landscapes"
+         data-title="" data-location="Torres del Paine, Chile" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/000015400027.jpg" alt="Torres del Paine, Chile" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="ar" data-collection="film landscapes"
+         data-title="" data-location="Mt Fitzroy, Argentina" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/000015410013.jpg" alt="Mt Fitzroy, Argentina" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0185.JPG" alt="New York, USA" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0187 2.JPG" alt="New York, USA" loading="lazy" width="2075" height="3130">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0188.JPG" alt="New York, USA" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0198.JPG" alt="New York, USA" loading="lazy" width="1829" height="2759">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film people street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0200.JPG" alt="New York, USA" loading="lazy" width="2075" height="3130">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film people street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0201.JPG" alt="New York, USA" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film people street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0202.JPG" alt="New York, USA" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0203.JPG" alt="New York, USA" loading="lazy" width="3020" height="2001">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film mare architecture"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0205.JPG" alt="New York, USA" loading="lazy" width="3077" height="2039">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film people street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0206.JPG" alt="New York, USA" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0207.JPG" alt="New York, USA" loading="lazy" width="3025" height="2005">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture mare"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0209.JPG" alt="New York, USA" loading="lazy" width="3025" height="2005">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film street"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0210.JPG" alt="New York, USA" loading="lazy" width="2005" height="3026">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film architecture mare"
+         data-title="" data-location="New York, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0211.JPG" alt="New York, USA" loading="lazy" width="3025" height="2005">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="film street architecture"
+         data-title="" data-location="Boston, USA" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/americas/IMG_0214 2.JPG" alt="Boston, USA" loading="lazy" width="3130" height="2075">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Brienz, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3598 3.JPG" alt="Brienz, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Sils, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3605.JPG" alt="Sils, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Pizol, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3606.JPG" alt="Pizol, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Zermatt, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3607.JPG" alt="Zermatt, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Göschenen, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3608.JPG" alt="Göschenen, Switzerland" loading="lazy" width="2132" height="3183">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Göschenen, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3619.JPG" alt="Göschenen, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes fauna"
+         data-title="" data-location="Brienz, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3622 3.JPG" alt="Brienz, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes flora"
+         data-title="" data-location="Saxer Lücke, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3623.JPG" alt="Saxer Lücke, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Brienz, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3624.JPG" alt="Brienz, Switzerland" loading="lazy" width="2132" height="3183">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Saxer Lücke, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3625.JPG" alt="Saxer Lücke, Switzerland" loading="lazy" width="2132" height="3183">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Pizol, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3628.JPG" alt="Pizol, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Zermatt, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3631.JPG" alt="Zermatt, Switzerland" loading="lazy" width="3188" height="2137">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="film landscapes"
+         data-title="" data-location="Öschinensee, Switzerland" data-date=""
+         data-camera="Olympus OM-1">
+        <img src="../assets/images/europe/IMG_3640.JPG" alt="Öschinensee, Switzerland" loading="lazy" width="2125" height="3173">
+    </div>
+
+    <!-- ── MISSING TITLE + DATE + EXIF (camera known · Sony α7 IV) ── -->
+
+    <div class="g-item" data-country="lk" data-collection="landscapes"
+         data-title="" data-location="Ella, Sri Lanka" data-date=""
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/DSC2714.jpg" alt="Ella, Sri Lanka" loading="lazy" width="4434" height="6651">
+    </div>
+
+    <div class="g-item" data-country="lk" data-collection="fauna landscapes"
+         data-title="" data-location="Yala National Park, Sri Lanka" data-date=""
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/DSC2488.jpg" alt="Yala National Park, Sri Lanka" loading="lazy" width="4427" height="2951">
+    </div>
+
+    <div class="g-item" data-country="lk" data-collection="colours fauna"
+         data-title="" data-location="Ella, Sri Lanka" data-date=""
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/DSC2643.jpg" alt="Ella, Sri Lanka" loading="lazy" width="2958" height="1972">
+    </div>
+
+    <div class="g-item" data-country="lk" data-collection="fauna landscapes"
+         data-title="" data-location="Yala National Park, Sri Lanka" data-date=""
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/DSC2544.jpg" alt="Yala National Park, Sri Lanka" loading="lazy" width="6916" height="4611">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="colours landscapes"
+         data-title="" data-location="Bryce Canyon, USA" data-date=""
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/americas/DSC0495.JPG" alt="Bryce Canyon, USA" loading="lazy" width="7008" height="4672">
+    </div>
+
+    <div class="g-item" data-country="us" data-collection="colours architecture"
+         data-title="" data-location="San Francisco, USA" data-date=""
+         data-camera="Sony α7 IV" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/americas/DSC1101.jpg" alt="San Francisco, USA" loading="lazy" width="6142" height="4095">
+    </div>
+
+    <!-- ── MISSING CAMERA + EXIF (has title · date) ── -->
+
+    <div class="g-item" data-country="eg" data-collection="fauna mare"
+         data-title="UNDERWATER RACE" data-location="Red Sea, Egypt" data-date="27.10.2019"
+         data-camera="" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/africa/IMG_0051.jpg" alt="Red Sea, Egypt" loading="lazy" width="2049" height="1537">
+    </div>
+
+    <div class="g-item" data-country="ch" data-collection="landscapes"
+         data-title="FREEZING WATERFALL" data-location="Surlej, Switzerland" data-date="25.11.2020"
+         data-camera="" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/europe/IMG_6059.JPG" alt="Surlej, Switzerland" loading="lazy" width="5377" height="3575">
+    </div>
+
+    <div class="g-item" data-country="ma" data-collection="landscapes"
+         data-title="PALMS IN THE SAHARA" data-location="Sahara Desert, Morocco" data-date="27.12.2018"
+         data-camera="" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/africa/IMG_9644.jpeg" alt="Sahara Desert, Morocco" loading="lazy" width="1600" height="1200">
+    </div>
+
+    <!-- ── MISSING EVERYTHING (title · date · camera) ── -->
+
+    <div class="g-item" data-country="id" data-collection="fauna"
+         data-title="" data-location="Uluwatu, Indonesia" data-date=""
+         data-camera="" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/DSC_0138.jpg" alt="Uluwatu, Indonesia" loading="lazy" width="4134" height="3307">
+    </div>
+
+    <div class="g-item" data-country="id" data-collection="fauna"
+         data-title="" data-location="Ulun Danu Beratan Temple, Indonesia" data-date=""
+         data-camera="" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/DSC_0335.jpg" alt="Ulun Danu Beratan Temple, Indonesia" loading="lazy" width="5336" height="3002">
+    </div>
+
+    <div class="g-item" data-country="sg" data-collection="architecture landscapes street"
+         data-title="" data-location="Singapore, Singapore" data-date=""
+         data-camera="" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/IMG_2782.jpeg" alt="Singapore, Singapore" loading="lazy" width="4032" height="3024">
+    </div>
+
+    <div class="g-item" data-country="my" data-collection="street"
+         data-title="" data-location="Penang, Malaysia" data-date=""
+         data-camera="" data-aperture="" data-shutter="" data-iso="">
+        <img src="../assets/images/asia/DSC_01.jpg" alt="Penang, Malaysia" loading="lazy" width="5000" height="4000">
     </div>
 
 </div>
@@ -525,6 +1004,6 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="../assets/data/countries.js"></script>
-<script src="../assets/js/gallery.js"></script>
+<script src="../assets/js/gallery.js?v=3"></script>
 </body>
 </html>

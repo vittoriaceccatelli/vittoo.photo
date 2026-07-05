@@ -244,13 +244,14 @@ document.addEventListener('DOMContentLoaded', function () {
     (function buildMonthTicks() {
         var spine = document.querySelector('.vtl__spine');
         if (!spine) return;
-        var yearSpans = Array.from(spine.querySelectorAll('span'));
+        var yearSpans = Array.from(spine.querySelectorAll('span:not(.vtl__country)'));
         if (yearSpans.length < 2) return;
 
         var spineTop = spine.getBoundingClientRect().top + window.scrollY;
 
         yearSpans.forEach(function (span, i) {
             if (i >= yearSpans.length - 1) return;
+            if (i >= yearSpans.length - 3) return; /* no month ticks below 2022 */
             var r1   = span.getBoundingClientRect();
             var r2   = yearSpans[i + 1].getBoundingClientRect();
             var topY = (r1.top + window.scrollY + r1.height / 2) - spineTop;
@@ -263,6 +264,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 spine.appendChild(tick);
             }
         });
+    }());
+
+    // ── Grain overlay (canvas-based, cross-browser) ──────────────────
+    (function () {
+        var c = document.createElement('canvas');
+        c.width = 256; c.height = 256;
+        var ctx = c.getContext('2d');
+        var id  = ctx.createImageData(256, 256);
+        for (var i = 0; i < id.data.length; i += 4) {
+            var v = Math.floor(Math.random() * 256);
+            id.data[i] = id.data[i + 1] = id.data[i + 2] = v;
+            id.data[i + 3] = 255;
+        }
+        ctx.putImageData(id, 0, 0);
+        var el = document.createElement('div');
+        el.setAttribute('style',
+            'position:fixed;inset:0;pointer-events:none;z-index:9998;' +
+            'background-image:url(' + c.toDataURL() + ');' +
+            'background-size:256px 256px;' +
+            'opacity:0.07;' +
+            'mix-blend-mode:soft-light'
+        );
+        document.body.appendChild(el);
     }());
 
     // ── 3. Section dot navigation ───────────────────────────────────

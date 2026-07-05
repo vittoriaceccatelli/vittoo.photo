@@ -149,7 +149,9 @@ document.addEventListener('DOMContentLoaded', function () {
         'OM': 'Oman',         'MY': 'Malaysia',       'MA': 'Morocco',
         'ZA': 'South Africa', 'EG': 'Egypt',          'LA': 'Laos',
         'NO': 'Norway',       'CH': 'Switzerland',    'IT': 'Italy',
-        'LK': 'Sri Lanka'
+        'LK': 'Sri Lanka',    'ES': 'Spain',          'DK': 'Denmark',
+        'CZ': 'Czech Republic','SG': 'Singapore',
+        'CL': 'Chile',         'AR': 'Argentina'
     };
 
     var PINS = {
@@ -191,9 +193,42 @@ document.addEventListener('DOMContentLoaded', function () {
         'Simi, Greece':                     [36.610,  27.840],
         'South Africa':                     [-33.925, 18.424],
         'Surlej, Switzerland':              [46.467,   9.717],
-        'Ubud, Indonesia':                  [-8.507, 115.262],
-        'Uluwatu, Indonesia':               [-8.829, 115.088],
-        'Val Ferret, Italy':                [45.867,   7.167]
+        'Ubud, Indonesia':                     [-8.507, 115.262],
+        'Uluwatu, Indonesia':                  [-8.829, 115.088],
+        'Ulun Danu Beratan Temple, Indonesia': [-8.275, 115.167],
+        'Val Ferret, Italy':                   [45.867,   7.167],
+        'Agua Amarga, Spain':                  [37.008,  -1.986],
+        'Bryce Canyon, USA':                   [37.593, -112.187],
+        'Canyonlands, USA':                    [38.200, -109.930],
+        'Copenhagen, Denmark':                 [55.676,  12.568],
+        'Ella, Sri Lanka':                     [ 6.867,  81.047],
+        'Fuerteventura, Spain':                [28.300, -14.000],
+        'Haputale, Sri Lanka':                 [ 6.764,  80.958],
+        'Kottes, Greece':                      [38.330,  23.300],
+        'Malaga, Spain':                       [36.721,  -4.421],
+        'Meteora, Greece':                     [39.722,  21.631],
+        'Mont Blanc, Italy':                   [45.833,   6.865],
+        'Penang, Malaysia':                    [ 5.414, 100.329],
+        'Prague, Czech Republic':              [50.075,  14.437],
+        'Rodalquilar, Spain':                  [36.868,  -2.032],
+        'San Gimignano, Italy':                [43.467,  11.043],
+        'San Jose, Spain':                     [36.788,  -2.108],
+        'Siena, Italy':                        [43.318,  11.331],
+        'Singapore, Singapore':                [ 1.352, 103.820],
+        'Skyros, Greece':                      [38.900,  24.500],
+        'Yala National Park, Sri Lanka':       [ 6.366,  81.519],
+        'Yellowstone, USA':                    [44.427, -110.589],
+        'Boston, USA':                         [42.361,  -71.057],
+        'Brienz, Switzerland':                 [46.758,    8.034],
+        'Göschenen, Switzerland':              [46.669,    8.587],
+        'Mt Fitzroy, Argentina':               [-49.272, -73.048],
+        'New York, USA':                       [40.713,  -74.006],
+        'Öschinensee, Switzerland':            [46.477,    7.636],
+        'Pizol, Switzerland':                  [46.962,    9.377],
+        'Saxer Lücke, Switzerland':            [47.175,    9.272],
+        'Sils, Switzerland':                   [46.432,    9.763],
+        'Torres del Paine, Chile':             [-50.942,  -73.406],
+        'Zermatt, Switzerland':                [46.020,    7.747]
     };
 
     // ── Animated counter ──────────────────────────────────────
@@ -221,6 +256,12 @@ document.addEventListener('DOMContentLoaded', function () {
         mapHint.style.pointerEvents = 'none';
 
         mapPanelGrid.innerHTML = '';
+        var col1 = document.createElement('div');
+        var col2 = document.createElement('div');
+        col1.className = 'g-map-panel__col';
+        col2.className = 'g-map-panel__col';
+        mapPanelGrid.appendChild(col1);
+        mapPanelGrid.appendChild(col2);
         matched.forEach(function (item, idx) {
             var img = item.querySelector('img');
             var btn = document.createElement('button');
@@ -231,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
             t.loading = 'eager';
             btn.appendChild(t);
             btn.addEventListener('click', function () { openPanelAt(idx); });
-            mapPanelGrid.appendChild(btn);
+            (idx % 2 === 0 ? col1 : col2).appendChild(btn);
         });
 
         mapPanel.classList.add('is-open');

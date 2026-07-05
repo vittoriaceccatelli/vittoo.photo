@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Currently — Vittoria Ceccatelli</title>
+    <link rel="stylesheet" href="../assets/css/currently.css?v=5">
+</head>
+<body>
+
+<header class="cr-header" id="cr-header">
+    <a class="cr-home" href="../index.html">VC</a>
+    <div class="cr-header__tagline">ML &amp; Data Engineering</div>
+    <nav class="cr-nav">
+        <a href="../professional/">ARCHIVE</a>
+        <div class="cr-dropdown">
+            <button class="cr-dropdown__btn">PERSONAL</button>
+            <div class="cr-dropdown__menu">
+                <a href="collections.html">Photography</a>
+                <a href="opinions.html">Opinions</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="cr-main">
+
+    <div class="cr-intro">
+        <h1>Currently</h1>
+        <p>Active threads. Updated sporadically.</p>
+    </div>
+
+    <!-- ── Learning ──────────────────────────── -->
+    <section class="cr-section">
+        <h2>Learning</h2>
+
+        <div class="cr-item">
+            <div class="cr-item__row">
+                <span class="cr-item__name">Foundation Models in Medical Imaging</span>
+                <span class="cr-item__tag">ongoing</span>
+            </div>
+            <div class="cr-item__note">SAM, MedSAM, and the broader question of how promptable segmentation generalises across imaging modalities.</div>
+        </div>
+
+        <div class="cr-item">
+            <div class="cr-item__row">
+                <span class="cr-item__name">Causal Inference for ML</span>
+                <span class="cr-item__tag">ongoing</span>
+            </div>
+            <div class="cr-item__note">Trying to build more rigorous intuition for when correlation isn't enough — particularly relevant for clinical outcome prediction.</div>
+        </div>
+
+        <div class="cr-item">
+            <div class="cr-item__row">
+                <span class="cr-item__name">Rust</span>
+                <span class="cr-item__tag">beginner</span>
+            </div>
+            <div class="cr-item__note">Systems programming as a way to think more carefully about memory and performance — useful context even when writing Python.</div>
+        </div>
+
+    </section>
+
+    <!-- ── Reading ───────────────────────────── -->
+    <section class="cr-section">
+        <h2>Reading</h2>
+
+        <div class="cr-item">
+            <div class="cr-item__row">
+                <span class="cr-item__name">Add paper / book title</span>
+                <span class="cr-item__tag">paper</span>
+            </div>
+            <div class="cr-item__note">Add a short note on why it's interesting.</div>
+        </div>
+
+        <div class="cr-item">
+            <div class="cr-item__row">
+                <span class="cr-item__name">Add paper / book title</span>
+                <span class="cr-item__tag">book</span>
+            </div>
+            <div class="cr-item__note">Add a short note on why it's interesting.</div>
+        </div>
+
+    </section>
+
+    <!-- ── Thinking about ────────────────────── -->
+    <section class="cr-section">
+        <h2>Thinking About</h2>
+
+        <div class="cr-item">
+            <div class="cr-item__row">
+                <span class="cr-item__name">Synthetic data for rare clinical conditions</span>
+                <span class="cr-item__tag">question</span>
+            </div>
+            <div class="cr-item__note">How much can generative models reduce the annotation bottleneck in rare-disease imaging without introducing systematic bias?</div>
+        </div>
+
+        <div class="cr-item">
+            <div class="cr-item__row">
+                <span class="cr-item__name">What makes a pipeline clinically deployable</span>
+                <span class="cr-item__tag">question</span>
+            </div>
+            <div class="cr-item__note">The gap between a model that works on a dataset and one that a surgeon would trust in a workflow — regulation, uncertainty quantification, interpretability.</div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="cr-footer">
+    <a href="mailto:viki.ceccatelli@gmail.com">viki.ceccatelli@gmail.com</a>
+</footer>
+
+<script>
+    var header = document.getElementById('cr-header');
+    if (header) {
+        window.addEventListener('scroll', function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 10);
+        }, { passive: true });
+    }
+</script>
+
+</body>
+</html>
