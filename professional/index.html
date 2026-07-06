@@ -16,18 +16,23 @@
     <a class="pro-home" href="../index.html">VC</a>
     <div class="pro-header__tagline">ML &amp; Data Engineering</div>
     <nav class="pro-nav">
-        <a href="index.html" class="active">OVERVIEW</a>
+        <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
         <div class="pro-dropdown">
             <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
             <div class="pro-dropdown__menu">
-                <a href="thesis.html">Carotid Pipeline</a>
+                <a href="thesis.html">Carotid Analysis</a>
                 <a href="glucose.html">Glucose Prediction</a>
-                <a href="biomechanics.html">Postural Stability</a>
+                <a href="biomechanics.html">Biomechanics</a>
             </div>
         </div>
-        <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
-        <a href="../pages/currently.html">CURRENTLY</a>
-        <div class="pro-dropdown pro-dropdown--personal">
+        <div class="pro-dropdown">
+            <button class="pro-dropdown__btn" aria-expanded="false">PROFESSIONAL</button>
+            <div class="pro-dropdown__menu">
+                <a href="index.html">Archive</a>
+                <a href="../pages/currently.html">Currently</a>
+            </div>
+        </div>
+        <div class="pro-dropdown">
             <button class="pro-dropdown__btn" aria-expanded="false">PERSONAL</button>
             <div class="pro-dropdown__menu">
                 <a href="../pages/collections.html">Photography</a>
@@ -142,14 +147,6 @@
                     </div>
                 </div>
 
-                <div class="vtl-entry vtl-entry--left" style="--clr:#7888b5; top:100%; --dur-m:6; --bar-lane:1" data-card-pct="96.1">
-                    <div class="vtl-entry__card">
-                        <div class="vtl-entry__dates">2013 – 2020</div>
-                        <div class="vtl-entry__title">German School London: Dual Diploma</div>
-                        <div class="vtl-entry__place">London, United Kingdom</div>
-                        <div class="vtl-entry__desc">German Abitur 1.4 &nbsp;·&nbsp; IB Diploma 38 pts</div>
-                    </div>
-                </div>
 
             </div>
 
@@ -172,7 +169,7 @@
                 <div class="vtl-entry vtl-entry--right" style="--clr:#bf7c6a; top:11.69%; --dur-m:6; --bar-lane:1">
                     <a class="vtl-entry__card vtl-entry__card--link" href="thesis.html">
                         <div class="vtl-entry__dates">Sep 2025 – Mar 2026</div>
-                        <div class="vtl-entry__title">Master Thesis: Automated Carotid Artery Analysis Pipeline</div>
+                        <div class="vtl-entry__title">Master Thesis: A Standardized Pipeline for Automated Carotid Artery Analysis</div>
                         <div class="vtl-entry__place">Nezami Lab · Harvard Medical School · Brigham and Women's Hospital (Prof. Farhad Nezami)</div>
                         <div class="vtl-entry__desc">Built a fully automated end-to-end pipeline processing 111 CTA scans, generating 354 features per patient across morphological, calcification, and hemodynamic domains characterizing carotid stenosis.</div>
                     </a>
@@ -181,7 +178,7 @@
                 <div class="vtl-entry vtl-entry--right" style="--clr:#c4a040; top:20.78%; --dur-m:4; --bar-lane:1">
                     <a class="vtl-entry__card vtl-entry__card--link" href="glucose.html">
                         <div class="vtl-entry__dates">Feb 2025 – Jun 2025</div>
-                        <div class="vtl-entry__title">Semester Project: ML on Wearable Data &amp; Glucose Prediction</div>
+                        <div class="vtl-entry__title">Semester Project: Artificial Intelligence for Glucose Level Prediction using Wearable Device Data with and without A Food Log</div>
                         <div class="vtl-entry__place">ETH Zurich · Biomedical and Mobile Health Technology Lab (Prof. Dr. Carlo Menon)</div>
                         <div class="vtl-entry__desc">End-to-end ML pipelines for classification, regression, and time-series forecasting on multi-modal wearable data; 69 engineered features from a wearable device.</div>
                     </a>
@@ -190,7 +187,7 @@
                 <div class="vtl-entry vtl-entry--right" style="--clr:#b87848; top:36.36%; --dur-m:1; --bar-lane:1" data-card-pct="31.81">
                     <a class="vtl-entry__card vtl-entry__card--link" href="biomechanics.html">
                         <div class="vtl-entry__dates">Feb 2024 – Mar 2024</div>
-                        <div class="vtl-entry__title">Semester Project: Data Analysis</div>
+                        <div class="vtl-entry__title">Semester Project: Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals</div>
                         <div class="vtl-entry__place">ETH Zurich · Laboratory for Movement Biomechanics (Prof. Dr. Bill Taylor)</div>
                         <div class="vtl-entry__desc">Signal processing and statistical analysis on high-frequency EMG and force-plate time-series data; MATLAB pipelines for coherence analysis and data visualization.</div>
                     </a>
@@ -237,7 +234,13 @@
 
             <div class="vtl__col vtl__col--left">
 
-                <div class="vtl-entry vtl-entry--left" style="--clr:#7888b5; top:48.72%; --dur-m:76; --bar-lane:1">
+                <div class="vtl-entry vtl-entry--left" style="--clr:#7888b5; top:48.72%; --dur-m:76; --bar-lane:1; --extra-h: calc(5 * (200vh - 220px) / 77)" data-card-pct="15">
+                    <div class="vtl-entry__card">
+                        <div class="vtl-entry__dates">2013 – 2020</div>
+                        <div class="vtl-entry__title">German School London: Dual Diploma</div>
+                        <div class="vtl-entry__place">London, United Kingdom</div>
+                        <div class="vtl-entry__desc">German Abitur 1.4 &nbsp;·&nbsp; IB Diploma 38 pts</div>
+                    </div>
                 </div>
 
                 <div class="vtl-entry vtl-entry--left" style="--clr:#90bac8; top:100%; --dur-m:77; --bar-lane:1" data-card-pct="75.3">
@@ -268,7 +271,7 @@
 
             <a class="pro-card" href="thesis.html" style="--card-clr: #7a9fc9">
                 <div class="pro-card__meta">2025 – 2026 &nbsp;·&nbsp; Nezami Lab · Harvard Medical School &amp; Brigham and Women's Hospital</div>
-                <div class="pro-card__title">Master Thesis: Automated Carotid Artery Analysis Pipeline</div>
+                <div class="pro-card__title">Master Thesis: A Standardized Pipeline for Automated Carotid Artery Analysis</div>
                 <div class="pro-card__desc">
                     End-to-end fully-automated pipeline for carotid CTA analysis including deep learning segmentation
                     (nnU-Net, SegMamba, SwinUNETR), morphological analysis, calcification mapping,
@@ -289,7 +292,7 @@
 
             <a class="pro-card" href="glucose.html" style="--card-clr: #c4a040">
                 <div class="pro-card__meta">2025 &nbsp;·&nbsp; ETH Zurich · Biomedical and Mobile Health Technology Lab</div>
-                <div class="pro-card__title">Semester Project: ML for Glucose Prediction from Wearable Data</div>
+                <div class="pro-card__title">Semester Project: Artificial Intelligence for Glucose Level Prediction using Wearable Device Data with and without A Food Log</div>
                 <div class="pro-card__desc">
                     Multi-task ML pipelines for non-invasive glucose monitoring using wearable physiological
                     data covering classification, regression, and 6-hour time-series forecasting.
@@ -313,7 +316,7 @@
 
             <a class="pro-card" href="biomechanics.html" style="--card-clr: #9484b8">
                 <div class="pro-card__meta">2024 &nbsp;·&nbsp; ETH Zurich · Laboratory for Movement Biomechanics</div>
-                <div class="pro-card__title">Semester Project: Auditory Noise Stimulation &amp; Postural Stability</div>
+                <div class="pro-card__title">Semester Project: Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals</div>
                 <div class="pro-card__desc">
                     Signal processing and coherence analysis on EMG and force-plate (CoP) data from
                     100 participants (50 elderly, 50 young). Developed MATLAB pipelines for EMG–EMG
@@ -419,10 +422,6 @@
     </section>
 
 </main>
-
-<footer class="pro-footer">
-    <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a>
-</footer>
 
 <script src="../assets/js/professional.js"></script>
 </body>

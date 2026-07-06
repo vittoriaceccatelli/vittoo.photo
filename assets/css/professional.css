@@ -781,9 +781,10 @@ a {
 /* ── Project figures ─────────────────────── */
 
 .pro-figure {
-    margin: 32px 0;
+    margin: 40px auto;
+    max-width: 680px;
     border: 1px solid var(--border);
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 .pro-figure img {
@@ -793,11 +794,26 @@ a {
 }
 
 .pro-figure figcaption {
-    padding: 12px 18px;
-    font-size: 11px;
+    padding: 10px 16px;
+    font-size: 10px;
     color: var(--muted);
     border-top: 1px solid var(--border);
     line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+/* ── Thesis highlight ────────────────────── */
+
+.thesis-highlight {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--text);
+    border-left: 2px solid var(--accent, #5a80b5);
+    padding-left: 14px;
+    margin-top: 28px;
+    opacity: 0.75;
 }
 
 /* ── Scroll reveal ───────────────────────── */
@@ -1472,8 +1488,8 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
 
 .vtl--compact .vtl-entry--left::before,
 .vtl--compact .vtl-entry--right::before {
-    top: calc(var(--dur-m, 1) * -3.333px);
-    height: calc(var(--dur-m, 1) * 3.333px);
+    top: calc(var(--dur-m, 1) * -3.333px - var(--extra-h, 0px));
+    height: calc(var(--dur-m, 1) * 3.333px + var(--extra-h, 0px));
 }
 
 /* ── Skills list ─────────────────────────── */

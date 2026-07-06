@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Postural Stability — Vittoria Ceccatelli</title>
-    <meta name="description" content="Auditory noise stimulation and postural stability — EMG and force-plate signal processing on 100 participants, quantifying stochastic resonance effects on fall risk. ETH Zurich semester project by Vittoria Ceccatelli.">
-    <meta property="og:title" content="Postural Stability — Vittoria Ceccatelli">
+    <title>Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals — Vittoria Ceccatelli</title>
+    <meta name="description" content="Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals — Semester project by Vittoria Ceccatelli at ETH Zurich.">
+    <meta property="og:title" content="Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals — Vittoria Ceccatelli">
     <meta property="og:description" content="Signal processing and coherence analysis showing subthreshold auditory noise reduces CoP velocity and EMG coherence in elderly participants.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="../assets/css/professional.css?v=31">
@@ -15,17 +15,22 @@
 <header class="pro-header">
     <a class="pro-home" href="../index.html">VC</a>
     <nav class="pro-nav">
-        <a href="index.html">OVERVIEW</a>
-        <div class="pro-dropdown active">
+        <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <div class="pro-dropdown">
             <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
             <div class="pro-dropdown__menu">
-                <a href="thesis.html">Carotid Pipeline</a>
+                <a href="thesis.html">Carotid Analysis</a>
                 <a href="glucose.html">Glucose Prediction</a>
-                <a href="biomechanics.html" class="active">Postural Stability</a>
+                <a href="biomechanics.html">Biomechanics</a>
             </div>
         </div>
-        
-        <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <div class="pro-dropdown">
+            <button class="pro-dropdown__btn" aria-expanded="false">PROFESSIONAL</button>
+            <div class="pro-dropdown__menu">
+                <a href="index.html">Archive</a>
+                <a href="../pages/currently.html">Currently</a>
+            </div>
+        </div>
         <div class="pro-dropdown">
             <button class="pro-dropdown__btn" aria-expanded="false">PERSONAL</button>
             <div class="pro-dropdown__menu">
@@ -41,7 +46,7 @@
     <!-- ── Hero ─────────────────────────────── -->
     <section class="pro-intro" id="background">
         <p class="pro-meta-label">Semester Project &nbsp;·&nbsp; ETH Zurich · Laboratory for Movement Biomechanics &nbsp;·&nbsp; Feb – Mar 2024</p>
-        <h1>Auditory Noise Stimulation &amp; Postural Stability</h1>
+        <h1>Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals</h1>
         <p class="tagline">
             Signal processing and coherence analysis of EMG and force-plate data from 100 participants,
             quantifying how subthreshold auditory white noise stimulation affects neuromuscular
@@ -85,25 +90,25 @@
 
         <div class="pipeline">
             <div class="pipeline__step">
-                <div class="pipeline__num">EO</div>
+                <div class="pipeline__num">01</div>
                 <div class="pipeline__body">
-                    <strong>Eyes Open</strong>
+                    <strong>Eyes Open (EO)</strong>
                     <span>Baseline condition. Full sensory integration.</span>
                 </div>
             </div>
 
             <div class="pipeline__step">
-                <div class="pipeline__num">EC</div>
+                <div class="pipeline__num">02</div>
                 <div class="pipeline__body">
-                    <strong>Eyes Closed</strong>
+                    <strong>Eyes Closed (EC)</strong>
                     <span>Visual input removed. Increased reliance on vestibular and somatosensory inputs; expected increase in sway.</span>
                 </div>
             </div>
 
             <div class="pipeline__step">
-                <div class="pipeline__num">SUB</div>
+                <div class="pipeline__num">03</div>
                 <div class="pipeline__body">
-                    <strong>Eyes Closed + Subthreshold Noise</strong>
+                    <strong>Eyes Closed + Subthreshold Noise (SUB)</strong>
                     <span>
                         Auditory white noise at a volume just below each participant's personal hearing threshold.
                         The hypothesis: noise may enhance peripheral sensory signals via stochastic resonance,
@@ -113,10 +118,10 @@
             </div>
 
             <div class="pipeline__step">
-                <div class="pipeline__num">SUPRA</div>
+                <div class="pipeline__num">04</div>
                 <div class="pipeline__body">
-                    <strong>Eyes Closed + Suprathreshold Noise</strong>
-                    <span>Auditory white noise above the hearing threshold. Control for the suprathreshold condition; expected to be less beneficial than subthreshold.</span>
+                    <strong>Eyes Closed + Suprathreshold Noise (SUPRA)</strong>
+                    <span>Auditory white noise above the hearing threshold. Control condition; expected to be less beneficial than subthreshold.</span>
                 </div>
             </div>
         </div>
@@ -191,10 +196,32 @@
             age-related compensation for reduced somatosensory acuity.
         </p>
 
-        <figure class="pro-figure">
-            <img src="../assets/images/projects/bio-results.png" alt="Combined CoP mean velocity metrics for elderly participants across four conditions">
-            <figcaption>Combined CoP velocity metrics for the elderly group — radial, mediolateral, and anteroposterior mean velocity across all four conditions. Subthreshold noise (SUB) consistently produces the lowest values across all three parameters, while suprathreshold noise does not achieve the same reduction.</figcaption>
-        </figure>
+        <p style="margin-top: 28px;">
+            The plots below show ipsilateral EMG–EMG coherence between the Soleus (SOL) and
+            Gastrocnemius medialis (GAM) across all five frequency bands and all four conditions,
+            for the left and right leg separately and for both participant groups. These muscles
+            were selected as exemplary representatives of the M. Triceps Surae — the primary
+            ankle plantarflexor group driving anteroposterior postural corrections.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
+            <figure class="pro-figure" style="margin: 0;">
+                <img src="../assets/images/projects/biomech-annex4-41.png" alt="SOL_L GAM_L coherence — young participants">
+                <figcaption>Left leg (SOL_L – GAM_L), young participants. Coherence is highest in the delta band. Condition differences are modest — consistent with a higher baseline stability leaving less room for improvement.</figcaption>
+            </figure>
+            <figure class="pro-figure" style="margin: 0;">
+                <img src="../assets/images/projects/biomech-annex4-42.png" alt="SOL_R GAM_R coherence — young participants">
+                <figcaption>Right leg (SOL_R – GAM_R), young participants. Similar pattern to the left leg; subthreshold noise shows minimal reduction relative to eyes closed.</figcaption>
+            </figure>
+            <figure class="pro-figure" style="margin: 0;">
+                <img src="../assets/images/projects/biomech-annex4-43.png" alt="SOL_L GAM_L coherence — older participants">
+                <figcaption>Left leg (SOL_L – GAM_L), older participants. Coherence values are markedly higher than in the young group. Subthreshold noise (yellow) consistently reduces coherence below the eyes-closed level across delta, theta, and alpha bands.</figcaption>
+            </figure>
+            <figure class="pro-figure" style="margin: 0;">
+                <img src="../assets/images/projects/biomech-annex4-44.png" alt="SOL_R GAM_R coherence — older participants">
+                <figcaption>Right leg (SOL_R – GAM_R), older participants. The same pattern holds: subthreshold noise reduces neuromuscular synchronisation in the lower frequency bands, indicating more efficient postural control with less compensatory co-activation.</figcaption>
+            </figure>
+        </div>
     </section>
 
     <!-- ── Tools ───────────────────────────────── -->

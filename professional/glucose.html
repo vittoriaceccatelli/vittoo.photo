@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Glucose Prediction — Vittoria Ceccatelli</title>
-    <meta name="description" content="AI for non-invasive glucose prediction from wearable data — multi-task ML system covering classification, regression, and 6-hour time-series forecasting. ETH Zurich semester project by Vittoria Ceccatelli.">
-    <meta property="og:title" content="Glucose Prediction — Vittoria Ceccatelli">
-    <meta property="og:description" content="Multi-task ML system predicting glucose from wearable physiological data — TabPFN, XGBoost, Temporal Fusion Transformer.">
+    <title>AI for Glucose Level Prediction — Vittoria Ceccatelli</title>
+    <meta name="description" content="Artificial Intelligence for Glucose Level Prediction using Wearable Device Data with and without A Food Log — Semester project by Vittoria Ceccatelli at ETH Zurich.">
+    <meta property="og:title" content="AI for Glucose Level Prediction — Vittoria Ceccatelli">
+    <meta property="og:description" content="Multi-task ML system predicting glucose from wearable physiological data — TabPFN, XGBoost, Temporal Fusion Transformer, SeqFusion.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="../assets/css/professional.css?v=31">
 </head>
@@ -15,17 +15,22 @@
 <header class="pro-header">
     <a class="pro-home" href="../index.html">VC</a>
     <nav class="pro-nav">
-        <a href="index.html">OVERVIEW</a>
-        <div class="pro-dropdown active">
+        <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <div class="pro-dropdown">
             <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
             <div class="pro-dropdown__menu">
-                <a href="thesis.html">Carotid Pipeline</a>
-                <a href="glucose.html" class="active">Glucose Prediction</a>
-                <a href="biomechanics.html">Postural Stability</a>
+                <a href="thesis.html">Carotid Analysis</a>
+                <a href="glucose.html">Glucose Prediction</a>
+                <a href="biomechanics.html">Biomechanics</a>
             </div>
         </div>
-        
-        <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
+        <div class="pro-dropdown">
+            <button class="pro-dropdown__btn" aria-expanded="false">PROFESSIONAL</button>
+            <div class="pro-dropdown__menu">
+                <a href="index.html">Archive</a>
+                <a href="../pages/currently.html">Currently</a>
+            </div>
+        </div>
         <div class="pro-dropdown">
             <button class="pro-dropdown__btn" aria-expanded="false">PERSONAL</button>
             <div class="pro-dropdown__menu">
@@ -40,12 +45,13 @@
 
     <!-- ── Hero ─────────────────────────────── -->
     <section class="pro-intro" id="background">
-        <p class="pro-meta-label">Semester Project &nbsp;·&nbsp; ETH Zurich · Biomedical and Mobile Health Technology Lab &nbsp;·&nbsp; Feb – Jun 2025</p>
-        <h1>AI for Glucose Prediction from Wearable Data</h1>
+        <p class="pro-meta-label">Semester Project &nbsp;·&nbsp; Biomedical and Mobile Health Technology Laboratory, ETH Zurich &nbsp;·&nbsp; Feb – May 2025</p>
+        <h1>Artificial Intelligence for Glucose Level Prediction using Wearable Device Data with and without A Food Log</h1>
         <p class="tagline">
-            A multi-task machine learning system predicting personalised glucose levels
-            from wearable physiological data — across classification, regression,
-            and 6-hour time-series forecasting — without requiring invasive continuous glucose monitoring.
+            A multi-task machine learning study predicting personalised glucose levels
+            from wearable physiological signals — evaluating classification, regression,
+            and time-series forecasting models, and assessing whether including a food log
+            improves predictive performance.
         </p>
         <div class="thesis-links">
             <a href="https://github.com/vittoriaceccatelli/glucoseProject" target="_blank" class="thesis-link-btn">GitHub →</a>
@@ -56,23 +62,29 @@
     <section class="pro-section">
         <h2>Background</h2>
         <p>
-            Diabetes affects 830 million people worldwide (WHO, 2022) and the number is rising.
-            Continuous glucose monitors (CGMs) help patients manage their condition in real time,
-            but they are invasive — requiring a subcutaneous sensor — and expensive ($100–400/month),
-            placing them out of reach for many. Prediabetes, which precedes type 2 diabetes,
-            often goes undiagnosed entirely.
+            Diabetes is a metabolic disorder caused either by cells of the pancreas that are unable to
+            produce enough insulin (type 1 diabetes) or by insulin resistance (type 2 diabetes), both
+            resulting in high glucose levels in the blood. As of 2022, diabetes affects 830 million
+            people worldwide, a number that is expected to significantly increase over the next decades.
+            For those affected by this disease, continuous glucose monitoring (CGM) systems help in
+            measuring glucose values in real-time, allowing individuals to react appropriately through
+            diet, medication, and lifestyle. However, CGM devices come with limitations: they are
+            invasive, requiring a sensor to be placed under the skin, and expensive, with costs ranging
+            from $100 to $400 per month.
         </p>
         <p>
-            Wearable devices already measure a rich set of physiological signals — skin conductance,
-            skin temperature, photoplethysmography, and accelerometry — that reflect changes in
-            the autonomic nervous system and metabolism. The hypothesis driving this project:
-            can these non-invasive signals predict glucose levels accurately enough to reduce or
-            replace the need for CGM?
+            Wearable devices already measure a rich set of physiological signals — electrodermal
+            activity (EDA), skin temperature, photoplethysmography (PPG), and accelerometry — that
+            reflect changes in the autonomic nervous system associated with glucose fluctuations.
+            Using wearable devices that measure these physiological signals to predict glucose values
+            non-invasively would consequently greatly improve the current situation. Additionally,
+            even though prediabetes cases are increasing, many remain undiagnosed. Such devices could
+            also enable continuous, non-invasive monitoring for early detection.
         </p>
         <p>
-            This project investigated three prediction tasks of increasing complexity, and
-            additionally evaluated whether including a food log as an additional data source
-            improves model performance.
+            This project investigated three prediction tasks of increasing complexity — classification,
+            regression, and forecasting — and additionally evaluated whether including a food log as
+            an additional data source improves model performance.
         </p>
     </section>
 
@@ -80,40 +92,81 @@
     <section class="pro-section">
         <h2>Dataset</h2>
         <p>
-            The publicly available <strong>BIG IDEAs Lab Glycaemic Variability and Wearable Device
-            Dataset</strong> (Physionet, v1.1.2) was used. It contains data from 16 participants
-            (7 male, 9 female, ages 36–65) with HbA1c values in the high-normal to prediabetic
-            range (5.2–6.4%). Each participant wore two devices simultaneously for 8–10 days:
+            The dataset used was the publicly available <strong>BIG IDEAs Lab Glycaemic Variability
+            and Wearable Device Data dataset</strong> (Physionet, v1.1.2). It contains data from
+            16 participants aged 36 to 65 years old, 7 males and 9 post-menopausal females, with
+            an HbA1c value between 5.2% and 6.4%, thus in the high normal to prediabetic range.
+            Over 8 to 10 days the participants wore both a Dexcom G6 CGM and an Empatica E4
+            wristband and were asked to keep a food log.
         </p>
-        <div class="pro-entry" style="margin-top: 16px;">
-            <div class="pro-entry__year">Dexcom G6</div>
-            <div class="pro-entry__body">
-                <span>Continuous glucose monitor — interstitial glucose at 5-minute intervals (ground truth)</span>
-            </div>
-        </div>
-        <div class="pro-entry">
-            <div class="pro-entry__year">Empatica E4</div>
-            <div class="pro-entry__body">
-                <span>Wristband — PPG (64 Hz), EDA (4 Hz), skin temperature (4 Hz), accelerometry (32 Hz)</span>
-            </div>
-        </div>
-        <div class="pro-entry">
-            <div class="pro-entry__year">Food log</div>
-            <div class="pro-entry__body">
-                <span>Timestamped entries of meal type and duration; 20 derived features</span>
-            </div>
-        </div>
-        <p style="margin-top: 16px;">
-            69 features were engineered in total: 46 from the Empatica E4 using a 5-minute rolling
-            window, 20 from the food log, and 3 additional features (sex, HbA1c, time from midnight).
-            Feature correlation analysis removed redundant features; class imbalance in the
-            classification task was addressed via random downsampling, continuous-sequence removal,
-            and SMOTE oversampling.
+        <p>
+            The Dexcom G6 CGM device measured interstitial glucose levels at 5-minute intervals.
+            The Empatica E4 wristband contains four sensors measuring PPG, EDA, skin temperature
+            and accelerometry. In addition, participants were asked to keep a food log with
+            information on the time and duration of food intake, as well as on the nutritional
+            value of the foods consumed.
+        </p>
+        <p>
+            Each glucose value was assigned one of the classes PersHigh, PersLow or PersNorm
+            based on its deviation from the participant's own rolling 24-hour average. The
+            PersHigh label was assigned if the glucose value was above one standard deviation
+            from the average of the previous 24 hours; PersLow if below; and PersNorm if within.
         </p>
 
         <figure class="pro-figure">
-            <img src="../assets/images/projects/glucose-data.png" alt="Glucose time series for Participant 3 over 8 days">
-            <figcaption>Raw CGM data (Dexcom G6) for a representative participant over 8 days — interstitial glucose values at 5-minute intervals, showing typical diurnal variability, post-meal spikes, and the range the models must learn to predict.</figcaption>
+            <img src="../assets/images/projects/glucose-fig2.png" alt="Interstitial Glucose Value Distribution by PersStatus">
+            <figcaption>Interstitial glucose value distribution by personalised glycaemic class (PersNorm, PersHigh, PersLow) across all participants. PersNorm values cluster around 111.7 mg/dL, while PersHigh values extend to higher glucose concentrations, reflecting post-meal and stress-related elevations.</figcaption>
+        </figure>
+    </section>
+
+    <!-- ── Data Preprocessing ─────────────────── -->
+    <section class="pro-section">
+        <h2>Data Preprocessing &amp; Feature Extraction</h2>
+        <p>
+            The preprocessing and feature extraction was done according to the methods described
+            in Bent et al.'s framework using the wearablecompute GitHub repository. A total of
+            46 Empatica E4-derived features were calculated using a 5-minute rolling window
+            without overlap. In addition, 20 features were calculated using food log data,
+            and 3 additional features — gender, HbA1c, and time from midnight — were extracted
+            from the demographics file.
+        </p>
+        <p>
+            To handle missing values, data availability was visualised for each participant across
+            all sensor streams. Any 5-minute datapoint was discarded if at least one of the
+            wearable features had a value of zero, indicating the feature could not be computed
+            from the available sensor data. The remaining datapoints were concatenated to one
+            consecutive sequence, resulting in a labeled dataset of 26,267 datapoints.
+        </p>
+
+        <figure class="pro-figure">
+            <img src="../assets/images/projects/glucose-fig4.png" alt="Data availability overlap for Participant 3">
+            <figcaption>Data availability for temperature, EDA, HR, ACC, HRV and glucose for Participant 3. Red indicates available data; black indicates missing or invalid data. Gaps in sensor streams are the primary driver of datapoint exclusion.</figcaption>
+        </figure>
+    </section>
+
+    <!-- ── Feature Engineering ─────────────────── -->
+    <section class="pro-section">
+        <h2>Feature Engineering &amp; Correlation Analysis</h2>
+        <p>
+            Feature importance was analysed for both the classification and regression tasks,
+            using a Leave-One-Group-Out (LOGO) cross-validation strategy to ensure data from
+            each participant was used as a test set once. For the classification task a Random
+            Forest (100 trees) and an XGBoost Classifier were compared; for the regression task
+            a Random Forest Regressor and an XGBoost Regressor were compared.
+        </p>
+        <p>
+            Feature correlation analysis was subsequently performed using the Spearman
+            correlation coefficient with a threshold of 0.8. Between two highly correlated
+            features, the one with the lower feature importance was dropped. This was performed
+            four times — separately for Random Forest and XGBoost, and for classification and
+            regression — resulting in feature sets of 27–32 non-correlated features. Food
+            log-derived features were always retained, as they could be dropped subsequently
+            if not needed.
+        </p>
+
+        <figure class="pro-figure">
+            <img src="../assets/images/projects/glucose-fig5.png" alt="Feature correlation plots before and after dropping highly correlated features">
+            <figcaption>Correlation plots before dropping any highly correlated features (left) and after dropping highly correlated features according to feature importance determined by Random Forest (middle) or XGBoost (right), for the regression (top) and classification (bottom) tasks.</figcaption>
         </figure>
     </section>
 
@@ -126,14 +179,12 @@
                 <div class="pipeline__num">01</div>
                 <div class="pipeline__body">
                     <strong>Classification — Personalised Glycaemic Category</strong>
-                    <span>
-                        Each glucose reading was assigned to one of three personalised classes
-                        (PersHigh, PersNorm, PersLow) based on each participant's own glucose
-                        distribution. Models compared: Decision Tree with stratified k-fold CV,
-                        Decision Tree with 70/30 split, and <strong>TabPFN</strong> (pretrained
-                        in-context learner). TabPFN performed best; food log features improved
-                        accuracy by ~7% in tree-based models but had negligible effect on TabPFN.
-                    </span>
+                    <span>Each glucose reading was classified into one of three personalised classes
+                    (PersHigh, PersNorm, PersLow). Two Decision Tree pipelines were compared —
+                    a Repeated Stratified K-Fold CV with recursive feature elimination (RFE), and
+                    a 70/30 Train/Test Split — alongside a TabPFN pretrained in-context learner.
+                    Class imbalance was addressed via random downsampling, continuous-sequence
+                    removal, and SMOTE oversampling.</span>
                 </div>
             </div>
 
@@ -141,33 +192,37 @@
                 <div class="pipeline__num">02</div>
                 <div class="pipeline__body">
                     <strong>Regression — Interstitial Glucose Value</strong>
-                    <span>
-                        Predict the current interstitial glucose concentration (mg/dL).
-                        Population models (Leave-One-Group-Out CV) and personalised models
-                        (50/50 split per participant) were trained with <strong>XGBoost</strong>
-                        and a <strong>Temporal Fusion Transformer (TFT)</strong>.
-                        Best result: personalised TFT, RMSE 21.2 ± 4.3 mg/dL (86.6% accuracy).
-                        Food log had minimal impact on regression performance.
-                    </span>
+                    <span>Predict the current interstitial glucose concentration in mg/dL.
+                    Both a population model (LOGO CV) and a personalised model (50/50 split per
+                    participant) were trained. Within each fold, a Random Forest Regressor (50 trees)
+                    selected features with importance above 0.005, which were then used to train an
+                    XGBoost Regressor. TabPFN was also evaluated as a regression model alongside
+                    the XGBoost models.</span>
                 </div>
             </div>
 
             <div class="pipeline__step">
                 <div class="pipeline__num">03</div>
                 <div class="pipeline__body">
-                    <strong>Forecasting — 6-Hour Glucose Trajectory</strong>
-                    <span>
-                        Predict glucose values 6 hours (72 timesteps) into the future.
-                        <strong>TFT</strong> (trained) and <strong>SeqFusion</strong>
-                        (zero-shot pretrained model selection) were compared.
-                        TFT achieved RMSE 15.0 ± 2.8 mg/dL (92% accuracy).
-                        SeqFusion's zero-shot performance was surprisingly strong,
-                        demonstrating the feasibility of pretrained model transfer to this domain.
-                        Food log features did not significantly impact forecasting accuracy.
-                    </span>
+                    <strong>Forecasting — Future Glucose Trajectory</strong>
+                    <span>Predict future glucose values across multiple prediction horizons (6–48
+                    timesteps, corresponding to 30 min to 4 hours). A Temporal Fusion Transformer
+                    (TFT) was trained using pytorch-forecasting, and SeqFusion — a zero-shot
+                    time-series forecasting framework that sequentially fuses diverse pretrained
+                    models — was evaluated without any task-specific training.</span>
                 </div>
             </div>
         </div>
+
+        <figure class="pro-figure" style="margin-top: 48px;">
+            <img src="../assets/images/projects/glucose-fig6.png" alt="Classification task pipelines">
+            <figcaption>Pipelines used for the classification task: Decision Tree Repeated Stratified K-Fold CV with RFE (left) and Decision Tree 70/30 Train/Test Split (right).</figcaption>
+        </figure>
+
+        <figure class="pro-figure">
+            <img src="../assets/images/projects/glucose-fig7.png" alt="Regression task pipelines">
+            <figcaption>Pipelines used for the regression task: Population XGBoost model using LOGO cross-validation (left) and Personalised XGBoost model using a 50/50 per-participant split (right). In both cases a Random Forest Regressor first selects features with importance above 0.005.</figcaption>
+        </figure>
     </section>
 
     <!-- ── Results ─────────────────────────────── -->
@@ -184,8 +239,8 @@
                 <div class="thesis-stat__label">engineered features</div>
             </div>
             <div class="thesis-stat">
-                <div class="thesis-stat__num">3</div>
-                <div class="thesis-stat__label">prediction tasks</div>
+                <div class="thesis-stat__num">88.2%</div>
+                <div class="thesis-stat__label">peak classification accuracy (TabPFN)</div>
             </div>
             <div class="thesis-stat">
                 <div class="thesis-stat__num">92%</div>
@@ -195,25 +250,34 @@
 
         <p>
             Feature importance analysis consistently identified <strong>EDA-related features,
-            activity features, sex, and circadian rhythm signals</strong> (particularly
-            time from midnight) as the most predictive. This reflects known sex differences
-            in glucose metabolism and the strong circadian regulation of insulin sensitivity.
+            activity-related features, and circadian rhythm signals</strong> — particularly
+            time from midnight — as most predictive, reflecting the strong circadian regulation
+            of insulin sensitivity and the relationship between glucose and autonomic nervous
+            system activity. Gender and HbA1c were also highly important, consistent with known
+            sex differences in glucose metabolism.
         </p>
         <p>
-            A key finding: <strong>models trained without food log features performed
-            comparably to those with food log features</strong> for the regression and
-            forecasting tasks. This is practically significant — it means a fully non-invasive,
-            food-log-free wearable system is feasible for glucose monitoring.
+            For the classification task, the TabPFN Classifier achieved the highest accuracy
+            (up to 88.2%), outperforming both Decision Tree models. Dropping food log features
+            improved TabPFN accuracy by up to 4%. For the regression task, the personalised
+            XGBoost model performed slightly better than the population model in terms of
+            accuracy (up to 84.5%) while the population model achieved lower RMSE values
+            (15.6 ± 2.67 mg/dL). The Temporal Fusion Transformer achieved 92.0% accuracy
+            for 6-hour forecasting (RMSE 15.0 ± 2.8 mg/dL).
         </p>
         <p>
-            SeqFusion's zero-shot results highlighted the potential of foundation model approaches
-            for time-series forecasting in digital health — where labelled data is scarce and
-            personalised retraining is expensive.
+            A key finding across all tasks: <strong>dropping food log-derived features did not
+            significantly impact the accuracy or RMSE of the regression and forecasting
+            models.</strong> This is practically significant — it means a fully non-invasive,
+            food-log-free wearable system is feasible for glucose monitoring. SeqFusion's
+            zero-shot results (97.2% accuracy at prediction horizon 6) further highlighted
+            the potential of pretrained model transfer to digital health domains where
+            labelled data is scarce.
         </p>
 
         <figure class="pro-figure">
             <img src="../assets/images/projects/glucose-results.png" alt="Clarke Error Grid for personalised XGBoost regression model without food log">
-            <figcaption>Clarke Error Grid — personalised XGBoost regression model without food log features. Points in Zone A (clinically accurate) and B (benign errors) confirm the model's safety profile. The result holds without food log input, supporting a fully non-invasive wearable-only system.</figcaption>
+            <figcaption>Clarke Error Grid — personalised XGBoost regression model without food log features. Points in Zone A (clinically accurate) and Zone B (benign errors) confirm the model's clinical safety profile without requiring any food log input.</figcaption>
         </figure>
     </section>
 
@@ -226,7 +290,8 @@
             <span class="chip">XGBoost</span>
             <span class="chip">TabPFN</span>
             <span class="chip">PyTorch</span>
-            <span class="chip">pytorch-forecasting (TFT)</span>
+            <span class="chip">pytorch-forecasting</span>
+            <span class="chip">Temporal Fusion Transformer</span>
             <span class="chip">SeqFusion</span>
             <span class="chip">SMOTE</span>
             <span class="chip">Pandas</span>
