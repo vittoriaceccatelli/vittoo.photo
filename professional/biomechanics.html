@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals — Vittoria Ceccatelli</title>
-    <meta name="description" content="Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals — Semester project by Vittoria Ceccatelli at ETH Zurich.">
-    <meta property="og:title" content="Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals — Vittoria Ceccatelli">
+    <title>Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals | Vittoria Ceccatelli</title>
+    <meta name="description" content="Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals, Semester project by Vittoria Ceccatelli at ETH Zurich.">
+    <meta property="og:title" content="Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals | Vittoria Ceccatelli">
     <meta property="og:description" content="Signal processing and coherence analysis showing subthreshold auditory noise reduces CoP velocity and EMG coherence in elderly participants.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="../assets/css/professional.css?v=31">
@@ -48,9 +48,9 @@
         <p class="pro-meta-label">Semester Project &nbsp;·&nbsp; ETH Zurich · Laboratory for Movement Biomechanics &nbsp;·&nbsp; Feb – Mar 2024</p>
         <h1>Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals</h1>
         <p class="tagline">
-            Signal processing and coherence analysis of EMG and force-plate data from 100 participants,
-            quantifying how subthreshold auditory white noise stimulation affects neuromuscular
-            control and fall risk in elderly individuals.
+            A study of 100 participants investigating whether playing barely inaudible white noise
+            through headphones improves balance in elderly people, using muscle activity and force
+            measurements to quantify the effect.
         </p>
     </section>
 
@@ -58,23 +58,23 @@
     <section class="pro-section">
         <h2>Background</h2>
         <p>
-            Postural stability — the body's ability to keep its centre of mass within safe boundaries —
-            depends on the integration of visual, vestibular, and somatosensory inputs. Falls are a
-            leading cause of injury in elderly populations; reduced postural stability with age is
-            a well-established risk factor.
+            Balance depends on the brain continuously integrating information from three sources:
+            vision, the inner ear, and touch and pressure signals from the body. As people age,
+            the reliability of these signals decreases, which is why fall risk rises sharply in
+            older adults. Falls are one of the leading causes of injury in elderly populations.
         </p>
         <p>
-            A growing body of research suggests that <strong>stochastic resonance</strong> — the
-            phenomenon whereby a subthreshold noise signal enhances the detection of weak sensory
-            inputs — may improve postural control. Crucially, the effect is strongest when the
-            noise is just below the sensory threshold (subthreshold), not above it (suprathreshold).
-            Prior work had explored mechanical and vibratory noise applied to the soles of the feet;
-            this project investigated whether <strong>auditory white noise</strong> produces the
-            same stabilising effect.
+            Research into a phenomenon called <strong>stochastic resonance</strong> suggests that
+            adding a small amount of noise to a weak signal can actually make it easier to detect.
+            Applied to balance, the idea is that a barely inaudible sound might enhance the body's
+            sensitivity to its own postural signals, improving stability without the person being
+            consciously aware of it. The effect only works below the hearing threshold, louder noise
+            provides no benefit. Previous studies tested this using vibrations under the feet. This
+            project asked whether the same effect can be achieved with auditory white noise.
         </p>
         <p>
-            A secondary question was whether older individuals — who have a lower baseline postural
-            stability and therefore more room for improvement — benefit more than younger individuals.
+            A secondary question was whether older individuals, who have lower baseline stability
+            and therefore more room for improvement, benefit more than younger individuals.
         </p>
     </section>
 
@@ -82,67 +82,61 @@
     <section class="pro-section" id="experiment">
         <h2>Experiment &amp; Methods</h2>
         <p>
-            100 participants (50 elderly, 50 young) performed quiet standing under four conditions,
-            each lasting one minute. Data was collected simultaneously from a <strong>force plate</strong>
-            (CoP, centre of pressure) and <strong>surface EMG electrodes on 8 muscles per leg</strong>
-            (16 channels total).
+            100 participants (50 elderly, 50 young) stood quietly for one minute under each of
+            four conditions. Balance was measured using a force plate that tracks how the body's
+            weight shifts during standing, and muscle activity was recorded from 16 electrodes
+            placed on the leg muscles.
         </p>
 
         <div class="pipeline">
             <div class="pipeline__step">
-                <div class="pipeline__num">01</div>
+                <div class="pipeline__num"></div>
                 <div class="pipeline__body">
-                    <strong>Eyes Open (EO)</strong>
-                    <span>Baseline condition. Full sensory integration.</span>
+                    <strong>Eyes Open</strong>
+                    <span>Baseline condition: eyes open, no noise.</span>
                 </div>
             </div>
 
             <div class="pipeline__step">
-                <div class="pipeline__num">02</div>
+                <div class="pipeline__num"></div>
                 <div class="pipeline__body">
-                    <strong>Eyes Closed (EC)</strong>
-                    <span>Visual input removed. Increased reliance on vestibular and somatosensory inputs; expected increase in sway.</span>
+                    <strong>Eyes Closed</strong>
+                    <span>Eyes covered, no noise. Removing vision increases balance difficulty and serves as the main comparison point.</span>
                 </div>
             </div>
 
             <div class="pipeline__step">
-                <div class="pipeline__num">03</div>
+                <div class="pipeline__num"></div>
                 <div class="pipeline__body">
-                    <strong>Eyes Closed + Subthreshold Noise (SUB)</strong>
-                    <span>
-                        Auditory white noise at a volume just below each participant's personal hearing threshold.
-                        The hypothesis: noise may enhance peripheral sensory signals via stochastic resonance,
-                        improving postural control without conscious awareness of the stimulus.
-                    </span>
+                    <strong>Eyes Closed + Subthreshold Noise</strong>
+                    <span>Eyes covered with barely inaudible white noise played through headphones. The hypothesis: the noise might enhance the body's own sensory signals below conscious awareness, improving balance.</span>
                 </div>
             </div>
 
             <div class="pipeline__step">
-                <div class="pipeline__num">04</div>
+                <div class="pipeline__num"></div>
                 <div class="pipeline__body">
-                    <strong>Eyes Closed + Suprathreshold Noise (SUPRA)</strong>
-                    <span>Auditory white noise above the hearing threshold. Control condition; expected to be less beneficial than subthreshold.</span>
+                    <strong>Eyes Closed + Suprathreshold Noise</strong>
+                    <span>Eyes covered with clearly audible white noise. Control condition to confirm that any benefit in condition 03 comes from the stochastic resonance effect, not just the presence of sound.</span>
                 </div>
             </div>
         </div>
 
-        <p style="margin-top: 28px;"><strong>Signal processing pipeline (MATLAB):</strong></p>
-        <p>
-            EMG signals (≥3000 Hz) were trimmed to 50 seconds, artifact-interpolated using a
-            spline method around peaks, filtered with a 50 Hz power-hum notch filter, and
-            rectified via the Hilbert transform. Force plate CoP data was high-pass filtered
-            (4th-order Butterworth, 20 Hz cut-off) and bias-corrected.
+        <p style="margin-top: 28px;">
+            All signals were cleaned to remove electrical interference and movement artefacts,
+            then two types of analysis were performed.
         </p>
         <p>
-            <strong>Linear CoP parameters</strong> extracted: mean velocity (radial, anteroposterior, mediolateral),
-            pathlength, sway area, and ML peak velocity. Statistical testing: Friedman's test for
-            overall condition effect; Wilcoxon signed rank sum test for pairwise comparisons.
+            <strong>Sway analysis:</strong> Six parameters were extracted from the force plate
+            data, capturing how much and how fast the body shifts during standing. Differences
+            between conditions were tested with non-parametric statistical tests.
         </p>
         <p>
-            <strong>Coherence analysis</strong> (magnitude squared coherence, MSC):
-            EMG–EMG coherence between all muscle pairs, and CoP–EMG coherence between the CoP
-            trajectory and each muscle. Coherence was analysed across delta, theta, alpha, and beta
-            frequency bands to assess neuromuscular synchronisation under each condition.
+            <strong>Muscle synchronisation analysis:</strong> The degree of synchronisation
+            between muscle pairs and between each muscle and the body's sway pattern was
+            measured. High synchronisation suggests the body is working harder to actively
+            compensate for instability, a reduction under noise indicates more automatic,
+            efficient balance control.
         </p>
     </section>
 
@@ -170,56 +164,53 @@
         </div>
 
         <p>
-            <strong>CoP analysis:</strong> In elderly participants, subthreshold noise significantly
-            reduced radial, anteroposterior, and mediolateral mean velocity, as well as pathlength
-            and ML peak velocity (all p &lt; 0.02). The same reductions were present but statistically
-            smaller and often non-significant in younger participants — consistent with the principle
-            that individuals with a lower baseline stability have more room for improvement.
+            <strong>Sway results:</strong> In elderly participants, subthreshold noise significantly
+            reduced sway speed and path length in all measured directions (all p &lt; 0.02). The same
+            reductions were present but smaller and often not statistically significant in younger
+            participants, consistent with the expectation that those who struggle more with balance
+            have more room to benefit.
         </p>
         <p>
-            <strong>Coherence analysis:</strong> The eyes-closed condition produced the highest
-            EMG–EMG and CoP–EMG coherence values; eyes-open the lowest. Subthreshold noise
-            reduced coherence compared to eyes-closed in elderly participants — particularly in
-            the M. Triceps Surae (Soleus, Gastrocnemius), which is consistent with the central
-            role of the ankle plantarflexors in anteroposterior postural control.
+            <strong>Muscle synchronisation results:</strong> The eyes-closed condition produced the
+            highest synchronisation between muscles, while eyes-open produced the lowest. Subthreshold
+            noise reduced synchronisation compared to the eyes-closed baseline in elderly participants,
+            most notably in the calf muscles, which play a central role in front-to-back balance.
         </p>
         <p>
-            Reduced coherence under subthreshold noise indicates <strong>decreased need for
-            compensatory neuromuscular synchronisation</strong> — the body is more efficiently
-            stabilised and requires less active muscular coordination to maintain balance.
-            Suprathreshold noise produced notably weaker effects, confirming the role of
-            stochastic resonance rather than simple auditory distraction.
+            Lower muscle synchronisation under subthreshold noise means the body is maintaining
+            balance more efficiently, with less active muscular effort. Suprathreshold (audible)
+            noise produced notably weaker effects, confirming that the benefit comes from the
+            stochastic resonance mechanism rather than simply the presence of sound.
         </p>
         <p>
-            Older participants showed generally higher baseline coherence values (delta and alpha bands
-            more prominent), suggesting that increased muscular synchronisation is a hallmark of
-            age-related compensation for reduced somatosensory acuity.
+            Older participants showed higher baseline muscle synchronisation overall, suggesting
+            that increased muscular coordination effort is a characteristic feature of how the
+            body compensates for reduced sensory reliability with age.
         </p>
 
         <p style="margin-top: 28px;">
-            The plots below show ipsilateral EMG–EMG coherence between the Soleus (SOL) and
-            Gastrocnemius medialis (GAM) across all five frequency bands and all four conditions,
-            for the left and right leg separately and for both participant groups. These muscles
-            were selected as exemplary representatives of the M. Triceps Surae — the primary
-            ankle plantarflexor group driving anteroposterior postural corrections.
+            The plots below show the degree of synchronisation between two key calf muscles
+            (Soleus and Gastrocnemius) across all four conditions, shown separately for young
+            and older participants and for the left and right leg. These muscles are the primary
+            drivers of front-to-back balance control.
         </p>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
             <figure class="pro-figure" style="margin: 0;">
-                <img src="../assets/images/projects/biomech-annex4-41.png" alt="SOL_L GAM_L coherence — young participants">
-                <figcaption>Left leg (SOL_L – GAM_L), young participants. Coherence is highest in the delta band. Condition differences are modest — consistent with a higher baseline stability leaving less room for improvement.</figcaption>
+                <img src="../assets/images/projects/biomech-annex4-41.png" alt="SOL_L GAM_L coherence, young participants">
+                <figcaption>Left leg, young participants. Muscle synchronisation is highest in the low-frequency band. Differences between conditions are small, consistent with younger adults having a higher baseline stability.</figcaption>
             </figure>
             <figure class="pro-figure" style="margin: 0;">
-                <img src="../assets/images/projects/biomech-annex4-42.png" alt="SOL_R GAM_R coherence — young participants">
-                <figcaption>Right leg (SOL_R – GAM_R), young participants. Similar pattern to the left leg; subthreshold noise shows minimal reduction relative to eyes closed.</figcaption>
+                <img src="../assets/images/projects/biomech-annex4-42.png" alt="SOL_R GAM_R coherence, young participants">
+                <figcaption>Right leg, young participants. Similar pattern to the left leg, subthreshold noise shows minimal reduction compared to eyes closed.</figcaption>
             </figure>
             <figure class="pro-figure" style="margin: 0;">
-                <img src="../assets/images/projects/biomech-annex4-43.png" alt="SOL_L GAM_L coherence — older participants">
-                <figcaption>Left leg (SOL_L – GAM_L), older participants. Coherence values are markedly higher than in the young group. Subthreshold noise (yellow) consistently reduces coherence below the eyes-closed level across delta, theta, and alpha bands.</figcaption>
+                <img src="../assets/images/projects/biomech-annex4-43.png" alt="SOL_L GAM_L coherence, older participants">
+                <figcaption>Left leg, older participants. Synchronisation values are markedly higher than in the young group. Subthreshold noise (yellow) consistently reduces synchronisation below the eyes-closed level.</figcaption>
             </figure>
             <figure class="pro-figure" style="margin: 0;">
-                <img src="../assets/images/projects/biomech-annex4-44.png" alt="SOL_R GAM_R coherence — older participants">
-                <figcaption>Right leg (SOL_R – GAM_R), older participants. The same pattern holds: subthreshold noise reduces neuromuscular synchronisation in the lower frequency bands, indicating more efficient postural control with less compensatory co-activation.</figcaption>
+                <img src="../assets/images/projects/biomech-annex4-44.png" alt="SOL_R GAM_R coherence, older participants">
+                <figcaption>Right leg, older participants. The same pattern holds: subthreshold noise reduces muscle synchronisation, indicating more efficient balance control with less active muscular effort.</figcaption>
             </figure>
         </div>
     </section>

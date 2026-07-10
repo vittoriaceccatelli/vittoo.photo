@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>A Standardized Pipeline for Automated Carotid Artery Analysis — Vittoria Ceccatelli</title>
-    <meta name="description" content="A Standardized Pipeline for Automated Carotid Artery Analysis — Master thesis by Vittoria Ceccatelli at Harvard Medical School. End-to-end ML pipeline for carotid CTA analysis with deep learning segmentation, morphological feature extraction, and 3D CFD haemodynamic simulation.">
-    <meta property="og:title" content="A Standardized Pipeline for Automated Carotid Artery Analysis — Vittoria Ceccatelli">
+    <title>A Standardized Pipeline for Automated Carotid Artery Analysis | Vittoria Ceccatelli</title>
+    <meta name="description" content="A Standardized Pipeline for Automated Carotid Artery Analysis, Master thesis by Vittoria Ceccatelli at Harvard Medical School. End-to-end ML pipeline for carotid CTA analysis with deep learning segmentation, morphological feature extraction, and 3D CFD haemodynamic simulation.">
+    <meta property="og:title" content="A Standardized Pipeline for Automated Carotid Artery Analysis | Vittoria Ceccatelli">
     <meta property="og:description" content="Fully automated ML pipeline for multi-domain carotid stenosis characterisation from CT angiography.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="../assets/css/professional.css?v=31">
@@ -48,9 +48,9 @@
         <p class="pro-meta-label">Master Thesis &nbsp;·&nbsp; Nezami Lab · Harvard Medical School &amp; Brigham and Women's Hospital &nbsp;·&nbsp; Sep 2025 – Mar 2026</p>
         <h1>A Standardized Pipeline for Automated Carotid Artery Analysis</h1>
         <p class="tagline">
-            A fully automated, modular framework for multi-domain characterization of carotid stenosis
-            from CT angiography — integrating deep learning segmentation, morphological analysis,
-            calcification mapping, and 3D CFD simulation.
+            A fully automated pipeline that analyses CT scans of the carotid arteries and extracts
+            a comprehensive set of measurements describing vessel shape, calcification, and blood flow
+            enabling large-scale, standardized characterization in support of stroke risk research.
         </p>
         <div class="thesis-links">
             <a href="https://github.com/vittoriaceccatelli/carotidPipeline" target="_blank" class="thesis-link-btn">GitHub →</a>
@@ -61,22 +61,17 @@
     <section class="pro-section">
         <h2>Background</h2>
         <p>
-            Carotid stenosis describes the luminal narrowing of vital arteries that supply blood to
-            the head and neck region and affects a significant portion of the general population and
-            ischemic stroke patients. Current practice to assess the disease relies on linear measurements
-            of the narrowed vessel and blood velocity measurements, even though evidence for the complexity
-            and multi-dimensionality of the disease has emerged in recent years. In addition to being too
-            simplistic, current assessment techniques are also time-intensive and operator-dependent,
-            introducing a level of inaccuracy and variability that significantly affects treatment
-            decisions and clinical outcomes.
+            Carotid stenosis is the narrowing of the carotid arteries, the major vessels on either
+            side of the neck that supply blood to the brain, and is a leading cause of ischemic stroke.
+            Current clinical assessment relies on simple diameter measurements and blood velocity readings,
+            which are time-intensive, operator-dependent, and fail to capture the true complexity of the
+            disease.
         </p>
         <p>
-            While individual aspects of carotid stenosis have been studied extensively, a comprehensive,
-            automated, and standardized pipeline that jointly characterizes vessel morphology, calcification,
-            and hemodynamics is missing. Morphological studies are often limited to a small subset of
-            geometric metrics, calcification characterization rarely extends beyond volume estimation,
-            and hemodynamic analyses are frequently performed in isolation without integration into a
-            broader clinical assessment framework.
+            While individual aspects of carotid stenosis, such as vessel shape or calcification burden,
+            have been studied, no comprehensive and automated approach exists that jointly characterizes
+            vessel geometry, calcification, and blood flow in a single, standardized framework.
+            This thesis addressed that gap.
         </p>
     </section>
 
@@ -84,23 +79,11 @@
     <section class="pro-section" id="pipeline">
         <h2>Pipeline Overview</h2>
         <p>
-            The proposed pipeline is implemented as a fully automated, modular framework that takes
-            raw CTA scans as input and produces a structured dataset of morphological, calcification,
-            and hemodynamic features describing the carotid bifurcation and its branches. The pipeline
-            integrates several stages, including automated vessel segmentation, standardized ROI isolation,
-            extraction of morphological descriptors, spatial characterization and quantification of
-            calcifications, and hemodynamic modeling through three-dimensional CFD simulations. The
-            framework is designed to enable large-scale processing, and can be implemented as open-source
-            software. It follows a modular design in which each stage functions as an independent
-            component, allowing individual modules to be reconfigured or replaced without altering
-            the overall workflow, as well as giving users choices at various stages depending on their
-            needs and requirements.
-        </p>
-        <p>
-            The pipeline is implemented as a bash script that calls various Python scripts, leveraging
-            established libraries for medical image processing, geometric analysis, and CFD pre- and
-            post-processing. It is designed to run on standard research computing hardware with optional
-            GPU acceleration for the segmentation and CFD stages.
+            The pipeline takes CT angiography scans as input and automatically produces a structured
+            dataset of measurements describing each patient's carotid arteries. It works through a
+            series of independent stages from image segmentation through to blood flow simulation
+            so that individual components can be updated or replaced without disrupting the rest of
+            the workflow. The pipeline is open-source and designed to run on standard research hardware.
         </p>
 
         <div class="pipeline">
@@ -108,49 +91,49 @@
                 <div class="pipeline__num">01</div>
                 <div class="pipeline__body">
                     <strong>Input</strong>
-                    <span>Raw CTA scans (111 patients) in DICOM format. Processed on standard research computing hardware with optional GPU acceleration.</span>
+                    <span>CT angiography scans from 111 patients, processed automatically without manual intervention.</span>
                 </div>
             </div>
             <div class="pipeline__step">
                 <div class="pipeline__num">02</div>
                 <div class="pipeline__body">
                     <strong>Deep Learning Segmentation</strong>
-                    <span>Five configurable models — nnU-Net, SegMamba, UNETR, SwinUNETR, UMambaBot — benchmarked on an iteratively expanded annotation set.</span>
+                    <span>The carotid arteries are automatically identified and segmented from the CT scan using one of five deep learning models.</span>
                 </div>
             </div>
             <div class="pipeline__step">
                 <div class="pipeline__num">03</div>
                 <div class="pipeline__body">
-                    <strong>ROI Isolation &amp; Standardization</strong>
-                    <span>Automated carotid bifurcation extraction, centerline computation, and geometric standardization ensuring consistent spatial orientation across all patients.</span>
+                    <strong>Region Extraction &amp; Standardization</strong>
+                    <span>The point where the artery splits into two branches is automatically located, and an equivalent region is extracted from each patient to allow direct comparison.</span>
                 </div>
             </div>
             <div class="pipeline__step">
                 <div class="pipeline__num">04</div>
                 <div class="pipeline__body">
                     <strong>Morphological Feature Extraction</strong>
-                    <span>Centerline-based descriptors: diameter profiles, cross-sectional area, tortuosity, curvature, torsion, bifurcation and planarity angles, and stenosis severity (NASCET/ECST).</span>
+                    <span>Key geometric measurements are extracted, including vessel diameter, curvature, tortuosity, and bifurcation angle, to describe the shape of each artery.</span>
                 </div>
             </div>
             <div class="pipeline__step">
                 <div class="pipeline__num">05</div>
                 <div class="pipeline__body">
                     <strong>Calcification Characterization</strong>
-                    <span>Calcium segmentation via Hounsfield unit thresholding. Spatial distribution quantified longitudinally, circumferentially, and radially along the vessel wall.</span>
+                    <span>Calcium deposits are identified and mapped in 3D, capturing not just how much calcium is present but precisely where it sits along and within the vessel wall.</span>
                 </div>
             </div>
             <div class="pipeline__step">
                 <div class="pipeline__num">06</div>
                 <div class="pipeline__body">
                     <strong>3D CFD Haemodynamic Simulation</strong>
-                    <span>Two configurable solvers — SimVascular and ANSYS Fluent — with three outlet boundary conditions: traction-free, Murray's Law, and Windkessel. Extracts WSS, pressure, and velocity fields across the cardiac cycle.</span>
+                    <span>Patient-specific 3D simulations of blood flow are run, producing maps of velocity, pressure, and wall shear stress throughout the cardiac cycle.</span>
                 </div>
             </div>
             <div class="pipeline__step">
                 <div class="pipeline__num">07</div>
                 <div class="pipeline__body">
                     <strong>Output Dataset</strong>
-                    <span>354 features per patient (177 per carotid) across morphological, calcification, and haemodynamic domains. Structured for downstream ML-based prediction of post-surgical stroke risk.</span>
+                    <span>354 measurements per patient across vessel shape, calcification, and blood flow, structured for downstream research linking carotid characteristics to stroke risk.</span>
                 </div>
             </div>
         </div>
@@ -159,30 +142,17 @@
 
     <!-- ── ROI Isolation ──────────────────── -->
     <section class="pro-section" id="roi">
-        <h2>Geometry Processing &amp; ROI Isolation</h2>
+        <h2>Geometry Processing &amp; Region Extraction</h2>
         <p>
-            The closed-surface segmentations produced by the deep learning model are first converted
-            from NIfTI format to STL surface meshes using a marching cubes algorithm applied to the
-            binary segmentation mask. The vmtkNetworkExtraction function is then used to generate an
-            initial centerline representing the topology of the vascular structure, which is further
-            processed by smoothing centerline point positions and resampling to a uniform point spacing.
-        </p>
-        <p>
-            The two carotid arteries are distinguished using their spatial position along the x-axis
-            of the RAS coordinate system, where higher x values correspond to the right carotid region
-            and lower x values correspond to the left carotid region. Within each carotid system, the
-            bifurcation point is identified from the centerline topology by locating junction nodes with
-            three neighboring centerline segments. To standardize the geometry across patients, branches
-            extending superior to the bifurcation (ICA and ECA) are truncated at a distance equal to
-            eight times the sampled radius, whereas the branch extending inferior to the bifurcation
-            (CCA) is truncated at a distance equal to twelve times the sampled radius. The surface meshes
-            are then clipped at these distances to produce standardized ROIs for subsequent morphological
-            and hemodynamic analysis.
+            Once the arteries were segmented, the pipeline automatically located the carotid bifurcation and extracted a
+            standardized region from each patient's scan. This step is critical: by ensuring that the
+            same anatomical region is analysed in every case, measurements become directly comparable
+            across patients regardless of individual anatomical variation.
         </p>
 
         <figure class="pro-figure">
             <img src="../assets/images/projects/thesis-fig7-roi.png" alt="Automated ROI Isolation and Carotid Labeling Workflow">
-            <figcaption>Step-by-step geometry processing workflow used to extract centerlines, identify carotid branches and bifurcation points, and generate standardized left and right carotid ROIs.</figcaption>
+            <figcaption>Automated workflow for identifying the carotid bifurcation, labeling each branch, and extracting a standardized region from the left and right carotid arteries.</figcaption>
         </figure>
     </section>
 
@@ -190,28 +160,17 @@
     <section class="pro-section" id="calcification">
         <h2>Spatial Calcification Characterization</h2>
         <p>
-            For each carotid branch, the resulting cross-sectional circles are used to construct a
-            volumetric tube mesh by sweeping the circles along the centerline positions. Each tube mesh
-            is then subdivided into a grid of spatial regions to enable detailed plaque localization.
-            Longitudinal sections correspond to 20 uniform subdivisions along the centerline direction.
-            Angular sections represent 10 equal partitions around each cross-sectional circle. Concentric
-            sections represent three radial partitions extending from the vessel lumen toward the vessel
-            wall. While the longitudinal sections describe the proximal–distal position of calcification
-            relative to the bifurcation, the concentric sections characterize the depth of calcium
-            deposits within the vessel wall. Angular sections represent circumferential positions around
-            the vessel cross-section.
-        </p>
-        <p>
-            For each spatial bin, the calcium volume is normalized by the total bin volume to produce
-            a fractional coverage value, representing the proportion of each section occupied by
-            calcified tissue. The combination of longitudinal, angular, and concentric indexing thus
-            provides a three-dimensional coordinate system intrinsic to each vessel, enabling
-            independent spatial comparisons of calcification burden across patients.
+            To characterize not just the amount of calcification but its location, each vessel branch
+            was divided into a three-dimensional grid of regions, capturing position along the vessel's
+            length, depth within the wall, and position around the vessel's circumference. For each
+            region, the proportion of the volume occupied by calcium was measured. This produced a
+            spatial fingerprint of calcification that can be compared consistently across patients,
+            going well beyond a simple total volume estimate.
         </p>
 
         <figure class="pro-figure">
             <img src="../assets/images/projects/thesis-fig10-calcification.png" alt="Spatial Calcification Characterization Workflow">
-            <figcaption>Pipeline for reconstructing vessel-wall volumes and subdividing them into longitudinal, angular, and concentric regions for detailed localization of calcified plaque.</figcaption>
+            <figcaption>Each vessel branch is subdivided into a 3D grid capturing position along the artery, depth within the wall, and circumferential location enabling detailed spatial mapping of calcified plaque.</figcaption>
         </figure>
     </section>
 
@@ -219,26 +178,22 @@
     <section class="pro-section" id="hemodynamics">
         <h2>Hemodynamic Simulation</h2>
         <p>
-            The CFD simulations represented the most computationally demanding stage of the pipeline.
-            For the SimVascular-based pipeline, individual simulations required between 1 and 15 hours
-            to complete on CPU-only hardware. By contrast, simulations performed using the ANSYS Fluent
-            pipeline with GPU acceleration on an NVIDIA GeForce RTX 5080 completed in approximately
-            25 minutes per case — a substantial difference in computational performance that highlights
-            the practical advantage of GPU-accelerated solvers for large-cohort hemodynamic analysis.
+            The blood flow simulations were the most time-intensive part of the pipeline, taking
+            between 25 minutes and 15 hours per case depending on the solver and hardware used.
+            Each simulation produced detailed maps of blood velocity, pressure, and wall shear stress
+            throughout the full cardiac
+            cycle.
         </p>
         <p>
-            Across the analyzed cases, the velocity field followed the expected pattern of acceleration
-            through regions of narrowing and curvature and deceleration in areas of expansion. In contrast,
-            the stenotic case showed markedly different flow behavior: velocity increased substantially
-            within the constricted region, forming a localized high-velocity jet. Following the stenosis,
-            the flow expanded into the downstream lumen, producing a rapid reduction in velocity magnitude.
-            Streamline visualizations further highlighted the presence of flow recirculation zones and
-            disturbed flow in the carotid bulb regions of all cases.
+            In healthy arteries, blood flows smoothly. In stenotic cases, where the artery is
+            significantly narrowed, the simulations revealed a concentrated high-velocity jet through
+            the narrowed region, followed by turbulent, recirculating flow downstream. This kind of
+            disturbed flow is associated with elevated stroke risk and plaque instability.
         </p>
 
         <figure class="pro-figure">
             <img src="../assets/images/projects/thesis-fig20-cfd.png" alt="Representative Velocity Fields and Streamline Patterns">
-            <figcaption>Velocity magnitude maps and streamlines for representative carotid cases, illustrating flow acceleration through stenotic regions and downstream flow structure.</figcaption>
+            <figcaption>Velocity magnitude maps and streamlines, illustrating flow acceleration through stenotic regions and downstream flow structure.</figcaption>
         </figure>
     </section>
 
@@ -263,21 +218,16 @@
         </div>
 
         <p>
-            The automated pipeline was evaluated on a dataset of 111 CTA cases. As each CTA scan yields
-            both a left and right carotid bifurcation, this corresponds to 222 carotid bifurcations
-            available for analysis across the full dataset. Of these, 73 cases (146 carotids) completed
-            the pipeline successfully, corresponding to an overall success rate of 65.8%. Failures
-            occurred at several stages of the pipeline where geometric assumptions or data requirements
-            were not satisfied. The largest number of failures occurred during morphology characterization
-            (14 cases), primarily attributable to insufficient vessel length within the standardized ROI.
+            The pipeline was tested on 111 CT scans. Since each scan contains both a left and right
+            carotid artery, this gave 222 individual vessels for analysis. Of these, 146 completed
+            the full pipeline successfully, representing an overall success rate of 65.8%. Most failures were
+            attributable to poor image quality in the original scans rather than errors in the pipeline itself.
         </p>
         <p>
-            The output dataset contains 177 features per carotid (354 per patient) across morphological,
-            calcification, and hemodynamic domains — a promising tool for more extensive carotid
-            phenotyping and predictive modeling studies linking carotid anatomy and hemodynamics to
-            clinical outcomes such as stroke or transient ischemic attack (TIA). Its modular and
-            configurable setup allows for future improvements and user tunability with no required
-            changes to the upstream or downstream stages of the pipeline.
+            The resulting dataset contains 354 measurements per patient spanning vessel shape,
+            calcification, and blood flow. It serves as a foundation for future studies linking carotid
+            anatomy and hemodynamics to clinical outcomes such as stroke, and its modular design
+            allows individual components to be improved or extended independently.
         </p>
         <p class="thesis-highlight">Presented at the Harvard Surgery Research Day 2026.</p>
     </section>
@@ -305,6 +255,10 @@
             <span class="chip">Pandas</span>
             <span class="chip">Matplotlib</span>
             <span class="chip">CFD</span>
+            <span class="chip">ParaView</span>
+            <span class="chip">Materialise Mimics</span>
+            <span class="chip">Geomagic Wrap</span>
+            <span class="chip">Visage</span>
             <span class="chip">Git</span>
             <span class="chip">Linux</span>
         </div>

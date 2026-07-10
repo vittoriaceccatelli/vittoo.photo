@@ -1420,6 +1420,29 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     line-height: 1.65;
 }
 
+.vtl-entry__courses {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+}
+
+.vtl-entry__courses-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.28);
+    margin-bottom: 7px;
+}
+
+.vtl-entry__courses-tags {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 5px;
+}
+
+.vtl-entry__courses-tags .pro-card__tag {
+    text-align: center;
+}
+
 .vtl-entry.sr {
     opacity: 0;
     transform: translateY(16px);

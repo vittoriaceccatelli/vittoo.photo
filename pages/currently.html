@@ -34,38 +34,28 @@
     <div class="cr-intro">
         <h1>Currently</h1>
         <div class="cr-intro__rule"></div>
-        <p>Finishing MSc at ETH Zurich. Looking for full-time roles in medical AI, ML engineering, or applied data science from autumn 2026 — ideally a team building things that ship, not just benchmarks. Open to London and Zurich.</p>
+        <p>Open to full-time roles in medical data engineering, ML engineering, or applied data science, and willing to relocate within Europe.</p>
     </div>
 
     <!-- ── Learning ──────────────────────────── -->
     <section class="cr-section cr-section--learning">
         <h2>Learning</h2>
 
-        <div class="cr-learn-feature">
-            <div class="cr-learn-feature__title">Foundation Models in Medical Imaging</div>
-            <p class="cr-learn-feature__body">SAM and MedSAM are the most interesting development in medical image segmentation right now — understanding where promptable segmentation generalises across modalities, and where it breaks, is the question the field hasn't fully answered.</p>
-        </div>
-
         <div class="cr-learn-grid">
 
             <div class="cr-learn-item">
-                <div class="cr-learn-item__name">Causal Inference for ML</div>
-                <div class="cr-learn-item__note">Clinical prediction is where correlation-based models fail most visibly. Building rigorous intuition for when causal framing changes the answer.</div>
-            </div>
-
-            <div class="cr-learn-item">
                 <div class="cr-learn-item__name">Embedding Models</div>
-                <div class="cr-learn-item__note">The backbone of Kindred's recommendation engine — sentence-transformers, fine-tuning decisions, approximate nearest-neighbour tradeoffs.</div>
+                <div class="cr-learn-item__note">Sentence-transformers, fine-tuning decisions, and approximate nearest-neighbour tradeoffs for building semantic search and recommendation systems.</div>
             </div>
 
             <div class="cr-learn-item">
                 <div class="cr-learn-item__name">FastAPI &amp; Async Python</div>
-                <div class="cr-learn-item__note">Serving Kindred's backend properly: async endpoints, dependency injection, clean separation between inference and API logic.</div>
+                <div class="cr-learn-item__note">Async endpoints, dependency injection, and clean separation between inference and API logic for serving ML models in production.</div>
             </div>
 
             <div class="cr-learn-item">
                 <div class="cr-learn-item__name">MLOps &amp; Model Deployment</div>
-                <div class="cr-learn-item__note">Understanding what monitoring, versioning, and drift detection actually look like in production — not as theory but as requirements that shape how you build.</div>
+                <div class="cr-learn-item__note">Understanding what monitoring, versioning, and drift detection actually look like in production, not as theory but as requirements that shape how you build.</div>
             </div>
 
         </div>
@@ -82,21 +72,21 @@
                 <img class="cr-book__cover" src="../assets/images/covers/deep-medicine.jpg" alt="Deep Medicine cover">
                 <div class="cr-book__title">Deep Medicine</div>
                 <div class="cr-book__author">Eric Topol</div>
-                <p class="cr-book__note">The most widely read book in medical AI — Topol's case for how AI reshapes diagnosis, imaging, and drug discovery, and what the technology can and can't do in clinical practice.</p>
+                <p class="cr-book__note">The most widely read book in medical AI: Topol's case for how AI reshapes diagnosis, imaging, and drug discovery, and what the technology can and can't do in clinical practice.</p>
             </div>
 
             <div class="cr-book">
                 <img class="cr-book__cover" src="../assets/images/covers/alignment-problem.jpg" alt="The Alignment Problem cover">
                 <div class="cr-book__title">The Alignment Problem</div>
                 <div class="cr-book__author">Brian Christian</div>
-                <p class="cr-book__note">On what it means to build ML systems that do what we actually want. Relevant not just to safety but to any high-stakes deployment — including clinical.</p>
+                <p class="cr-book__note">On what it means to build ML systems that do what we actually want. Relevant not just to safety but to any high-stakes deployment.</p>
             </div>
 
             <div class="cr-book">
                 <img class="cr-book__cover" src="../assets/images/covers/hands-on-ml.jpg" alt="Hands-On Machine Learning cover">
                 <div class="cr-book__title">Hands-On Machine Learning</div>
                 <div class="cr-book__author">Aurélien Géron</div>
-                <p class="cr-book__note">The practical standard for bridging theory and implementation — Scikit-Learn, Keras, TensorFlow end to end. Widely read across the industry.</p>
+                <p class="cr-book__note">The practical standard for bridging theory and implementation: Scikit-Learn, Keras, TensorFlow end to end.</p>
             </div>
 
         </div>
@@ -108,20 +98,15 @@
         <h2>Building</h2>
 
         <div class="cr-project">
-            <div class="cr-project__title">Kindred</div>
-            <div class="cr-project__blocks">
-                <div class="cr-project__block">
-                    <div class="cr-project__label">Why</div>
-                    <p class="cr-project__text">Most recommendation engines optimise for engagement, not taste. I wanted something that actually learns what I love — not what I click on, but what I finish, reread, or abandon halfway through.</p>
-                </div>
-                <div class="cr-project__block">
-                    <div class="cr-project__label">How</div>
-                    <p class="cr-project__text">A swipe interface for rating books you've already read. Each rating feeds an embedding model that builds a taste profile, layered with collaborative filtering to surface books you haven't encountered yet.</p>
-                </div>
-                <div class="cr-project__block">
-                    <div class="cr-project__label">What's next</div>
-                    <p class="cr-project__text">Cross-modal extension to films. The same representation space that maps books by content should, in principle, map films — a single taste graph across media types.</p>
-                </div>
+            <div class="cr-project__meta">Personal project &nbsp;·&nbsp; In progress</div>
+            <div class="cr-project__title">Book Tracker</div>
+            <p class="cr-project__text">A book app I'm building in phases. Right now: search, a reading shelf, and ratings. The longer goal is a recommendation layer that learns from those ratings over time and builds a taste profile, something that can describe what your reading has in common, not just suggest more of the same. Movies next.</p>
+            <div class="cr-project__tags">
+                <span class="cr-project__tag">React Native</span>
+                <span class="cr-project__tag">Expo</span>
+                <span class="cr-project__tag">FastAPI</span>
+                <span class="cr-project__tag">Postgres</span>
+                <span class="cr-project__tag">Python</span>
             </div>
         </div>
 
@@ -137,7 +122,7 @@
         </div>
 
         <div class="cr-question">
-            <p class="cr-question__text">The gap between a model that works on a dataset and one that a surgeon would trust in a workflow — regulation, uncertainty quantification, interpretability.</p>
+            <p class="cr-question__text">The gap between a model that works on a dataset and one that a surgeon would trust in a workflow: regulation, uncertainty quantification, interpretability.</p>
             <span class="cr-question__label">What makes a pipeline clinically deployable</span>
         </div>
 
@@ -146,7 +131,7 @@
 </main>
 
 <footer class="cr-footer">
-    <a href="mailto:viki.ceccatelli@gmail.com">viki.ceccatelli@gmail.com</a>
+    <a href="mailto:vittoria.ceccatelli@gmail.com">vittoria.ceccatelli@gmail.com</a>
 </footer>
 
 <script>
