@@ -11,6 +11,8 @@
     padding: 0;
 }
 
+html, body { overflow-x: hidden; }
+
 body {
     background: var(--bg);
     color: var(--text);
@@ -1001,6 +1003,7 @@ html {
 .pro-about__col {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .pro-about__col--left {
@@ -1022,6 +1025,7 @@ html {
     line-height: 0.88;
     color: var(--text);
     text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
 .pro-about__name span {
@@ -1721,6 +1725,12 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     .pro-projects-section {
         padding: 48px 32px;
     }
+    .pro-skills-section .pro-panel__title,
+    .pro-projects-section .pro-panel__title {
+        margin: 0 -32px 36px;
+        padding: 16px 32px;
+        padding-bottom: 16px;
+    }
     .pro-projects-section .pro-cards {
         grid-template-columns: 1fr;
     }
@@ -1748,16 +1758,25 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     .pro-about__col--right {
         padding: 28px 24px 48px;
     }
+    .pro-about__name {
+        font-size: clamp(30px, 12vw, 52px);
+    }
     .pro-tl-section {
-        padding: 0 20px 40px;
+        padding: 0 12px 40px;
     }
     .pro-tl__sticky {
-        margin: 0 -20px 28px;
-        padding: 14px 20px;
+        margin: 0 -12px 28px;
+        padding: 14px 12px;
     }
     .pro-skills-section,
     .pro-projects-section {
         padding: 40px 24px;
+    }
+    .pro-skills-section .pro-panel__title,
+    .pro-projects-section .pro-panel__title {
+        margin: 0 -24px 28px;
+        padding: 14px 24px;
+        padding-bottom: 14px;
     }
     .vtl {
         grid-template-columns: 1fr 28px 1fr;
@@ -1870,73 +1889,37 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     .pro-dropdown__btn { font-size: 12px; letter-spacing: 4px; opacity: 0.55; }
     .pro-dropdown.is-open .pro-dropdown__btn { opacity: 1; }
 
-    /* Timeline: left-line with dots */
-    .vtl-row { display: block; }
-    .vtl {
-        display: block;
-        border-left: 1px solid rgba(0,0,0,0.12);
-        padding-left: 22px;
-        margin-left: 14px;
+    /* Timeline: keep two-sided cards, just tighter — no country stripe, no desc/courses text */
+    .vtl { grid-template-columns: 1fr 22px 1fr; }
+    .vtl-entry--left  { padding-right: 14px; }
+    .vtl-entry--right { padding-left: 14px; }
+    .vtl-entry--left  .vtl-entry__card { left: -8px; right: 14px; }
+    .vtl-entry--right .vtl-entry__card { left: 14px; right: -8px; }
+    .vtl-entry__card { padding: 9px 10px; grid-template-columns: 1fr; gap: 2px 0; }
+    .vtl-entry--left .vtl-entry__card { grid-template-columns: 1fr; }
+    .vtl-entry__dates {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        white-space: normal;
+        font-size: 8px;
     }
-    .vtl__stripe { display: none; }
-    .vtl__spine  { display: none; }
-    .vtl__col    { position: static; min-height: 0; }
-    .vtl-entry {
-        position: relative !important;
-        top: auto !important;
-        padding: 0 0 20px;
+    .vtl-entry__title {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        font-size: 11px;
     }
-    .vtl-entry--left,
-    .vtl-entry--right { text-align: left; padding-left: 0; padding-right: 0; }
-    /* Repurpose bar as a small dot on the line */
-    .vtl-entry--left::before,
-    .vtl-entry--right::before {
-        content: '';
-        position: absolute;
-        left: -28px !important;
-        right: auto !important;
-        top: 4px !important;
-        width: 6px !important;
-        height: 6px !important;
-        border-radius: 50%;
-        background: var(--clr, rgba(0,0,0,0.25));
-    }
-    /* Strip card chrome */
-    .vtl-entry__card {
-        position: static !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        display: block !important;
-        background: none !important;
-        border: none !important;
-        border-top: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        border-radius: 0;
-        width: 100%;
-    }
-    .vtl-entry__card:hover { background: none !important; box-shadow: none !important; }
-    a.vtl-entry__card:hover .vtl-entry__title::after { content: none; }
-    /* Reset grid layout on card children */
-    .vtl-entry__dates,
-    .vtl-entry--left .vtl-entry__dates {
-        display: block;
-        grid-column: unset !important;
-        grid-row: unset !important;
-        margin-bottom: 2px;
-    }
-    .vtl-entry__title,
-    .vtl-entry--left .vtl-entry__title {
-        display: block;
-        grid-column: unset !important;
-        grid-row: unset !important;
-    }
-    .vtl-entry__place { margin-bottom: 0; }
+    .vtl-entry__place { grid-row: 3; font-size: 9px; margin-bottom: 0; }
     .vtl-entry__desc    { display: none !important; }
     .vtl-entry__courses { display: none !important; }
     .vtl-row--compact { margin-top: 20px; }
 
     /* Biomechanics 2-col figure grid */
     .pro-figures-grid { grid-template-columns: 1fr !important; }
+
+    /* Scroll-snap makes mobile scrolling feel sluggish — desktop-only */
+    html { scroll-snap-type: none; }
+    .pro-about, .pro-tl-section, .pro-skills-section, .pro-projects-section {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
 }
