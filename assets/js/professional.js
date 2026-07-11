@@ -28,6 +28,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // ── Hamburger menu ──────────────────────────────────────────────
+    var burger = document.getElementById('pro-burger');
+    var mobileNav = document.getElementById('pro-nav');
+    if (burger && mobileNav) {
+        burger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var open = burger.classList.toggle('is-open');
+            mobileNav.classList.toggle('is-open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+        document.addEventListener('click', function (e) {
+            if (mobileNav.classList.contains('is-open') && !mobileNav.contains(e.target) && e.target !== burger) {
+                burger.classList.remove('is-open');
+                mobileNav.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
     // ── Header glass on scroll ──────────────────────────────────────
     const header = document.querySelector('.pro-header');
     if (header) {

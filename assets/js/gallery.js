@@ -6,6 +6,38 @@ document.addEventListener('DOMContentLoaded', function () {
         if (header) header.classList.toggle('is-scrolled', window.scrollY > 10);
     }, { passive: true });
 
+    // ── Hamburger menu ────────────────────────────────────────
+    var burger = document.getElementById('g-burger');
+    var mobileNav = document.getElementById('g-nav');
+    if (burger && mobileNav) {
+        burger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var open = burger.classList.toggle('is-open');
+            mobileNav.classList.toggle('is-open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+        document.addEventListener('click', function (e) {
+            if (mobileNav.classList.contains('is-open') && !mobileNav.contains(e.target) && e.target !== burger) {
+                burger.classList.remove('is-open');
+                mobileNav.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // ── Dropdown click (mobile) ───────────────────────────────
+    document.querySelectorAll('.g-dropdown__btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.stopPropagation();
+                var dropdown = btn.closest('.g-dropdown');
+                var wasOpen = dropdown.classList.contains('is-open');
+                document.querySelectorAll('.g-dropdown').forEach(function (d) { d.classList.remove('is-open'); });
+                if (!wasOpen) dropdown.classList.add('is-open');
+            }
+        });
+    });
+
     // ── Filter ───────────────────────────────────────────────
     var filters = document.querySelectorAll('.g-filter');
     var items   = Array.from(document.querySelectorAll('.g-item'));

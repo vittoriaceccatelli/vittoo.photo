@@ -8,13 +8,13 @@
     <meta property="og:title" content="Exploring the Impact of Auditory Noise Stimulation on the Postural Stability of Elderly Individuals | Vittoria Ceccatelli">
     <meta property="og:description" content="Signal processing and coherence analysis showing subthreshold auditory noise reduces CoP velocity and EMG coherence in elderly participants.">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="../assets/css/professional.css?v=31">
+    <link rel="stylesheet" href="../assets/css/professional.css?v=33">
 </head>
 <body>
 
 <header class="pro-header">
     <a class="pro-home" href="../index.html">VC</a>
-    <nav class="pro-nav">
+    <nav class="pro-nav" id="pro-nav">
         <a href="CV.pdf" download="Vittoria_Ceccatelli_CV"><svg width="10" height="10" viewBox="0 0 11 11" fill="none" style="vertical-align:middle;margin-right:5px"><path d="M5.5 1v6.5M2 10h7M2 7l3.5 3 3.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>CV</a>
         <div class="pro-dropdown">
             <button class="pro-dropdown__btn" aria-expanded="false">PROJECTS</button>
@@ -39,6 +39,9 @@
             </div>
         </div>
     </nav>
+    <button class="pro-burger" id="pro-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
 </header>
 
 <main class="pro-main">
@@ -195,7 +198,7 @@
             drivers of front-to-back balance control.
         </p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
+        <div class="pro-figures-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
             <figure class="pro-figure" style="margin: 0;">
                 <img src="../assets/images/projects/biomech-annex4-41.png" alt="SOL_L GAM_L coherence, young participants">
                 <figcaption>Left leg, young participants. Muscle synchronisation is highest in the low-frequency band. Differences between conditions are small, consistent with younger adults having a higher baseline stability.</figcaption>

@@ -474,3 +474,85 @@ a { color: inherit; text-decoration: none; }
     .cr-feature__title { font-size: 22px; }
     .cr-question__text { font-size: 15px; }
 }
+
+/* ── Dropdown click support (all screen sizes) ── */
+.cr-dropdown.is-open .cr-dropdown__btn { opacity: 1; }
+.cr-dropdown.is-open .cr-dropdown__menu { display: block; }
+
+/* ── Hamburger button ───────────────────────── */
+
+.cr-burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 2px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 110;
+    color: var(--text);
+    opacity: 0.45;
+    transition: opacity 0.2s;
+}
+.cr-burger:hover { opacity: 1; }
+.cr-burger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform 0.25s, opacity 0.25s;
+}
+.cr-burger.is-open { opacity: 1; }
+.cr-burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.cr-burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.cr-burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+    .cr-burger { display: flex; }
+    .cr-header__tagline { display: none; }
+
+    .cr-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        z-index: 99;
+        overflow-y: auto;
+    }
+    .cr-nav.is-open { display: flex; }
+
+    .cr-dropdown { position: static; text-align: center; }
+    .cr-dropdown__menu {
+        position: static;
+        background: none;
+        border: none;
+        min-width: 0;
+        padding: 10px 0 0;
+        display: none;
+        text-align: center;
+    }
+    .cr-dropdown.is-open .cr-dropdown__menu { display: block; }
+    .cr-dropdown__menu::before { display: none; }
+    .cr-dropdown__menu a {
+        display: block;
+        padding: 9px 0;
+        font-size: 11px;
+        letter-spacing: 3px;
+        opacity: 0.5;
+    }
+    .cr-dropdown__btn { font-size: 12px; letter-spacing: 4px; opacity: 0.55; }
+    .cr-dropdown.is-open .cr-dropdown__btn { opacity: 1; }
+
+    .cr-learn-grid { grid-template-columns: 1fr; gap: 28px; }
+    .cr-books { grid-template-columns: 1fr 1fr; }
+    .cr-main { width: 88%; }
+}
+
+@media (max-width: 480px) {
+    .cr-books { grid-template-columns: 1fr; }
+    .cr-main { width: 92%; }
+}

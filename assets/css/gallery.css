@@ -549,3 +549,87 @@ a { color: inherit; text-decoration: none; }
     .g-lb__prev { left: 4px; padding: 12px 10px; }
     .g-lb__next { right: 4px; padding: 12px 10px; }
 }
+
+/* ── Dropdown click support ─────────────────── */
+.g-dropdown.is-open .g-dropdown__btn { opacity: 1; }
+.g-dropdown.is-open .g-dropdown__menu { display: block; }
+
+/* ── Hamburger button ───────────────────────── */
+
+.g-burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 2px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 110;
+    color: var(--text, #e8e2d6);
+    opacity: 0.45;
+    transition: opacity 0.2s;
+}
+.g-burger:hover { opacity: 1; }
+.g-burger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform 0.25s, opacity 0.25s;
+}
+.g-burger.is-open { opacity: 1; }
+.g-burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.g-burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.g-burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+    .g-burger { display: flex; }
+
+    .g-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--bg, #0e0d0b);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        z-index: 99;
+        overflow-y: auto;
+    }
+    .g-nav.is-open { display: flex; }
+
+    .g-dropdown { position: static; text-align: center; }
+    .g-dropdown__menu {
+        position: static;
+        background: none;
+        border: none;
+        min-width: 0;
+        padding: 10px 0 0;
+        display: none;
+        text-align: center;
+    }
+    .g-dropdown.is-open .g-dropdown__menu { display: block; }
+    .g-dropdown__menu::before { display: none; }
+    .g-dropdown__menu a {
+        display: block;
+        padding: 9px 0;
+        font-size: 11px;
+        letter-spacing: 3px;
+        opacity: 0.5;
+    }
+    .g-dropdown__btn { font-size: 12px; letter-spacing: 4px; opacity: 0.55; }
+    .g-dropdown.is-open .g-dropdown__btn { opacity: 1; }
+
+    .g-nav__link { font-size: 12px; letter-spacing: 4px; opacity: 0.55; }
+    .g-nav__link:hover { opacity: 1; }
+
+    .g-filters {
+        position: static;
+        padding: 16px 20px;
+        margin-top: 60px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        flex-wrap: wrap;
+    }
+    .g-grid { margin-top: 0; }
+}

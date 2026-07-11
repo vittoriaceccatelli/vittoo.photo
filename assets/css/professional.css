@@ -1798,3 +1798,145 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
         left: 0;
     }
 }
+
+/* ── Hamburger button ───────────────────────── */
+
+.pro-burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 2px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 110;
+    color: var(--text);
+    opacity: 0.45;
+    transition: opacity 0.2s;
+}
+.pro-burger:hover { opacity: 1; }
+.pro-burger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform 0.25s, opacity 0.25s;
+}
+.pro-burger.is-open { opacity: 1; }
+.pro-burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.pro-burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.pro-burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile nav overlay + timeline collapse ─── */
+
+@media (max-width: 768px) {
+    .pro-burger { display: flex; }
+
+    .pro-header__tagline { display: none; }
+
+    .pro-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        z-index: 99;
+        overflow-y: auto;
+    }
+    .pro-nav.is-open { display: flex; }
+
+    .pro-dropdown { position: static; text-align: center; }
+    .pro-dropdown__menu {
+        position: static;
+        background: none;
+        border: none;
+        min-width: 0;
+        padding: 10px 0 0;
+        display: none;
+        text-align: center;
+    }
+    .pro-dropdown.is-open .pro-dropdown__menu { display: block; }
+    .pro-dropdown__menu::before { display: none; }
+    .pro-dropdown__menu a {
+        display: block;
+        padding: 9px 0;
+        font-size: 11px;
+        letter-spacing: 3px;
+        opacity: 0.5;
+    }
+    .pro-dropdown__btn { font-size: 12px; letter-spacing: 4px; opacity: 0.55; }
+    .pro-dropdown.is-open .pro-dropdown__btn { opacity: 1; }
+
+    /* Timeline: left-line with dots */
+    .vtl-row { display: block; }
+    .vtl {
+        display: block;
+        border-left: 1px solid rgba(0,0,0,0.12);
+        padding-left: 22px;
+        margin-left: 14px;
+    }
+    .vtl__stripe { display: none; }
+    .vtl__spine  { display: none; }
+    .vtl__col    { position: static; min-height: 0; }
+    .vtl-entry {
+        position: relative !important;
+        top: auto !important;
+        padding: 0 0 20px;
+    }
+    .vtl-entry--left,
+    .vtl-entry--right { text-align: left; padding-left: 0; padding-right: 0; }
+    /* Repurpose bar as a small dot on the line */
+    .vtl-entry--left::before,
+    .vtl-entry--right::before {
+        content: '';
+        position: absolute;
+        left: -28px !important;
+        right: auto !important;
+        top: 4px !important;
+        width: 6px !important;
+        height: 6px !important;
+        border-radius: 50%;
+        background: var(--clr, rgba(0,0,0,0.25));
+    }
+    /* Strip card chrome */
+    .vtl-entry__card {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        border-top: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        border-radius: 0;
+        width: 100%;
+    }
+    .vtl-entry__card:hover { background: none !important; box-shadow: none !important; }
+    a.vtl-entry__card:hover .vtl-entry__title::after { content: none; }
+    /* Reset grid layout on card children */
+    .vtl-entry__dates,
+    .vtl-entry--left .vtl-entry__dates {
+        display: block;
+        grid-column: unset !important;
+        grid-row: unset !important;
+        margin-bottom: 2px;
+    }
+    .vtl-entry__title,
+    .vtl-entry--left .vtl-entry__title {
+        display: block;
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+    .vtl-entry__place { margin-bottom: 0; }
+    .vtl-entry__desc    { display: none !important; }
+    .vtl-entry__courses { display: none !important; }
+    .vtl-row--compact { margin-top: 20px; }
+
+    /* Biomechanics 2-col figure grid */
+    .pro-figures-grid { grid-template-columns: 1fr !important; }
+}

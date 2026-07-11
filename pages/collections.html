@@ -6,13 +6,13 @@
     <title>vittoo.photo</title>
     <meta name="description" content="Photography by Vittoria Ceccatelli — wildlife, landscapes, street, people, flora, architecture, and the sea.">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="../assets/css/gallery.css?v=4">
+    <link rel="stylesheet" href="../assets/css/gallery.css?v=5">
 </head>
 <body>
 
 <header class="g-header">
     <a class="g-logo" href="../index.html">VC</a>
-    <nav class="g-nav">
+    <nav class="g-nav" id="g-nav">
         <a class="g-nav__link" href="https://www.instagram.com/vittoo.photo/" target="_blank">INSTAGRAM</a>
         <a class="g-nav__link" id="map-toggle" href="#">MAP</a>
         <div class="g-dropdown">
@@ -30,6 +30,9 @@
             </div>
         </div>
     </nav>
+    <button class="g-burger" id="g-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
 </header>
 
 <div class="g-filters">

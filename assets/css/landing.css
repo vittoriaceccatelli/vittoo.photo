@@ -236,3 +236,21 @@ html, body {
         letter-spacing: 5px;
     }
 }
+
+/* ── Touch devices: show sub-links without hover ── */
+@media (hover: none) {
+    .vittoria__split,
+    .personal__split {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    .panel--vittoria .panel__label,
+    .panel--personal .panel__label {
+        opacity: 0;
+    }
+
+    /* Disable expand animation — no hover intent on touch */
+    .panel { transition: none; }
+}
