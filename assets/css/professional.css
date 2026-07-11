@@ -1088,6 +1088,8 @@ html {
 
 .pro-about__contact {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 6px;
     gap: 14px;
     align-items: center;
     font-size: 9px;
@@ -1696,6 +1698,10 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
 /* ── Responsive ──────────────────────────── */
 
 @media (max-width: 900px) {
+    .pro-main {
+        width: 88%;
+        padding: 120px 0 80px;
+    }
     .pro-header {
         padding: 20px 24px;
     }
@@ -1741,6 +1747,10 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
 }
 
 @media (max-width: 520px) {
+    .pro-main {
+        width: 92%;
+        padding: 100px 0 60px;
+    }
     .pro-header {
         flex-wrap: wrap;
         gap: 12px;
@@ -1895,6 +1905,9 @@ a.vtl-entry__card:hover .vtl-entry__title::after {
     .vtl-entry--right { padding-left: 14px; }
     .vtl-entry--left  .vtl-entry__card { left: -8px; right: 14px; }
     .vtl-entry--right .vtl-entry__card { left: 14px; right: -8px; }
+    /* Bar lanes must stay inside the 14px reserved gap so cards never overlap lane 1/2 bars */
+    .vtl-entry--left::before  { right: calc(var(--bar-lane, 0) * 4px); }
+    .vtl-entry--right::before { left:  calc(var(--bar-lane, 0) * 4px); }
     .vtl-entry__card { padding: 9px 10px; grid-template-columns: 1fr; gap: 2px 0; }
     .vtl-entry--left .vtl-entry__card { grid-template-columns: 1fr; }
     .vtl-entry__dates {
